@@ -1,4 +1,9 @@
 if(is_userdata_reserved(game)) then
+-- Gui to Lua
+-- Version: 3
+
+-- Instances:
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -10,7 +15,9 @@ local TextLabel2_2 = Instance.new("TextLabel")
 local TextLabel3_2 = Instance.new("TextLabel")
 local TextLabel6 = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
-  
+
+--Properties:
+
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
