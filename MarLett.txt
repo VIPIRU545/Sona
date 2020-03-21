@@ -36,7 +36,7 @@ getgenv().getsenv = function(Script)
     error("Script Doesn't Exist!")
 end
 
-getsEnv = function(sc)
+getgenv().getsEnv = function(sc)
 	local function iterate(obj, tbl)
 		for i,v in ipairs(obj) do
 			if type(v) == "table" then
