@@ -27,31 +27,15 @@ end
 return instance
 end
 --======================================================--
-getgenv().getsenv = function(Script)
-	for i,v in pairs(getsEnv()) do
-		if v.script == Script then
-			return v
-		end
+getgenv().getsenv = function(Scr)
+    for i,v in pairs(getreg()) do
+        if (type(v) == "function") then
+            if getfenv(v).script and checkcaller() then
+                if getfenv(v).script == Scr then
+                    return getfenv(v)
+                end
+            end
+        end
     end
-    error("Script Doesn't Exist!")
-end
-
-getgenv().getsEnv = function(sc)
-	local function iterate(obj, tbl)
-		for i,v in ipairs(obj) do
-			if type(v) == "table" then
-				iterate(v, tbl)
-			elseif type(v) == "function" then
-				if getfenv(v).script then
-					table.insert(tbl, getfenv(v));
-				end
-			end
-		end
-	end
-	
-	local result = {}
-	iterate(getreg(), result)
-
-	return result;
 end
 --======================================================--
