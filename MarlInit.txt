@@ -1,0 +1,59 @@
+--======================================================--
+getgenv().MARLETT_LOADED = true
+--======================================================--
+getgenv().getnilinstances = function()
+local nilinstances = {}
+for i,v in next,getreg() do
+if type(v)=="table" then
+for NilInst, Nilparent in next,v do
+if typeof(Nilparent)=="Instance" and Nilparent.Parent==nil then
+table.insert(nilinstances,Nilparent)
+end
+end
+end
+end
+return nilinstances
+end
+--======================================================--
+getgenv().getinstances = function()
+local instance = {}
+for i,v in next,getreg() do
+if type(v)=="table" then
+for Inst, instances in next,v do
+if typeof(instances)=="Instance" then
+table.insert(instance, instances)
+end
+end
+end
+end
+return instance
+end
+--======================================================--
+getgenv().getsenv = function(Scr)
+    for i,v in pairs(getreg()) do
+        if (type(v) == "function") then
+            if getfenv(v).script and checkcaller() then
+                if getfenv(v).script == Scr then
+                    return getfenv(v)
+                end
+            end
+        end
+    end
+end
+--======================================================--
+local metatable = getrawmetatable(game)
+local index = metatable.__index -- Wont cause stack overflow
+local create_closure = function(x) return x end
+make_writeable(metatable) -- Makes metatable writeable
+
+metatable.__index = create_closure(function(t, k)
+  if t == game then
+    if (k == "HttpGet") then
+        return function(self, url, ...)
+          return HttpGet(url, ...)
+       end
+     end
+   end
+  return index(t, k)
+end)
+--======================================================--
