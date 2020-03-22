@@ -39,3 +39,19 @@ getgenv().getsenv = function(Scr)
     end
 end
 --======================================================--
+local metatable = getrawmetatable(game)
+local index = metatable.__index -- Wont cause stack overflow
+local create_closure = function(x) return x end
+make_writeable(metatable) -- Makes metatable writeable
+
+metatable.__index = create_closure(function(t, k)
+  if t == game then
+    if (k == "HttpGet") then
+        return function(self, url, ...)
+          return HttpGet(url, ...)
+       end
+     end
+   end
+  return index(t, k)
+end)
+--======================================================--
