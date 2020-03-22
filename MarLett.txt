@@ -1,4 +1,6 @@
 --======================================================--
+getgenv().MARLETT_LOADED = true
+--======================================================--
 getgenv().getnilinstances = function()
 local nilinstances = {}
 for i,v in next,getreg() do
