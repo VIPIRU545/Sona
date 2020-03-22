@@ -1,6 +1,4 @@
 --======================================================--
-local LOADLOADLOADLOADLOAD = {[\"RbxGear\"] = \"https://raw.githubusercontent.com/VIPIRU545/Sona/master/rbxgear.lua\"; ""[\"RbxGui\"] = \"https://raw.githubusercontent.com/VIPIRU545/Sona/master/rbxgui.lua\"; "  "[\"RbxStamper\"] = \"https://raw.githubusercontent.com/VIPIRU545/Sona/master/rbxstamper.lua\"; " "[\"RbxUtility\"] = \"https://raw.githubusercontent.com/VIPIRU545/Sona/master/rbxutility.lua\"} " "function LoadLibrary(library) if LOADLOADLOADLOADLOAD[library] then return loadstring(game:HttpGet(LOADLOADLOADLOADLOAD[library], true))() end end
---======================================================--
 getgenv().MARLETT_LOADED = true
 --======================================================--
 getgenv().getnilinstances = function()
