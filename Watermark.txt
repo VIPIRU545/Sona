@@ -1,6 +1,6 @@
 local camera = game:GetService("Workspace").CurrentCamera
 watermark = Drawing.new("Text")
-watermark.Text = "From Backwoods: My account had been disabled on discord, heres the new sona invite: https://discord.gg/m5MpTP"
+watermark.Text = "From Backwoods: My account had been disabled on discord, heres the new sona invite: https://discord.gg/BGXXDVE"
 watermark.Color = Color3.new(242, 243, 243)
 watermark.Position = Vector2.new(camera.ViewportSize.X - 1910, camera.ViewportSize.Y - 25)
 watermark.Size = 16.0
