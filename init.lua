@@ -11,7 +11,7 @@ setreadonly(mt, false)
 
 local newcclosure = newcclosure or function(f)
         return f
-    end
+    end 
 
 mt.__index =
     newcclosure(
