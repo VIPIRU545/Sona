@@ -22,7 +22,7 @@ mt.__index =
                     return GetObjects(id)
                 end
             else
-                if (k == "HttpGet" and checkcaller()) then
+                if (k == "HttpGet" or k == "HttpGetAsync" and checkcaller()) then
                     return function(t, e)
                         return request_Http(e)
                     end
@@ -40,10 +40,28 @@ mt.__namecall =
         if check == "GetObjects" then
             return GetObjects(...)
         else
-            if (check == "HttpGet") then
+            if (check == "HttpGet" or check == "HttpGetAsync") then
                 return request_Http(...)
             end
         end
         return old_n(self, ...)
+    end
+)
+
+getfenv(0)["toprint"] =
+    newcclosure(
+    function(...)
+        local Rt, Rn = {...}, select("#", ...)
+        local Str = ""
+        for i = 1, Rn do
+            local v = getrenv().tostring(Rt[i])
+            if (type(v) ~= "string") then
+                error("'tostring' must return a string to 'print'", 0)
+            end
+
+            Str = Str .. v .. " "
+        end
+
+        return printcon(Str)
     end
 )
