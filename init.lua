@@ -10,13 +10,11 @@ end
 
 -- credits to yarios as im using his getobjects
 
-local GetObjects = function(a)
+local GetObjects = function(self, a)
     local Objects = {}
     if a then
-        local b = game:GetService("InsertService"):LoadLocalAsset(a)
-        if b then
-            table_insert(Objects, b)
-        end
+        local b = LoadAsset(InsertService, a)
+        if b then TableInsert(Objects, b) end
     end
     return Objects
 end
