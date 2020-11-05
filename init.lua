@@ -1,4 +1,16 @@
-local GetObjects = function(a) -- credits to yarios as im using his getobjects
+--store all modules and localscripts--
+
+for i, v in pairs(getloadedmodules()) do
+    store_modules(v:GetFullName())
+end
+
+for i, v in pairs(getscripts()) do
+    store_scripts(v:GetFullName())
+end
+
+-- credits to yarios as im using his getobjects
+
+local GetObjects = function(a)
     local Objects = {}
     if a then
         local b = InsertService:LoadLocalAsset(a)
@@ -9,6 +21,8 @@ local GetObjects = function(a) -- credits to yarios as im using his getobjects
     return Objects
 end
 
+-- getobjects and httpget fix
+
 local mt = getrawmetatable(game)
 
 local old_i = mt.__index
@@ -18,7 +32,7 @@ setreadonly(mt, false)
 
 local newcclosure = newcclosure or function(f)
         return f
-    end 
+    end
 
 mt.__index =
     newcclosure(
