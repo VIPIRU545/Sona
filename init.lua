@@ -8,17 +8,8 @@ for i, v in pairs(getscripts()) do
     store_scripts(v:GetFullName())
 end
 
-local InsertService = game:GetService("InsertService")
-
-local GetObjects = function(self, a) 
-    local Objects = {}
-    if a then
-        local b = InsertService:LoadLocalAsset(self)
-        if b then 
-            table_insert(Objects, b) 
-        end
-    end
-    return Objects
+local GetObjects = function(...)
+    return {game:GetService("InsertService"):LoadLocalAsset(...)}
 end
 
 -- getobjects and httpget fix
