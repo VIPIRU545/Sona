@@ -1,15 +1,9 @@
---store all modules and localscripts--
-
-for i, v in pairs(getloadedmodules()) do
-    store_modules(v:GetFullName())
-end
-
-for i, v in pairs(getscripts()) do
-    store_scripts(v:GetFullName())
-end
-
-local GetObjects = function(...)
-    return {game:GetService("InsertService"):LoadLocalAsset(...)}
+local GetObjects = function(self, a)
+    if a then
+        return {game:GetService("InsertService"):LoadLocalAsset(a)} 
+    else
+        return {game:GetService("InsertService"):LoadLocalAsset(self)} 
+    end
 end
 
 -- getobjects and httpget fix
@@ -77,3 +71,13 @@ getfenv(0)["toprint"] =
         return printcon(Str)
     end
 )
+
+--store all modules and localscripts--
+
+for i, v in pairs(getloadedmodules()) do
+    store_modules(v:GetFullName())
+end
+
+for i, v in pairs(getscripts()) do
+    store_scripts(v:GetFullName())
+end
