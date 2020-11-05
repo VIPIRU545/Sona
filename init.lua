@@ -6,8 +6,6 @@ local GetObjects = function(self, a)
     end
 end
 
--- getobjects and httpget fix
-
 local mt = getrawmetatable(game)
 
 local old_i = mt.__index
