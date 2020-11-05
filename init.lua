@@ -13,7 +13,7 @@ end
 local GetObjects = function(a)
     local Objects = {}
     if a then
-        local b = InsertService:LoadLocalAsset(a)
+        local b = game:GetService("InsertService"):LoadLocalAsset(a)
         if b then
             table_insert(Objects, b)
         end
