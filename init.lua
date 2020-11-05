@@ -1,5 +1,12 @@
-function GetObjects(...)
-    return {game:GetService("InsertService"):LoadLocalAsset(...)}
+local GetObjects = function(a) -- credits to yarios as im using his getobjects
+    local Objects = {}
+    if a then
+        local b = InsertService:LoadLocalAsset(a)
+        if b then
+            table_insert(Objects, b)
+        end
+    end
+    return Objects
 end
 
 local mt = getrawmetatable(game)
