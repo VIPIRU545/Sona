@@ -10,6 +10,9 @@ end
 
 -- credits to yarios as im using his getobjects
 
+local InsertService = game:GetService'InsertService'
+local LoadAsset = InsertService.LoadLocalAsset
+
 local GetObjects = function(self, a)
     local Objects = {}
     if a then
