@@ -1,3 +1,5 @@
+getfenv(0)["bit"] = bit32
+
 local GetObjects = function(self, a)
     if a then
         return {game:GetService("InsertService"):LoadLocalAsset(a)} 
