@@ -1,11 +1,3 @@
-for i, v in pairs(getloadedmodules()) do
-    store_modules(v:GetFullName())
-end
-
-for i, v in pairs(getscripts()) do
-    store_scripts(v:GetFullName())
-end
-
 --pretty cool right this isnt exactly the full drawing lib source u need way more than this so u wont get anywhere with this
 
 local text = {
