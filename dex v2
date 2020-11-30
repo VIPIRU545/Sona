@@ -1,156 +1,1841 @@
+local print = function() end
+local warn = function() end
+local error = function() end
+
+math.randomseed(tick())
+
+function RandomCharacters(length)
+	local STR = ''
+	
+	for i = 1, length do
+		STR = STR .. string.char(math.random(65,90))
+	end
+	
+	return STR
+end
+
+if getgenv().dex_ui ~= nil then getgenv().dex_ui:remove() getgenv().dex_ui = nil end
+
 CreateGui = function()
-local NewGuiPart1 = Instance.new("ScreenGui")
-local NewGuiPart2 = Instance.new("Frame")
-local NewGuiPart3 = Instance.new("Frame")
-local NewGuiPart4 = Instance.new("TextLabel")
-local NewGuiPart5 = Instance.new("TextBox")
-local NewGuiPart6 = Instance.new("Frame")
-local NewGuiPart7 = Instance.new("Frame")
-local NewGuiPart8 = Instance.new("TextButton")
-local NewGuiPart9 = Instance.new("TextLabel")
-local NewGuiPart10 = Instance.new("TextLabel")
-local NewGuiPart11 = Instance.new("ImageLabel")
-local NewGuiPart12 = Instance.new("Frame")
-local NewGuiPart13 = Instance.new("Frame")
-local NewGuiPart14 = Instance.new("Frame")
-local NewGuiPart15 = Instance.new("TextButton")
-local NewGuiPart16 = Instance.new("ImageLabel")
-local NewGuiPart17 = Instance.new("TextButton")
-local NewGuiPart18 = Instance.new("ImageLabel")
-local NewGuiPart19 = Instance.new("TextButton")
-local NewGuiPart20 = Instance.new("ImageLabel")
-local NewGuiPart21 = Instance.new("TextButton")
-local NewGuiPart22 = Instance.new("ImageLabel")
-local NewGuiPart23 = Instance.new("TextButton")
-local NewGuiPart24 = Instance.new("ImageLabel")
-local NewGuiPart25 = Instance.new("TextButton")
-local NewGuiPart26 = Instance.new("ImageLabel")
-local NewGuiPart27 = Instance.new("TextButton")
-local NewGuiPart28 = Instance.new("Frame")
-local NewGuiPart29 = Instance.new("Frame")
-local NewGuiPart30 = Instance.new("TextLabel")
-local NewGuiPart31 = Instance.new("Frame")
-local NewGuiPart32 = Instance.new("TextLabel")
-local NewGuiPart33 = Instance.new("TextLabel")
-local NewGuiPart34 = Instance.new("TextButton")
-local NewGuiPart35 = Instance.new("TextLabel")
-local NewGuiPart36 = Instance.new("TextLabel")
-local NewGuiPart37 = Instance.new("Frame")
-local NewGuiPart38 = Instance.new("Frame")
-local NewGuiPart39 = Instance.new("TextLabel")
-local NewGuiPart40 = Instance.new("Frame")
-local NewGuiPart41 = Instance.new("TextButton")
-local NewGuiPart42 = Instance.new("TextLabel")
-local NewGuiPart43 = Instance.new("TextButton")
-local NewGuiPart44 = Instance.new("TextBox")
-local NewGuiPart45 = Instance.new("TextButton")
-local NewGuiPart46 = Instance.new("TextLabel")
-local NewGuiPart47 = Instance.new("TextLabel")
-local NewGuiPart48 = Instance.new("Frame")
-local NewGuiPart49 = Instance.new("TextLabel")
-local NewGuiPart50 = Instance.new("Frame")
-local NewGuiPart51 = Instance.new("TextButton")
-local NewGuiPart52 = Instance.new("TextLabel")
-local NewGuiPart53 = Instance.new("TextButton")
-local NewGuiPart54 = Instance.new("Frame")
-local NewGuiPart55 = Instance.new("TextLabel")
-local NewGuiPart56 = Instance.new("Frame")
-local NewGuiPart57 = Instance.new("TextLabel")
-local NewGuiPart58 = Instance.new("TextButton")
-local NewGuiPart59 = Instance.new("Frame")
-local NewGuiPart60 = Instance.new("TextLabel")
-local NewGuiPart61 = Instance.new("Frame")
-local NewGuiPart62 = Instance.new("TextLabel")
-local NewGuiPart63 = Instance.new("ScrollingFrame")
-local NewGuiPart64 = Instance.new("TextButton")
-local NewGuiPart65 = Instance.new("TextLabel")
-local NewGuiPart66 = Instance.new("TextLabel")
-local NewGuiPart67 = Instance.new("TextButton")
-local NewGuiPart68 = Instance.new("TextButton")
-local NewGuiPart69 = Instance.new("Frame")
-local NewGuiPart70 = Instance.new("TextButton")
-local NewGuiPart71 = Instance.new("TextBox")
-local NewGuiPart72 = Instance.new("TextButton")
-local NewGuiPart73 = Instance.new("TextButton")
-local NewGuiPart74 = Instance.new("Frame")
-local NewGuiPart75 = Instance.new("Frame")
-local NewGuiPart76 = Instance.new("TextButton")
-local NewGuiPart77 = Instance.new("ScrollingFrame")
-local NewGuiPart78 = Instance.new("Frame")
-local NewGuiPart79 = Instance.new("TextLabel")
-local NewGuiPart80 = Instance.new("TextLabel")
-local NewGuiPart81 = Instance.new("TextLabel")
-local NewGuiPart82 = Instance.new("Frame")
-local NewGuiPart83 = Instance.new("TextLabel")
-local NewGuiPart84 = Instance.new("Frame")
-local NewGuiPart85 = Instance.new("Frame")
-local NewGuiPart86 = Instance.new("Frame")
-local NewGuiPart87 = Instance.new("ImageButton")
-local NewGuiPart88 = Instance.new("Frame")
-local NewGuiPart89 = Instance.new("Frame")
-local NewGuiPart90 = Instance.new("Frame")
-local NewGuiPart91 = Instance.new("Frame")
-local NewGuiPart92 = Instance.new("Frame")
-local NewGuiPart93 = Instance.new("ImageButton")
-local NewGuiPart94 = Instance.new("Frame")
-local NewGuiPart95 = Instance.new("Frame")
-local NewGuiPart96 = Instance.new("Frame")
-local NewGuiPart97 = Instance.new("Frame")
-local NewGuiPart98 = Instance.new("Frame")
-local NewGuiPart99 = Instance.new("TextButton")
-local NewGuiPart100 = Instance.new("Frame")
-local NewGuiPart101 = Instance.new("Frame")
-local NewGuiPart102 = Instance.new("TextButton")
-local NewGuiPart103 = Instance.new("TextButton")
-local NewGuiPart104 = Instance.new("TextButton")
-local NewGuiPart105 = Instance.new("Frame")
-local NewGuiPart106 = Instance.new("Frame")
-local NewGuiPart107 = Instance.new("TextLabel")
-local NewGuiPart108 = Instance.new("TextLabel")
-local NewGuiPart109 = Instance.new("TextLabel")
-local NewGuiPart110 = Instance.new("ImageLabel")
-local NewGuiPart111 = Instance.new("Frame")
-local NewGuiPart112 = Instance.new("Frame")
-local NewGuiPart113 = Instance.new("TextLabel")
-local NewGuiPart114 = Instance.new("Frame")
-local NewGuiPart115 = Instance.new("Frame")
-local NewGuiPart116 = Instance.new("TextLabel")
-local NewGuiPart117 = Instance.new("TextLabel")
-local NewGuiPart118 = Instance.new("TextButton")
-local NewGuiPart119 = Instance.new("TextLabel")
-local NewGuiPart120 = Instance.new("TextLabel")
-local NewGuiPart121 = Instance.new("Frame")
-local NewGuiPart122 = Instance.new("TextLabel")
-local NewGuiPart123 = Instance.new("TextLabel")
-local NewGuiPart124 = Instance.new("TextButton")
-local NewGuiPart125 = Instance.new("TextLabel")
-local NewGuiPart126 = Instance.new("TextLabel")
-local NewGuiPart127 = Instance.new("Frame")
-local NewGuiPart128 = Instance.new("TextLabel")
-local NewGuiPart129 = Instance.new("TextLabel")
-local NewGuiPart130 = Instance.new("TextButton")
-local NewGuiPart131 = Instance.new("TextLabel")
-local NewGuiPart132 = Instance.new("TextLabel")
-local NewGuiPart133 = Instance.new("Frame")
-local NewGuiPart134 = Instance.new("TextLabel")
-local NewGuiPart135 = Instance.new("TextLabel")
-local NewGuiPart136 = Instance.new("TextButton")
-local NewGuiPart137 = Instance.new("TextLabel")
-local NewGuiPart138 = Instance.new("TextLabel")
-local NewGuiPart139 = Instance.new("TextLabel")
-local NewGuiPart140 = Instance.new("Frame")
-local NewGuiPart141 = Instance.new("Frame")
-local NewGuiPart142 = Instance.new("TextLabel")
-local NewGuiPart143 = Instance.new("TextButton")
-local NewGuiPart144 = Instance.new("TextBox")
-local NewGuiPart145 = Instance.new("Frame")
-local NewGuiPart146 = Instance.new("TextButton")
-local NewGuiPart147 = Instance.new("TextLabel")
-local NewGuiPart148 = Instance.new("TextLabel")
-local NewGuiPart149 = Instance.new("Frame")
-local NewGuiPart150 = Instance.new("Frame")
-local NewGuiPart151 = Instance.new("TextLabel")
-local NewGuiPart152 = Instance.new("TextLabel")
+local ROBLOX = Instance.new("ScreenGui")
+local PropertiesFrame = Instance.new("Frame")
+local Header = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local ExplorerPanel = Instance.new("Frame")
+local SideMenu = Instance.new("Frame")
+local Toggle = Instance.new("TextButton")
+local Title = Instance.new("TextLabel")
+local Version = Instance.new("TextLabel")
+local Slant = Instance.new("ImageLabel")
+local Main = Instance.new("Frame")
+local SlideOut = Instance.new("Frame")
+local SlideFrame = Instance.new("Frame")
+local Explorer = Instance.new("TextButton")
+local Icon = Instance.new("ImageLabel")
+local SaveMap = Instance.new("TextButton")
+local Icon_2 = Instance.new("ImageLabel")
+local Settings = Instance.new("TextButton")
+local Icon_3 = Instance.new("ImageLabel")
+local Remotes = Instance.new("TextButton")
+local Icon_4 = Instance.new("ImageLabel")
+local About = Instance.new("TextButton")
+local Icon_5 = Instance.new("ImageLabel")
+local OpenScriptEditor = Instance.new("TextButton")
+local Icon_6 = Instance.new("ImageLabel")
+local Toggle_2 = Instance.new("TextButton")
+local SettingsPanel = Instance.new("Frame")
+local Header_2 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local SettingTemplate = Instance.new("Frame")
+local SName = Instance.new("TextLabel")
+local Status = Instance.new("TextLabel")
+local Change = Instance.new("TextButton")
+local OnBar = Instance.new("TextLabel")
+local Bar = Instance.new("TextLabel")
+local SettingList = Instance.new("Frame")
+local SaveInstance = Instance.new("Frame")
+local Title_2 = Instance.new("TextLabel")
+local MainWindow = Instance.new("Frame")
+local Save = Instance.new("TextButton")
+local Desc = Instance.new("TextLabel")
+local Cancel = Instance.new("TextButton")
+local FileName = Instance.new("TextBox")
+local SaveObjects = Instance.new("TextButton")
+local enabled = Instance.new("TextLabel")
+local Desc2 = Instance.new("TextLabel")
+local Confirmation = Instance.new("Frame")
+local Title_3 = Instance.new("TextLabel")
+local MainWindow_2 = Instance.new("Frame")
+local Yes = Instance.new("TextButton")
+local Desc_2 = Instance.new("TextLabel")
+local No = Instance.new("TextButton")
+local Caution = Instance.new("Frame")
+local Title_4 = Instance.new("TextLabel")
+local MainWindow_3 = Instance.new("Frame")
+local Desc_3 = Instance.new("TextLabel")
+local Ok = Instance.new("TextButton")
+local CallRemote = Instance.new("Frame")
+local Title_5 = Instance.new("TextLabel")
+local MainWindow_4 = Instance.new("Frame")
+local Desc_4 = Instance.new("TextLabel")
+local Arguments = Instance.new("ScrollingFrame")
+local DisplayReturned = Instance.new("TextButton")
+local enabled_2 = Instance.new("TextLabel")
+local Desc2_2 = Instance.new("TextLabel")
+local Add = Instance.new("TextButton")
+local Subtract = Instance.new("TextButton")
+local ArgumentTemplate = Instance.new("Frame")
+local Type = Instance.new("TextButton")
+local Value = Instance.new("TextBox")
+local Cancel_2 = Instance.new("TextButton")
+local Ok_2 = Instance.new("TextButton")
+local TableCaution = Instance.new("Frame")
+local MainWindow_5 = Instance.new("Frame")
+local Ok_3 = Instance.new("TextButton")
+local TableResults = Instance.new("ScrollingFrame")
+local TableTemplate = Instance.new("Frame")
+local Type_2 = Instance.new("TextLabel")
+local Value_2 = Instance.new("TextLabel")
+local Title_6 = Instance.new("TextLabel")
+local ScriptEditor = Instance.new("Frame")
+local Title_7 = Instance.new("TextLabel")
+local Cover = Instance.new("Frame")
+local EditorGrid = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local ScriptBarLeft = Instance.new("ImageButton")
+local ArrowGraphic = Instance.new("Frame")
+local Graphic = Instance.new("Frame")
+local Graphic_2 = Instance.new("Frame")
+local Graphic_3 = Instance.new("Frame")
+local Graphic_4 = Instance.new("Frame")
+local ScriptBarRight = Instance.new("ImageButton")
+local ArrowGraphic_2 = Instance.new("Frame")
+local Graphic_5 = Instance.new("Frame")
+local Graphic_6 = Instance.new("Frame")
+local Graphic_7 = Instance.new("Frame")
+local Graphic_8 = Instance.new("Frame")
+local Clipboard = Instance.new("TextButton")
+local SaveScript = Instance.new("TextButton")
+local ScriptBar = Instance.new("Frame")
+local Entry = Instance.new("Frame")
+local Button = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local Close_2 = Instance.new("TextButton")
+local IntroFrame = Instance.new("Frame")
+local Main_2 = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local Title_8 = Instance.new("TextLabel")
+local Version_2 = Instance.new("TextLabel")
+local Creator = Instance.new("TextLabel")
+local BG = Instance.new("ImageLabel")
+local Slant_2 = Instance.new("Frame")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local SaveMapWindow = Instance.new("Frame")
+local Header_3 = Instance.new("Frame")
+local TextLabel_3 = Instance.new("TextLabel")
+local MapSettings = Instance.new("Frame")
+local Terrain = Instance.new("Frame")
+local SName_2 = Instance.new("TextLabel")
+local Status_2 = Instance.new("TextLabel")
+local Change_2 = Instance.new("TextButton")
+local OnBar_2 = Instance.new("TextLabel")
+local Bar_2 = Instance.new("TextLabel")
+local Lighting = Instance.new("Frame")
+local SName_3 = Instance.new("TextLabel")
+local Status_3 = Instance.new("TextLabel")
+local Change_3 = Instance.new("TextButton")
+local OnBar_3 = Instance.new("TextLabel")
+local Bar_3 = Instance.new("TextLabel")
+local CameraInstances = Instance.new("Frame")
+local SName_4 = Instance.new("TextLabel")
+local Status_4 = Instance.new("TextLabel")
+local Change_4 = Instance.new("TextButton")
+local OnBar_4 = Instance.new("TextLabel")
+local Bar_4 = Instance.new("TextLabel")
+local Scripts = Instance.new("Frame")
+local SName_5 = Instance.new("TextLabel")
+local Status_5 = Instance.new("TextLabel")
+local Change_5 = Instance.new("TextButton")
+local OnBar_5 = Instance.new("TextLabel")
+local Bar_5 = Instance.new("TextLabel")
+local ToSave = Instance.new("TextLabel")
+local CopyList = Instance.new("Frame")
+local Bottom = Instance.new("Frame")
+local TextLabel_4 = Instance.new("TextLabel")
+local Save_2 = Instance.new("TextButton")
+local FileName_2 = Instance.new("TextBox")
+local Entry_2 = Instance.new("Frame")
+local Change_6 = Instance.new("TextButton")
+local enabled_3 = Instance.new("TextLabel")
+local Info = Instance.new("TextLabel")
+local RemoteDebugWindow = Instance.new("Frame")
+local Header_4 = Instance.new("Frame")
+local TextLabel_5 = Instance.new("TextLabel")
+local Desc_5 = Instance.new("TextLabel")
+local AboutWindow = Instance.new("Frame")
+local Header_5 = Instance.new("Frame")
+local TextLabel_6 = Instance.new("TextLabel")
+local Desc_6 = Instance.new("TextLabel")
+
+ROBLOX.Name = RandomCharacters(16, 64)
+
+PropertiesFrame.Name = "PropertiesFrame"
+PropertiesFrame.Parent = ROBLOX
+PropertiesFrame.Active = true
+PropertiesFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+PropertiesFrame.BorderColor3 = Color3.fromRGB(191, 191, 191)
+PropertiesFrame.BorderSizePixel = 0
+PropertiesFrame.Position = UDim2.new(1, 0, 0.5, 36)
+PropertiesFrame.Size = UDim2.new(0, 300, 0.5, -36)
+
+Header.Name = "Header"
+Header.Parent = PropertiesFrame
+Header.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Header.BorderColor3 = Color3.fromRGB(149, 149, 149)
+Header.BorderSizePixel = 0
+Header.Position = UDim2.new(0, 0, 0, -35)
+Header.Size = UDim2.new(1, 0, 0, 35)
+
+TextLabel.Parent = Header
+TextLabel.BackgroundTransparency = 1
+TextLabel.Position = UDim2.new(0, 4, 0, 0)
+TextLabel.Size = UDim2.new(1, -4, 0.5, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Properties"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+TextBox.Parent = Header
+TextBox.BackgroundTransparency = 0.8
+TextBox.Position = UDim2.new(0, 4, 0.5, 0)
+TextBox.Size = UDim2.new(1, -8, 0.5, -3)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.PlaceholderText = "Search Properties"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 14
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+
+ExplorerPanel.Name = "ExplorerPanel"
+ExplorerPanel.Parent = ROBLOX
+ExplorerPanel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ExplorerPanel.BorderColor3 = Color3.fromRGB(191, 191, 191)
+ExplorerPanel.BorderSizePixel = 0
+ExplorerPanel.Position = UDim2.new(1, 0, 0, 1)
+ExplorerPanel.Size = UDim2.new(0, 300, 0.5, 0)
+
+SideMenu.Name = "SideMenu"
+SideMenu.Parent = ROBLOX
+SideMenu.BackgroundColor3 = Color3.fromRGB(233, 233, 233)
+SideMenu.BackgroundTransparency = 1
+SideMenu.BorderColor3 = Color3.fromRGB(149, 149, 149)
+SideMenu.BorderSizePixel = 0
+SideMenu.Position = UDim2.new(1, -330, 0, 0)
+SideMenu.Size = UDim2.new(0, 30, 0, 180)
+SideMenu.Visible = false
+SideMenu.ZIndex = 2
+
+Toggle.Name = "Toggle"
+Toggle.Parent = SideMenu
+Toggle.Active = false
+Toggle.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Toggle.BorderSizePixel = 0
+Toggle.Position = UDim2.new(0, 0, 0, 60)
+Toggle.Size = UDim2.new(0, 30, 0, 30)
+Toggle.AutoButtonColor = false
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = ">"
+Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.TextSize = 24
+Toggle.TextTransparency = 1
+Toggle.TextWrapped = true
+
+Title.Name = "Title"
+Title.Parent = SideMenu
+Title.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Title.BackgroundTransparency = 1
+Title.Size = UDim2.new(0, 30, 0, 20)
+Title.ZIndex = 2
+Title.Font = Enum.Font.SourceSansBold
+Title.Text = "DEX"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14
+Title.TextWrapped = true
+
+Version.Name = "Version"
+Version.Parent = SideMenu
+Version.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Version.BackgroundTransparency = 1
+Version.Position = UDim2.new(0, 0, 0, 15)
+Version.Size = UDim2.new(0, 30, 0, 20)
+Version.ZIndex = 2
+Version.Font = Enum.Font.SourceSansBold
+Version.Text = "V2.0.0"
+Version.TextColor3 = Color3.fromRGB(255, 255, 255)
+Version.TextSize = 12
+Version.TextWrapped = true
+
+Slant.Name = "Slant"
+Slant.Parent = SideMenu
+Slant.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Slant.BackgroundTransparency = 1
+Slant.Position = UDim2.new(0, 0, 0, 90)
+Slant.Rotation = 180
+Slant.Size = UDim2.new(0, 30, 0, 30)
+Slant.Image = "rbxassetid://474172996"
+Slant.ImageColor3 = Color3.fromRGB(43, 43, 43)
+
+Main.Name = "Main"
+Main.Parent = SideMenu
+Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Main.BorderSizePixel = 0
+Main.Size = UDim2.new(0, 30, 0, 30)
+
+SlideOut.Name = "SlideOut"
+SlideOut.Parent = SideMenu
+SlideOut.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SlideOut.BackgroundTransparency = 1
+SlideOut.BorderSizePixel = 0
+SlideOut.ClipsDescendants = true
+SlideOut.Position = UDim2.new(0, 0, 0, 30)
+SlideOut.Size = UDim2.new(0, 30, 0, 150)
+
+SlideFrame.Name = "SlideFrame"
+SlideFrame.Parent = SlideOut
+SlideFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SlideFrame.BorderSizePixel = 0
+SlideFrame.Position = UDim2.new(0, 0, 0, -150)
+SlideFrame.Size = UDim2.new(0, 30, 0, 150)
+
+Explorer.Name = "Explorer"
+Explorer.Parent = SlideFrame
+Explorer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Explorer.BackgroundTransparency = 1
+Explorer.BorderSizePixel = 0
+Explorer.Position = UDim2.new(0, 0, 0, 120)
+Explorer.Size = UDim2.new(0, 30, 0, 30)
+Explorer.ZIndex = 2
+Explorer.AutoButtonColor = false
+Explorer.Font = Enum.Font.SourceSans
+Explorer.Text = ""
+Explorer.TextSize = 24
+
+Icon.Name = "Icon"
+Icon.Parent = Explorer
+Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Icon.BackgroundTransparency = 1
+Icon.Position = UDim2.new(0, 5, 0, 5)
+Icon.Size = UDim2.new(0, 20, 0, 20)
+Icon.ZIndex = 2
+Icon.Image = "rbxassetid://472635937"
+
+SaveMap.Name = "SaveMap"
+SaveMap.Parent = SlideFrame
+SaveMap.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SaveMap.BackgroundTransparency = 1
+SaveMap.BorderSizePixel = 0
+SaveMap.Position = UDim2.new(0, 0, 0, 90)
+SaveMap.Size = UDim2.new(0, 30, 0, 30)
+SaveMap.ZIndex = 2
+SaveMap.AutoButtonColor = false
+SaveMap.Font = Enum.Font.SourceSans
+SaveMap.Text = ""
+SaveMap.TextSize = 24
+
+Icon_2.Name = "Icon"
+Icon_2.Parent = SaveMap
+Icon_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Icon_2.BackgroundTransparency = 1
+Icon_2.Position = UDim2.new(0, 5, 0, 5)
+Icon_2.Size = UDim2.new(0, 20, 0, 20)
+Icon_2.ZIndex = 2
+Icon_2.Image = "rbxassetid://472636337"
+
+Settings.Name = "Settings"
+Settings.Parent = SlideFrame
+Settings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Settings.BackgroundTransparency = 1
+Settings.BorderSizePixel = 0
+Settings.Position = UDim2.new(0, 0, 0, 30)
+Settings.Size = UDim2.new(0, 30, 0, 30)
+Settings.ZIndex = 2
+Settings.AutoButtonColor = false
+Settings.Font = Enum.Font.SourceSans
+Settings.Text = ""
+Settings.TextSize = 24
+
+Icon_3.Name = "Icon"
+Icon_3.Parent = Settings
+Icon_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Icon_3.BackgroundTransparency = 1
+Icon_3.Position = UDim2.new(0, 5, 0, 5)
+Icon_3.Size = UDim2.new(0, 20, 0, 20)
+Icon_3.ZIndex = 2
+Icon_3.Image = "rbxassetid://472635774"
+
+Remotes.Name = "Remotes"
+Remotes.Parent = SlideFrame
+Remotes.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Remotes.BackgroundTransparency = 1
+Remotes.BorderSizePixel = 0
+Remotes.Position = UDim2.new(0, 0, 0, 60)
+Remotes.Size = UDim2.new(0, 30, 0, 30)
+Remotes.ZIndex = 2
+Remotes.AutoButtonColor = false
+Remotes.Font = Enum.Font.SourceSans
+Remotes.Text = ""
+Remotes.TextSize = 24
+
+Icon_4.Name = "Icon"
+Icon_4.Parent = Remotes
+Icon_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Icon_4.BackgroundTransparency = 1
+Icon_4.Position = UDim2.new(0, 5, 0, 5)
+Icon_4.Size = UDim2.new(0, 20, 0, 20)
+Icon_4.ZIndex = 2
+Icon_4.Image = "rbxassetid://472636187"
+
+About.Name = "About"
+About.Parent = SlideFrame
+About.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+About.BackgroundTransparency = 1
+About.BorderSizePixel = 0
+About.Size = UDim2.new(0, 30, 0, 30)
+About.ZIndex = 2
+About.AutoButtonColor = false
+About.Font = Enum.Font.SourceSans
+About.Text = ""
+About.TextSize = 24
+
+Icon_5.Archivable = false
+Icon_5.Name = "Icon"
+Icon_5.Parent = About
+Icon_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Icon_5.BackgroundTransparency = 1
+Icon_5.Position = UDim2.new(0, 5, 0, 5)
+Icon_5.Size = UDim2.new(0, 20, 0, 20)
+Icon_5.ZIndex = 2
+Icon_5.Image = "rbxassetid://476354004"
+
+OpenScriptEditor.Name = "OpenScriptEditor"
+OpenScriptEditor.Parent = SideMenu
+OpenScriptEditor.Active = false
+OpenScriptEditor.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+OpenScriptEditor.BorderSizePixel = 0
+OpenScriptEditor.Position = UDim2.new(0, 0, 0, 30)
+OpenScriptEditor.Size = UDim2.new(0, 30, 0, 30)
+OpenScriptEditor.ZIndex = 2
+OpenScriptEditor.AutoButtonColor = false
+OpenScriptEditor.Font = Enum.Font.SourceSans
+OpenScriptEditor.Text = ""
+OpenScriptEditor.TextSize = 24
+
+Icon_6.Name = "Icon"
+Icon_6.Parent = OpenScriptEditor
+Icon_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Icon_6.BackgroundTransparency = 1
+Icon_6.Position = UDim2.new(0, 5, 0, 5)
+Icon_6.Size = UDim2.new(0, 20, 0, 20)
+Icon_6.ZIndex = 2
+Icon_6.Image = "rbxassetid://475456048"
+Icon_6.ImageTransparency = 1
+
+Toggle_2.Name = "Toggle"
+Toggle_2.Parent = ROBLOX
+Toggle_2.BackgroundColor3 = Color3.fromRGB(233, 233, 233)
+Toggle_2.BorderColor3 = Color3.fromRGB(149, 149, 149)
+Toggle_2.Position = UDim2.new(1, 0, 0, 0)
+Toggle_2.Size = UDim2.new(0, 30, 0, 30)
+Toggle_2.Font = Enum.Font.SourceSans
+Toggle_2.Text = "<"
+Toggle_2.TextSize = 24
+
+SettingsPanel.Name = "SettingsPanel"
+SettingsPanel.Parent = ROBLOX
+SettingsPanel.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SettingsPanel.BorderColor3 = Color3.fromRGB(191, 191, 191)
+SettingsPanel.BorderSizePixel = 0
+SettingsPanel.Position = UDim2.new(1, 0, 0, 1)
+SettingsPanel.Size = UDim2.new(0, 300, 1, 0)
+
+Header_2.Name = "Header"
+Header_2.Parent = SettingsPanel
+Header_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Header_2.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Header_2.Size = UDim2.new(1, 0, 0, 17)
+
+TextLabel_2.Parent = Header_2
+TextLabel_2.BackgroundTransparency = 1
+TextLabel_2.Position = UDim2.new(0, 4, 0, 0)
+TextLabel_2.Size = UDim2.new(1, -4, 1, 0)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Settings"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 14
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+
+SettingTemplate.Name = "SettingTemplate"
+SettingTemplate.Parent = SettingsPanel
+SettingTemplate.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SettingTemplate.BackgroundTransparency = 1
+SettingTemplate.Position = UDim2.new(0, 0, 0, 18)
+SettingTemplate.Size = UDim2.new(1, 0, 0, 60)
+SettingTemplate.Visible = false
+
+SName.Name = "SName"
+SName.Parent = SettingTemplate
+SName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SName.BackgroundTransparency = 1
+SName.Position = UDim2.new(0, 10, 0, 0)
+SName.Size = UDim2.new(1, -20, 0, 30)
+SName.Font = Enum.Font.SourceSans
+SName.Text = "SettingName"
+SName.TextColor3 = Color3.fromRGB(255, 255, 255)
+SName.TextSize = 18
+SName.TextXAlignment = Enum.TextXAlignment.Left
+
+Status.Name = "Status"
+Status.Parent = SettingTemplate
+Status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status.BackgroundTransparency = 1
+Status.Position = UDim2.new(0, 60, 0, 30)
+Status.Size = UDim2.new(0, 50, 0, 15)
+Status.Font = Enum.Font.SourceSans
+Status.Text = "Off"
+Status.TextColor3 = Color3.fromRGB(255, 255, 255)
+Status.TextSize = 18
+Status.TextXAlignment = Enum.TextXAlignment.Left
+
+Change.Name = "Change"
+Change.Parent = SettingTemplate
+Change.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+Change.BorderSizePixel = 0
+Change.Position = UDim2.new(0, 10, 0, 30)
+Change.Size = UDim2.new(0, 40, 0, 15)
+Change.Font = Enum.Font.SourceSans
+Change.Text = ""
+Change.TextColor3 = Color3.fromRGB(255, 255, 255)
+Change.TextSize = 14
+
+OnBar.Name = "OnBar"
+OnBar.Parent = Change
+OnBar.BackgroundColor3 = Color3.fromRGB(209, 125, 0)
+OnBar.BorderSizePixel = 0
+OnBar.Size = UDim2.new(0, 0, 0, 15)
+OnBar.Font = Enum.Font.SourceSans
+OnBar.Text = ""
+OnBar.TextColor3 = Color3.fromRGB(255, 255, 255)
+OnBar.TextSize = 14
+
+Bar.Name = "Bar"
+Bar.Parent = Change
+Bar.BackgroundColor3 = Color3.fromRGB(255, 153, 0)
+Bar.BorderSizePixel = 0
+Bar.ClipsDescendants = true
+Bar.Position = UDim2.new(0, -2, 0, -2)
+Bar.Size = UDim2.new(0, 10, 0, 19)
+Bar.Font = Enum.Font.SourceSans
+Bar.Text = ""
+Bar.TextColor3 = Color3.fromRGB(255, 255, 255)
+Bar.TextSize = 14
+
+SettingList.Name = "SettingList"
+SettingList.Parent = SettingsPanel
+SettingList.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SettingList.BackgroundTransparency = 1
+SettingList.Position = UDim2.new(0, 0, 0, 17)
+SettingList.Size = UDim2.new(1, 0, 1, -17)
+
+SaveInstance.Name = "SaveInstance"
+SaveInstance.Parent = ROBLOX
+SaveInstance.Active = true
+SaveInstance.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SaveInstance.BorderColor3 = Color3.fromRGB(30, 30, 30)
+SaveInstance.Draggable = true
+SaveInstance.Position = UDim2.new(0.3, 0, 0.3, 0)
+SaveInstance.Size = UDim2.new(0, 350, 0, 20)
+SaveInstance.Visible = false
+SaveInstance.ZIndex = 2
+
+Title_2.Name = "Title"
+Title_2.Parent = SaveInstance
+Title_2.BackgroundTransparency = 1
+Title_2.Size = UDim2.new(1, 0, 1, 0)
+Title_2.ZIndex = 2
+Title_2.Font = Enum.Font.SourceSans
+Title_2.Text = "Save Instance"
+Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.TextSize = 14
+Title_2.TextXAlignment = Enum.TextXAlignment.Left
+
+MainWindow.Name = "MainWindow"
+MainWindow.Parent = SaveInstance
+MainWindow.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+MainWindow.BackgroundTransparency = 0.1
+MainWindow.BorderColor3 = Color3.fromRGB(30, 30, 30)
+MainWindow.Size = UDim2.new(1, 0, 0, 200)
+
+Save.Name = "Save"
+Save.Parent = MainWindow
+Save.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Save.BackgroundTransparency = 0.5
+Save.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Save.Position = UDim2.new(0.075, 0, 1, -40)
+Save.Size = UDim2.new(0.4, 0, 0, 30)
+Save.Font = Enum.Font.SourceSans
+Save.Text = "Save"
+Save.TextColor3 = Color3.fromRGB(255, 255, 255)
+Save.TextSize = 18
+
+Desc.Name = "Desc"
+Desc.Parent = MainWindow
+Desc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Desc.BackgroundTransparency = 1
+Desc.Position = UDim2.new(0, 0, 0, 20)
+Desc.Size = UDim2.new(1, 0, 0, 40)
+Desc.Font = Enum.Font.SourceSans
+Desc.Text = "This will save an instance to your PC. Type in the name for your instance. (.rbxmx will be added automatically.)"
+Desc.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc.TextSize = 14
+Desc.TextWrapped = true
+
+Cancel.Name = "Cancel"
+Cancel.Parent = MainWindow
+Cancel.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Cancel.BackgroundTransparency = 0.5
+Cancel.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Cancel.Position = UDim2.new(0.524, 0, 1, -40)
+Cancel.Size = UDim2.new(0.4, 0, 0, 30)
+Cancel.Font = Enum.Font.SourceSans
+Cancel.Text = "Cancel"
+Cancel.TextColor3 = Color3.fromRGB(255, 255, 255)
+Cancel.TextSize = 18
+
+FileName.Name = "FileName"
+FileName.Parent = MainWindow
+FileName.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+FileName.BackgroundTransparency = 0.2
+FileName.BorderColor3 = Color3.fromRGB(40, 40, 40)
+FileName.Position = UDim2.new(0.075, 0, 0.4, 0)
+FileName.Size = UDim2.new(0.85, 0, 0, 30)
+FileName.Font = Enum.Font.SourceSans
+FileName.Text = ""
+FileName.TextColor3 = Color3.fromRGB(255, 255, 255)
+FileName.TextSize = 18
+FileName.TextXAlignment = Enum.TextXAlignment.Left
+
+SaveObjects.Name = "SaveObjects"
+SaveObjects.Parent = MainWindow
+SaveObjects.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+SaveObjects.BackgroundTransparency = 0.6
+SaveObjects.BorderColor3 = Color3.fromRGB(40, 40, 40)
+SaveObjects.Position = UDim2.new(0.075, 0, 0.625, 0)
+SaveObjects.Size = UDim2.new(0, 20, 0, 20)
+SaveObjects.ZIndex = 2
+SaveObjects.Font = Enum.Font.SourceSans
+SaveObjects.Text = ""
+SaveObjects.TextColor3 = Color3.fromRGB(255, 255, 255)
+SaveObjects.TextSize = 18
+
+enabled.Name = "enabled"
+enabled.Parent = SaveObjects
+enabled.BackgroundColor3 = Color3.fromRGB(96, 96, 96)
+enabled.BackgroundTransparency = 0.4
+enabled.BorderSizePixel = 0
+enabled.Position = UDim2.new(0, 3, 0, 3)
+enabled.Size = UDim2.new(0, 14, 0, 14)
+enabled.Font = Enum.Font.SourceSans
+enabled.Text = ""
+enabled.TextSize = 14
+
+Desc2.Name = "Desc2"
+Desc2.Parent = MainWindow
+Desc2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Desc2.BackgroundTransparency = 1
+Desc2.Position = UDim2.new(0.075, 30, 0.625, 0)
+Desc2.Size = UDim2.new(0.925, -30, 0, 20)
+Desc2.Font = Enum.Font.SourceSans
+Desc2.Text = "Save \"Object\" type values"
+Desc2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc2.TextSize = 14
+Desc2.TextXAlignment = Enum.TextXAlignment.Left
+
+Confirmation.Name = "Confirmation"
+Confirmation.Parent = ROBLOX
+Confirmation.Active = true
+Confirmation.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Confirmation.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Confirmation.Draggable = true
+Confirmation.Position = UDim2.new(0.3, 0, 0.349, 0)
+Confirmation.Size = UDim2.new(0, 350, 0, 20)
+Confirmation.Visible = false
+Confirmation.ZIndex = 3
+
+Title_3.Name = "Title"
+Title_3.Parent = Confirmation
+Title_3.BackgroundTransparency = 1
+Title_3.Size = UDim2.new(1, 0, 1, 0)
+Title_3.ZIndex = 3
+Title_3.Font = Enum.Font.SourceSans
+Title_3.Text = "    Confirm"
+Title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_3.TextSize = 14
+Title_3.TextXAlignment = Enum.TextXAlignment.Left
+
+MainWindow_2.Name = "MainWindow"
+MainWindow_2.Parent = Confirmation
+MainWindow_2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+MainWindow_2.BackgroundTransparency = 0.1
+MainWindow_2.BorderColor3 = Color3.fromRGB(40, 40, 40)
+MainWindow_2.Size = UDim2.new(1, 0, 0, 150)
+MainWindow_2.ZIndex = 2
+
+Yes.Name = "Yes"
+Yes.Parent = MainWindow_2
+Yes.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Yes.BackgroundTransparency = 0.5
+Yes.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Yes.Position = UDim2.new(0.075, 0, 1, -40)
+Yes.Size = UDim2.new(0.4, 0, 0, 30)
+Yes.ZIndex = 2
+Yes.Font = Enum.Font.SourceSans
+Yes.Text = "Yes"
+Yes.TextColor3 = Color3.fromRGB(255, 255, 255)
+Yes.TextSize = 18
+
+Desc_2.Name = "Desc"
+Desc_2.Parent = MainWindow_2
+Desc_2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Desc_2.BackgroundTransparency = 1
+Desc_2.Position = UDim2.new(0, 0, 0, 20)
+Desc_2.Size = UDim2.new(1, 0, 0, 40)
+Desc_2.ZIndex = 2
+Desc_2.Font = Enum.Font.SourceSans
+Desc_2.Text = "The file, FILENAME, already exists. Overwrite?"
+Desc_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc_2.TextSize = 14
+Desc_2.TextWrapped = true
+
+No.Name = "No"
+No.Parent = MainWindow_2
+No.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+No.BackgroundTransparency = 0.5
+No.BorderColor3 = Color3.fromRGB(0, 0, 0)
+No.Position = UDim2.new(0.524, 0, 1, -40)
+No.Size = UDim2.new(0.4, 0, 0, 30)
+No.ZIndex = 2
+No.Font = Enum.Font.SourceSans
+No.Text = "No"
+No.TextColor3 = Color3.fromRGB(255, 255, 255)
+No.TextSize = 18
+
+Caution.Name = "Caution"
+Caution.Parent = ROBLOX
+Caution.Active = true
+Caution.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Caution.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Caution.Draggable = true
+Caution.Position = UDim2.new(0.3, 0, 0.3, 0)
+Caution.Size = UDim2.new(0, 350, 0, 20)
+Caution.Visible = false
+Caution.ZIndex = 5
+
+Title_4.Name = "Title"
+Title_4.Parent = Caution
+Title_4.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Title_4.BackgroundTransparency = 1
+Title_4.Size = UDim2.new(1, 0, 1, 0)
+Title_4.ZIndex = 5
+Title_4.Font = Enum.Font.SourceSans
+Title_4.Text = "    Caution"
+Title_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_4.TextSize = 14
+Title_4.TextStrokeColor3 = Color3.fromRGB(30, 30, 30)
+Title_4.TextXAlignment = Enum.TextXAlignment.Left
+
+MainWindow_3.Name = "MainWindow"
+MainWindow_3.Parent = Caution
+MainWindow_3.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+MainWindow_3.BackgroundTransparency = 0.1
+MainWindow_3.BorderColor3 = Color3.fromRGB(40, 40, 40)
+MainWindow_3.Size = UDim2.new(1, 0, 0, 150)
+MainWindow_3.ZIndex = 4
+
+Desc_3.Name = "Desc"
+Desc_3.Parent = MainWindow_3
+Desc_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Desc_3.BackgroundTransparency = 1
+Desc_3.Position = UDim2.new(0, 0, 0, 20)
+Desc_3.Size = UDim2.new(1, 0, 0, 42)
+Desc_3.ZIndex = 4
+Desc_3.Font = Enum.Font.SourceSans
+Desc_3.Text = "The file, FILENAME, already exists. Overwrite?"
+Desc_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc_3.TextSize = 14
+Desc_3.TextStrokeColor3 = Color3.fromRGB(30, 30, 30)
+Desc_3.TextWrapped = true
+
+Ok.Name = "Ok"
+Ok.Parent = MainWindow_3
+Ok.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Ok.BackgroundTransparency = 0.5
+Ok.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Ok.Position = UDim2.new(0.3, 0, 1, -40)
+Ok.Size = UDim2.new(0.4, 0, 0, 30)
+Ok.ZIndex = 4
+Ok.Font = Enum.Font.SourceSans
+Ok.Text = "Ok"
+Ok.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ok.TextSize = 18
+Ok.TextStrokeColor3 = Color3.fromRGB(30, 30, 30)
+
+CallRemote.Name = "CallRemote"
+CallRemote.Parent = ROBLOX
+CallRemote.Active = true
+CallRemote.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+CallRemote.BorderColor3 = Color3.fromRGB(40, 40, 40)
+CallRemote.Draggable = true
+CallRemote.Position = UDim2.new(0.3, 0, 0.3, 0)
+CallRemote.Size = UDim2.new(0, 350, 0, 20)
+CallRemote.Visible = false
+CallRemote.ZIndex = 2
+
+Title_5.Name = "Title"
+Title_5.Parent = CallRemote
+Title_5.BackgroundTransparency = 1
+Title_5.Size = UDim2.new(1, 0, 1, 0)
+Title_5.ZIndex = 2
+Title_5.Font = Enum.Font.SourceSans
+Title_5.Text = "Call Remote"
+Title_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_5.TextSize = 14
+Title_5.TextXAlignment = Enum.TextXAlignment.Left
+
+MainWindow_4.Name = "MainWindow"
+MainWindow_4.Parent = CallRemote
+MainWindow_4.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+MainWindow_4.BackgroundTransparency = 0.1
+MainWindow_4.BorderColor3 = Color3.fromRGB(40, 40, 40)
+MainWindow_4.Size = UDim2.new(1, 0, 0, 200)
+
+Desc_4.Name = "Desc"
+Desc_4.Parent = MainWindow_4
+Desc_4.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Desc_4.BackgroundTransparency = 1
+Desc_4.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Desc_4.Position = UDim2.new(0, 0, 0, 20)
+Desc_4.Size = UDim2.new(1, 0, 0, 20)
+Desc_4.Font = Enum.Font.SourceSans
+Desc_4.Text = "Arguments"
+Desc_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc_4.TextSize = 14
+Desc_4.TextWrapped = true
+
+Arguments.Name = "Arguments"
+Arguments.Parent = MainWindow_4
+Arguments.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Arguments.BackgroundTransparency = 1
+Arguments.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Arguments.Position = UDim2.new(0, 0, 0, 40)
+Arguments.Size = UDim2.new(1, 0, 0, 80)
+Arguments.BottomImage = "rbxasset://textures/blackBkg_square.png"
+Arguments.CanvasSize = UDim2.new(0, 0, 0, 0)
+Arguments.MidImage = "rbxasset://textures/blackBkg_square.png"
+Arguments.TopImage = "rbxasset://textures/blackBkg_square.png"
+
+DisplayReturned.Name = "DisplayReturned"
+DisplayReturned.Parent = MainWindow_4
+DisplayReturned.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+DisplayReturned.BackgroundTransparency = 0.6
+DisplayReturned.BorderColor3 = Color3.fromRGB(30, 30, 30)
+DisplayReturned.Position = UDim2.new(0.075, 0, 0.625, 0)
+DisplayReturned.Size = UDim2.new(0, 20, 0, 20)
+DisplayReturned.ZIndex = 2
+DisplayReturned.Font = Enum.Font.SourceSans
+DisplayReturned.Text = ""
+DisplayReturned.TextColor3 = Color3.fromRGB(255, 255, 255)
+DisplayReturned.TextSize = 18
+
+enabled_2.Name = "enabled"
+enabled_2.Parent = DisplayReturned
+enabled_2.BackgroundColor3 = Color3.fromRGB(96, 96, 96)
+enabled_2.BackgroundTransparency = 0.4
+enabled_2.BorderSizePixel = 0
+enabled_2.Position = UDim2.new(0, 3, 0, 3)
+enabled_2.Size = UDim2.new(0, 14, 0, 14)
+enabled_2.Visible = false
+enabled_2.Font = Enum.Font.SourceSans
+enabled_2.Text = ""
+enabled_2.TextSize = 14
+
+Desc2_2.Name = "Desc2"
+Desc2_2.Parent = MainWindow_4
+Desc2_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Desc2_2.BackgroundTransparency = 1
+Desc2_2.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Desc2_2.Position = UDim2.new(0.075, 30, 0.625, 0)
+Desc2_2.Size = UDim2.new(0.925, -30, 0, 20)
+Desc2_2.Font = Enum.Font.SourceSans
+Desc2_2.Text = "Display values returned"
+Desc2_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc2_2.TextSize = 14
+Desc2_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Add.Name = "Add"
+Add.Parent = MainWindow_4
+Add.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Add.BackgroundTransparency = 0.5
+Add.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Add.Position = UDim2.new(0.8, 0, 0.625, 0)
+Add.Size = UDim2.new(0, 20, 0, 20)
+Add.Font = Enum.Font.SourceSansBold
+Add.Text = "+"
+Add.TextColor3 = Color3.fromRGB(255, 255, 255)
+Add.TextSize = 24
+
+Subtract.Name = "Subtract"
+Subtract.Parent = MainWindow_4
+Subtract.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Subtract.BackgroundTransparency = 0.5
+Subtract.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Subtract.Position = UDim2.new(0.899, 0, 0.625, 0)
+Subtract.Size = UDim2.new(0, 20, 0, 20)
+Subtract.Font = Enum.Font.SourceSansBold
+Subtract.Text = "-"
+Subtract.TextColor3 = Color3.fromRGB(255, 255, 255)
+Subtract.TextSize = 24
+
+ArgumentTemplate.Name = "ArgumentTemplate"
+ArgumentTemplate.Parent = MainWindow_4
+ArgumentTemplate.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ArgumentTemplate.BackgroundTransparency = 0.5
+ArgumentTemplate.BorderColor3 = Color3.fromRGB(40, 40, 40)
+ArgumentTemplate.Size = UDim2.new(1, 0, 0, 20)
+ArgumentTemplate.Visible = false
+
+Type.Name = "Type"
+Type.Parent = ArgumentTemplate
+Type.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Type.BackgroundTransparency = 0.899
+Type.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Type.Size = UDim2.new(0.4, 0, 0, 20)
+Type.Font = Enum.Font.SourceSans
+Type.Text = "Script"
+Type.TextSize = 18
+
+Value.Name = "Value"
+Value.Parent = ArgumentTemplate
+Value.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Value.BackgroundTransparency = 0.899
+Value.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Value.Position = UDim2.new(0.4, 0, 0, 0)
+Value.Size = UDim2.new(0.6, -12, 0, 20)
+Value.Font = Enum.Font.SourceSans
+Value.Text = ""
+Value.TextSize = 14
+Value.TextXAlignment = Enum.TextXAlignment.Left
+
+Cancel_2.Name = "Cancel"
+Cancel_2.Parent = MainWindow_4
+Cancel_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Cancel_2.BackgroundTransparency = 0.5
+Cancel_2.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Cancel_2.Size = UDim2.new(0.4, 0, 0, 30)
+Cancel_2.Font = Enum.Font.SourceSans
+Cancel_2.Text = "Cancel"
+Cancel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Cancel_2.TextSize = 18
+
+Ok_2.Name = "Ok"
+Ok_2.Parent = MainWindow_4
+Ok_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Ok_2.BackgroundTransparency = 0.5
+Ok_2.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Ok_2.Position = UDim2.new(0.075, 0, 1, -40)
+Ok_2.Size = UDim2.new(0.4, 0, 0, 30)
+Ok_2.Font = Enum.Font.SourceSans
+Ok_2.Text = "Call"
+Ok_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ok_2.TextSize = 18
+
+TableCaution.Name = "TableCaution"
+TableCaution.Parent = ROBLOX
+TableCaution.Active = true
+TableCaution.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TableCaution.BorderColor3 = Color3.fromRGB(43, 43, 43)
+TableCaution.Draggable = true
+TableCaution.Position = UDim2.new(0.3, 0, 0.3, 0)
+TableCaution.Size = UDim2.new(0, 350, 0, 20)
+TableCaution.Visible = false
+TableCaution.ZIndex = 2
+
+MainWindow_5.Name = "MainWindow"
+MainWindow_5.Parent = TableCaution
+MainWindow_5.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+MainWindow_5.BackgroundTransparency = 0.1
+MainWindow_5.BorderColor3 = Color3.fromRGB(43, 43, 43)
+MainWindow_5.Size = UDim2.new(1, 0, 0, 150)
+
+Ok_3.Name = "Ok"
+Ok_3.Parent = MainWindow_5
+Ok_3.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Ok_3.BackgroundTransparency = 0.5
+Ok_3.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Ok_3.Position = UDim2.new(0.3, 0, 1, -40)
+Ok_3.Size = UDim2.new(0.4, 0, 0, 30)
+Ok_3.Font = Enum.Font.SourceSans
+Ok_3.Text = "Ok"
+Ok_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ok_3.TextSize = 18
+
+TableResults.Name = "TableResults"
+TableResults.Parent = MainWindow_5
+TableResults.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TableResults.BackgroundTransparency = 1
+TableResults.Position = UDim2.new(0, 0, 0, 20)
+TableResults.Size = UDim2.new(1, 0, 0, 80)
+TableResults.BottomImage = "rbxasset://textures/blackBkg_square.png"
+TableResults.CanvasSize = UDim2.new(0, 0, 0, 0)
+TableResults.MidImage = "rbxasset://textures/blackBkg_square.png"
+TableResults.TopImage = "rbxasset://textures/blackBkg_square.png"
+
+TableTemplate.Name = "TableTemplate"
+TableTemplate.Parent = MainWindow_5
+TableTemplate.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+TableTemplate.BackgroundTransparency = 0.5
+TableTemplate.BorderColor3 = Color3.fromRGB(191, 191, 191)
+TableTemplate.Size = UDim2.new(1, 0, 0, 20)
+TableTemplate.Visible = false
+
+Type_2.Name = "Type"
+Type_2.Parent = TableTemplate
+Type_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Type_2.BackgroundTransparency = 0.899
+Type_2.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Type_2.Size = UDim2.new(0.4, 0, 0, 20)
+Type_2.Font = Enum.Font.SourceSans
+Type_2.Text = "Script"
+Type_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Type_2.TextSize = 18
+
+Value_2.Name = "Value"
+Value_2.Parent = TableTemplate
+Value_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Value_2.BackgroundTransparency = 0.899
+Value_2.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Value_2.Position = UDim2.new(0.4, 0, 0, 0)
+Value_2.Size = UDim2.new(0.6, -12, 0, 20)
+Value_2.Font = Enum.Font.SourceSans
+Value_2.Text = "Script"
+Value_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Value_2.TextSize = 14
+
+Title_6.Name = "Title"
+Title_6.Parent = TableCaution
+Title_6.BackgroundTransparency = 1
+Title_6.Size = UDim2.new(1, 0, 1, 0)
+Title_6.ZIndex = 2
+Title_6.Font = Enum.Font.SourceSans
+Title_6.Text = "Caution"
+Title_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_6.TextSize = 14
+Title_6.TextXAlignment = Enum.TextXAlignment.Left
+
+ScriptEditor.Name = "ScriptEditor"
+ScriptEditor.Parent = ROBLOX
+ScriptEditor.Active = true
+ScriptEditor.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScriptEditor.BorderColor3 = Color3.fromRGB(30, 30, 30)
+ScriptEditor.Draggable = true
+ScriptEditor.Position = UDim2.new(0.3, 0, 0.3, 0)
+ScriptEditor.Size = UDim2.new(0, 916, 0, 20)
+ScriptEditor.Visible = false
+ScriptEditor.ZIndex = 5
+
+Title_7.Name = "Title"
+Title_7.Parent = ScriptEditor
+Title_7.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Title_7.BackgroundTransparency = 1
+Title_7.Size = UDim2.new(1, 0, 1, 0)
+Title_7.ZIndex = 5
+Title_7.Font = Enum.Font.SourceSans
+Title_7.Text = "Script Viewer"
+Title_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_7.TextSize = 14
+Title_7.TextXAlignment = Enum.TextXAlignment.Left
+
+Cover.Name = "Cover"
+Cover.Parent = ScriptEditor
+Cover.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Cover.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Cover.Position = UDim2.new(0, 0, 3, 0)
+Cover.Size = UDim2.new(0, 916, 0, 416)
+
+EditorGrid.Name = "EditorGrid"
+EditorGrid.Parent = ScriptEditor
+EditorGrid.Active = true
+EditorGrid.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+EditorGrid.BorderColor3 = Color3.fromRGB(30, 30, 30)
+EditorGrid.Position = UDim2.new(0, 0, 3, 0)
+EditorGrid.Size = UDim2.new(1, -16, 0, 400)
+
+TopBar.Name = "TopBar"
+TopBar.Parent = ScriptEditor
+TopBar.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+TopBar.BorderColor3 = Color3.fromRGB(30, 30, 30)
+TopBar.Size = UDim2.new(1, 0, 3, 0)
+
+ScriptBarLeft.Name = "ScriptBarLeft"
+ScriptBarLeft.Parent = TopBar
+ScriptBarLeft.Active = false
+ScriptBarLeft.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScriptBarLeft.BorderColor3 = Color3.fromRGB(30, 30, 30)
+ScriptBarLeft.Position = UDim2.new(1, -32, 0, 40)
+ScriptBarLeft.Size = UDim2.new(0, 16, 0, 20)
+ScriptBarLeft.AutoButtonColor = false
+
+ArrowGraphic.Name = "Arrow Graphic"
+ArrowGraphic.Parent = ScriptBarLeft
+ArrowGraphic.BackgroundTransparency = 1
+ArrowGraphic.BorderSizePixel = 0
+ArrowGraphic.Position = UDim2.new(0.5, -4, 0.5, -4)
+ArrowGraphic.Size = UDim2.new(0, 8, 0, 8)
+
+Graphic.Name = "Graphic"
+Graphic.Parent = ArrowGraphic
+Graphic.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+Graphic.BackgroundTransparency = 0.699
+Graphic.BorderSizePixel = 0
+Graphic.Position = UDim2.new(0.25, 0, 0.375, 0)
+Graphic.Size = UDim2.new(0.125, 0, 0.25, 0)
+
+Graphic_2.Name = "Graphic"
+Graphic_2.Parent = ArrowGraphic
+Graphic_2.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+Graphic_2.BackgroundTransparency = 0.699
+Graphic_2.BorderSizePixel = 0
+Graphic_2.Position = UDim2.new(0.375, 0, 0.25, 0)
+Graphic_2.Size = UDim2.new(0.125, 0, 0.5, 0)
+
+Graphic_3.Name = "Graphic"
+Graphic_3.Parent = ArrowGraphic
+Graphic_3.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+Graphic_3.BackgroundTransparency = 0.699
+Graphic_3.BorderSizePixel = 0
+Graphic_3.Position = UDim2.new(0.5, 0, 0.125, 0)
+Graphic_3.Size = UDim2.new(0.125, 0, 0.75, 0)
+
+Graphic_4.Name = "Graphic"
+Graphic_4.Parent = ArrowGraphic
+Graphic_4.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+Graphic_4.BackgroundTransparency = 0.699
+Graphic_4.BorderSizePixel = 0
+Graphic_4.Position = UDim2.new(0.625, 0, 0, 0)
+Graphic_4.Size = UDim2.new(0.125, 0, 1, 0)
+
+ScriptBarRight.Name = "ScriptBarRight"
+ScriptBarRight.Parent = TopBar
+ScriptBarRight.Active = false
+ScriptBarRight.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ScriptBarRight.BorderColor3 = Color3.fromRGB(30, 30, 30)
+ScriptBarRight.Position = UDim2.new(1, -16, 0, 40)
+ScriptBarRight.Size = UDim2.new(0, 16, 0, 20)
+ScriptBarRight.AutoButtonColor = false
+
+ArrowGraphic_2.Name = "Arrow Graphic"
+ArrowGraphic_2.Parent = ScriptBarRight
+ArrowGraphic_2.BackgroundTransparency = 1
+ArrowGraphic_2.BorderSizePixel = 0
+ArrowGraphic_2.Position = UDim2.new(0.5, -4, 0.5, -4)
+ArrowGraphic_2.Size = UDim2.new(0, 8, 0, 8)
+
+Graphic_5.Name = "Graphic"
+Graphic_5.Parent = ArrowGraphic_2
+Graphic_5.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+Graphic_5.BackgroundTransparency = 0.699
+Graphic_5.BorderSizePixel = 0
+Graphic_5.Position = UDim2.new(0.625, 0, 0.375, 0)
+Graphic_5.Size = UDim2.new(0.125, 0, 0.25, 0)
+
+Graphic_6.Name = "Graphic"
+Graphic_6.Parent = ArrowGraphic_2
+Graphic_6.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+Graphic_6.BackgroundTransparency = 0.699
+Graphic_6.BorderSizePixel = 0
+Graphic_6.Position = UDim2.new(0.5, 0, 0.25, 0)
+Graphic_6.Size = UDim2.new(0.125, 0, 0.5, 0)
+
+Graphic_7.Name = "Graphic"
+Graphic_7.Parent = ArrowGraphic_2
+Graphic_7.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+Graphic_7.BackgroundTransparency = 0.699
+Graphic_7.BorderSizePixel = 0
+Graphic_7.Position = UDim2.new(0.375, 0, 0.125, 0)
+Graphic_7.Size = UDim2.new(0.125, 0, 0.75, 0)
+
+Graphic_8.Name = "Graphic"
+Graphic_8.Parent = ArrowGraphic_2
+Graphic_8.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+Graphic_8.BackgroundTransparency = 0.699
+Graphic_8.BorderSizePixel = 0
+Graphic_8.Position = UDim2.new(0.25, 0, 0, 0)
+Graphic_8.Size = UDim2.new(0.125, 0, 1, 0)
+
+Clipboard.Name = "Clipboard"
+Clipboard.Parent = TopBar
+Clipboard.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Clipboard.BackgroundTransparency = 0.5
+Clipboard.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clipboard.Position = UDim2.new(0, 0, 0, 20)
+Clipboard.Size = UDim2.new(0, 80, 0, 20)
+Clipboard.AutoButtonColor = false
+Clipboard.Font = Enum.Font.SourceSans
+Clipboard.Text = "To Clipboard"
+Clipboard.TextColor3 = Color3.fromRGB(255, 255, 255)
+Clipboard.TextSize = 14
+
+SaveScript.Name = "SaveScript"
+SaveScript.Parent = TopBar
+SaveScript.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SaveScript.BackgroundTransparency = 0.5
+SaveScript.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SaveScript.Position = UDim2.new(0, 80, 0, 20)
+SaveScript.Size = UDim2.new(0, 80, 0, 20)
+SaveScript.AutoButtonColor = false
+SaveScript.Font = Enum.Font.SourceSans
+SaveScript.Text = "Save Script"
+SaveScript.TextColor3 = Color3.fromRGB(255, 255, 255)
+SaveScript.TextSize = 14
+
+ScriptBar.Name = "ScriptBar"
+ScriptBar.Parent = TopBar
+ScriptBar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ScriptBar.BorderColor3 = Color3.fromRGB(30, 30, 30)
+ScriptBar.ClipsDescendants = true
+ScriptBar.Position = UDim2.new(0, 0, 0, 40)
+ScriptBar.Size = UDim2.new(1, -32, 0, 20)
+
+Entry.Name = "Entry"
+Entry.Parent = TopBar
+Entry.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Entry.BackgroundTransparency = 1
+Entry.Size = UDim2.new(0, 100, 1, 0)
+Entry.Visible = false
+
+Button.Name = "Button"
+Button.Parent = Entry
+Button.BackgroundColor3 = Color3.fromRGB(90, 90, 90)
+Button.BackgroundTransparency = .6
+Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Button.ClipsDescendants = true
+Button.Size = UDim2.new(1, 0, 1, 0)
+Button.ZIndex = 4
+Button.Font = Enum.Font.SourceSans
+Button.Text = ""
+Button.TextSize = 12
+Button.TextColor3 = Color3.fromRGB(255, 255, 255);
+Button.TextXAlignment = Enum.TextXAlignment.Left
+
+Close.Name = "Close"
+Close.Parent = Entry
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.Position = UDim2.new(1, -20, 0, 0)
+Close.Size = UDim2.new(0, 20, 0, 20)
+Close.ZIndex = 4
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextSize = 14
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+Close_2.Name = "Close"
+Close_2.Parent = ScriptEditor
+Close_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Close_2.BackgroundTransparency = 1
+Close_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close_2.Position = UDim2.new(1, -20, 0, 0)
+Close_2.Size = UDim2.new(0, 20, 0, 20)
+Close_2.ZIndex = 5
+Close_2.Font = Enum.Font.SourceSans
+Close_2.Text = "X"
+Close_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close_2.TextSize = 14
+
+IntroFrame.Name = "IntroFrame"
+IntroFrame.Parent = ROBLOX
+IntroFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+IntroFrame.BorderSizePixel = 0
+IntroFrame.Position = UDim2.new(1, 30, 0, 0)
+IntroFrame.Size = UDim2.new(0, 300, 1, 0)
+IntroFrame.ZIndex = 2
+
+Main_2.Name = "Main"
+Main_2.Parent = IntroFrame
+Main_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Main_2.BorderSizePixel = 0
+Main_2.Position = UDim2.new(0, -30, 0, 0)
+Main_2.Size = UDim2.new(0, 30, 0, 90)
+Main_2.ZIndex = 4
+
+ImageLabel.Parent = Main_2
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+ImageLabel.ZIndex = 5
+ImageLabel.Image = "rbxassetid://969742484"
+ImageLabel.ScaleType = Enum.ScaleType.Tile
+ImageLabel.TileSize = UDim2.new(25, 0, 6, 0)
+
+Title_8.Name = "Title"
+Title_8.Parent = IntroFrame
+Title_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_8.BackgroundTransparency = 1
+Title_8.Position = UDim2.new(0, 100, 0, 150)
+Title_8.Size = UDim2.new(0, 100, 0, 60)
+Title_8.ZIndex = 4
+Title_8.Font = Enum.Font.SourceSansBold
+Title_8.Text = "DEX"
+Title_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_8.TextSize = 60
+Title_8.TextWrapped = true
+
+Version_2.Name = "Version"
+Version_2.Parent = IntroFrame
+Version_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Version_2.BackgroundTransparency = 1
+Version_2.Position = UDim2.new(0, 100, 0, 210)
+Version_2.Size = UDim2.new(0, 100, 0, 30)
+Version_2.ZIndex = 4
+Version_2.Font = Enum.Font.SourceSansBold
+Version_2.Text = "V2.0.0"
+Version_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Version_2.TextSize = 28
+Version_2.TextWrapped = true
+
+Creator.Name = "Creator"
+Creator.Parent = IntroFrame
+Creator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Creator.BackgroundTransparency = 1
+Creator.Position = UDim2.new(0, 80, 0, 300)
+Creator.Size = UDim2.new(0, 140, 0, 30)
+Creator.ZIndex = 4
+Creator.Font = Enum.Font.SourceSansBold
+Creator.Text = ""
+Creator.TextColor3 = Color3.fromRGB(255, 255, 255)
+Creator.TextSize = 28
+Creator.TextWrapped = true
+
+BG.Name = "BG"
+BG.Parent = IntroFrame
+BG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BG.BackgroundTransparency = 1
+BG.BorderSizePixel = 0
+BG.Size = UDim2.new(1, 0, 1, 0)
+BG.ZIndex = 3
+BG.Image = "rbxassetid://969742484"
+BG.ScaleType = Enum.ScaleType.Tile
+BG.TileSize = UDim2.new(4, 0, 1, 0)
+
+Slant_2.Name = "Slant"
+Slant_2.Parent = IntroFrame
+Slant_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Slant_2.BackgroundTransparency = 1
+Slant_2.BorderSizePixel = 0
+Slant_2.ClipsDescendants = true
+Slant_2.Position = UDim2.new(0, -27, 0, 86)
+Slant_2.Rotation = 45
+Slant_2.Size = UDim2.new(0, 60, 0, 30)
+Slant_2.ZIndex = 3
+
+ImageLabel_2.Parent = Slant_2
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1
+ImageLabel_2.BorderSizePixel = 0
+ImageLabel_2.Size = UDim2.new(1, 0, 1, 0)
+ImageLabel_2.ZIndex = 2
+ImageLabel_2.Image = "rbxassetid://969742484"
+ImageLabel_2.ScaleType = Enum.ScaleType.Tile
+ImageLabel_2.TileSize = UDim2.new(25, 0, 6, 0)
+
+SaveMapWindow.Name = "SaveMapWindow"
+SaveMapWindow.Parent = ROBLOX
+SaveMapWindow.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SaveMapWindow.BorderColor3 = Color3.fromRGB(191, 191, 191)
+SaveMapWindow.BorderSizePixel = 0
+SaveMapWindow.Position = UDim2.new(1, 0, 0, 1)
+SaveMapWindow.Size = UDim2.new(0, 300, 1, 0)
+
+Header_3.Name = "Header"
+Header_3.Parent = SaveMapWindow
+Header_3.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Header_3.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Header_3.Size = UDim2.new(1, 0, 0, 17)
+
+TextLabel_3.Parent = Header_3
+TextLabel_3.BackgroundTransparency = 1
+TextLabel_3.Position = UDim2.new(0, 4, 0, 0)
+TextLabel_3.Size = UDim2.new(1, -4, 1, 0)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "Map Downloader"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 14
+TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+
+MapSettings.Name = "MapSettings"
+MapSettings.Parent = SaveMapWindow
+MapSettings.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+MapSettings.BackgroundTransparency = 1
+MapSettings.BorderSizePixel = 0
+MapSettings.Position = UDim2.new(0, 0, 0, 200)
+MapSettings.Size = UDim2.new(1, 0, 0, 240)
+
+Terrain.Name = "Terrain"
+Terrain.Parent = MapSettings
+Terrain.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Terrain.BackgroundTransparency = 1
+Terrain.BorderSizePixel = 0
+Terrain.Position = UDim2.new(0, 0, 0, 60)
+Terrain.Size = UDim2.new(1, 0, 0, 60)
+
+SName_2.Name = "SName"
+SName_2.Parent = Terrain
+SName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SName_2.BackgroundTransparency = 1
+SName_2.BorderColor3 = Color3.fromRGB(40, 40, 40)
+SName_2.Position = UDim2.new(0, 10, 0, 0)
+SName_2.Size = UDim2.new(1, -20, 0, 30)
+SName_2.Font = Enum.Font.SourceSans
+SName_2.Text = "Save Terrain"
+SName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+SName_2.TextSize = 18
+SName_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Status_2.Name = "Status"
+Status_2.Parent = Terrain
+Status_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status_2.BackgroundTransparency = 1
+Status_2.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Status_2.Position = UDim2.new(0, 60, 0, 30)
+Status_2.Size = UDim2.new(0, 50, 0, 15)
+Status_2.Font = Enum.Font.SourceSans
+Status_2.Text = "Off"
+Status_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Status_2.TextSize = 18
+Status_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Change_2.Name = "Change"
+Change_2.Parent = Terrain
+Change_2.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+Change_2.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Change_2.BorderSizePixel = 0
+Change_2.Position = UDim2.new(0, 10, 0, 30)
+Change_2.Size = UDim2.new(0, 40, 0, 15)
+Change_2.Font = Enum.Font.SourceSans
+Change_2.Text = ""
+Change_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Change_2.TextSize = 14
+
+OnBar_2.Name = "OnBar"
+OnBar_2.Parent = Change_2
+OnBar_2.BackgroundColor3 = Color3.fromRGB(209, 125, 0)
+OnBar_2.BorderSizePixel = 0
+OnBar_2.Size = UDim2.new(0, 0, 0, 15)
+OnBar_2.Font = Enum.Font.SourceSans
+OnBar_2.Text = ""
+OnBar_2.TextSize = 14
+
+Bar_2.Name = "Bar"
+Bar_2.Parent = Change_2
+Bar_2.BackgroundColor3 = Color3.fromRGB(255, 153, 0)
+Bar_2.BorderSizePixel = 0
+Bar_2.ClipsDescendants = true
+Bar_2.Position = UDim2.new(0, -2, 0, -2)
+Bar_2.Size = UDim2.new(0, 10, 0, 19)
+Bar_2.Font = Enum.Font.SourceSans
+Bar_2.Text = ""
+Bar_2.TextSize = 14
+
+Lighting.Name = "Lighting"
+Lighting.Parent = MapSettings
+Lighting.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Lighting.BackgroundTransparency = 1
+Lighting.BorderSizePixel = 0
+Lighting.Position = UDim2.new(0, 0, 0, 120)
+Lighting.Size = UDim2.new(1, 0, 0, 60)
+
+SName_3.Name = "SName"
+SName_3.Parent = Lighting
+SName_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SName_3.BackgroundTransparency = 1
+SName_3.BorderColor3 = Color3.fromRGB(40, 40, 40)
+SName_3.Position = UDim2.new(0, 10, 0, 0)
+SName_3.Size = UDim2.new(1, -20, 0, 30)
+SName_3.Font = Enum.Font.SourceSans
+SName_3.Text = "Lighting Properties"
+SName_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+SName_3.TextSize = 18
+SName_3.TextXAlignment = Enum.TextXAlignment.Left
+
+Status_3.Name = "Status"
+Status_3.Parent = Lighting
+Status_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status_3.BackgroundTransparency = 1
+Status_3.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Status_3.Position = UDim2.new(0, 60, 0, 30)
+Status_3.Size = UDim2.new(0, 50, 0, 15)
+Status_3.Font = Enum.Font.SourceSans
+Status_3.Text = "Off"
+Status_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Status_3.TextSize = 18
+Status_3.TextXAlignment = Enum.TextXAlignment.Left
+
+Change_3.Name = "Change"
+Change_3.Parent = Lighting
+Change_3.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+Change_3.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Change_3.BorderSizePixel = 0
+Change_3.Position = UDim2.new(0, 10, 0, 30)
+Change_3.Size = UDim2.new(0, 40, 0, 15)
+Change_3.Font = Enum.Font.SourceSans
+Change_3.Text = ""
+Change_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Change_3.TextSize = 14
+
+OnBar_3.Name = "OnBar"
+OnBar_3.Parent = Change_3
+OnBar_3.BackgroundColor3 = Color3.fromRGB(209, 125, 0)
+OnBar_3.BorderSizePixel = 0
+OnBar_3.Size = UDim2.new(0, 0, 0, 15)
+OnBar_3.Font = Enum.Font.SourceSans
+OnBar_3.Text = ""
+OnBar_3.TextSize = 14
+
+Bar_3.Name = "Bar"
+Bar_3.Parent = Change_3
+Bar_3.BackgroundColor3 = Color3.fromRGB(255, 153, 0)
+Bar_3.BorderSizePixel = 0
+Bar_3.ClipsDescendants = true
+Bar_3.Position = UDim2.new(0, -2, 0, -2)
+Bar_3.Size = UDim2.new(0, 10, 0, 19)
+Bar_3.Font = Enum.Font.SourceSans
+Bar_3.Text = ""
+Bar_3.TextSize = 14
+
+CameraInstances.Name = "CameraInstances"
+CameraInstances.Parent = MapSettings
+CameraInstances.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+CameraInstances.BackgroundTransparency = 1
+CameraInstances.BorderSizePixel = 0
+CameraInstances.Position = UDim2.new(0, 0, 0, 180)
+CameraInstances.Size = UDim2.new(1, 0, 0, 60)
+
+SName_4.Name = "SName"
+SName_4.Parent = CameraInstances
+SName_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SName_4.BackgroundTransparency = 1
+SName_4.BorderColor3 = Color3.fromRGB(40, 40, 40)
+SName_4.Position = UDim2.new(0, 10, 0, 0)
+SName_4.Size = UDim2.new(1, -20, 0, 30)
+SName_4.Font = Enum.Font.SourceSans
+SName_4.Text = "Camera Instances"
+SName_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+SName_4.TextSize = 18
+SName_4.TextXAlignment = Enum.TextXAlignment.Left
+
+Status_4.Name = "Status"
+Status_4.Parent = CameraInstances
+Status_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status_4.BackgroundTransparency = 1
+Status_4.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Status_4.Position = UDim2.new(0, 60, 0, 30)
+Status_4.Size = UDim2.new(0, 50, 0, 15)
+Status_4.Font = Enum.Font.SourceSans
+Status_4.Text = "Off"
+Status_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Status_4.TextSize = 18
+Status_4.TextXAlignment = Enum.TextXAlignment.Left
+
+Change_4.Name = "Change"
+Change_4.Parent = CameraInstances
+Change_4.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+Change_4.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Change_4.BorderSizePixel = 0
+Change_4.Position = UDim2.new(0, 10, 0, 30)
+Change_4.Size = UDim2.new(0, 40, 0, 15)
+Change_4.Font = Enum.Font.SourceSans
+Change_4.Text = ""
+Change_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Change_4.TextSize = 14
+
+OnBar_4.Name = "OnBar"
+OnBar_4.Parent = Change_4
+OnBar_4.BackgroundColor3 = Color3.fromRGB(209, 125, 0)
+OnBar_4.BorderSizePixel = 0
+OnBar_4.Size = UDim2.new(0, 0, 0, 15)
+OnBar_4.Font = Enum.Font.SourceSans
+OnBar_4.Text = ""
+OnBar_4.TextSize = 14
+
+Bar_4.Name = "Bar"
+Bar_4.Parent = Change_4
+Bar_4.BackgroundColor3 = Color3.fromRGB(255, 153, 0)
+Bar_4.BorderSizePixel = 0
+Bar_4.ClipsDescendants = true
+Bar_4.Position = UDim2.new(0, -2, 0, -2)
+Bar_4.Size = UDim2.new(0, 10, 0, 19)
+Bar_4.Font = Enum.Font.SourceSans
+Bar_4.Text = ""
+Bar_4.TextSize = 14
+
+Scripts.Name = "Scripts"
+Scripts.Parent = MapSettings
+Scripts.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Scripts.BackgroundTransparency = 1
+Scripts.BorderSizePixel = 0
+Scripts.Size = UDim2.new(1, 0, 0, 60)
+
+SName_5.Name = "SName"
+SName_5.Parent = Scripts
+SName_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SName_5.BackgroundTransparency = 1
+SName_5.BorderColor3 = Color3.fromRGB(40, 40, 40)
+SName_5.Position = UDim2.new(0, 10, 0, 0)
+SName_5.Size = UDim2.new(1, -20, 0, 30)
+SName_5.Font = Enum.Font.SourceSans
+SName_5.Text = "Save Scripts"
+SName_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+SName_5.TextSize = 18
+SName_5.TextXAlignment = Enum.TextXAlignment.Left
+
+Status_5.Name = "Status"
+Status_5.Parent = Scripts
+Status_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status_5.BackgroundTransparency = 1
+Status_5.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Status_5.Position = UDim2.new(0, 60, 0, 30)
+Status_5.Size = UDim2.new(0, 50, 0, 15)
+Status_5.Font = Enum.Font.SourceSans
+Status_5.Text = "Off"
+Status_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Status_5.TextSize = 18
+Status_5.TextXAlignment = Enum.TextXAlignment.Left
+
+Change_5.Name = "Change"
+Change_5.Parent = Scripts
+Change_5.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+Change_5.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Change_5.BorderSizePixel = 0
+Change_5.Position = UDim2.new(0, 10, 0, 30)
+Change_5.Size = UDim2.new(0, 40, 0, 15)
+Change_5.Font = Enum.Font.SourceSans
+Change_5.Text = ""
+Change_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Change_5.TextSize = 14
+
+OnBar_5.Name = "OnBar"
+OnBar_5.Parent = Change_5
+OnBar_5.BackgroundColor3 = Color3.fromRGB(209, 125, 0)
+OnBar_5.BorderSizePixel = 0
+OnBar_5.Size = UDim2.new(0, 0, 0, 15)
+OnBar_5.Font = Enum.Font.SourceSans
+OnBar_5.Text = ""
+OnBar_5.TextSize = 14
+
+Bar_5.Name = "Bar"
+Bar_5.Parent = Change_5
+Bar_5.BackgroundColor3 = Color3.fromRGB(255, 153, 0)
+Bar_5.BorderSizePixel = 0
+Bar_5.ClipsDescendants = true
+Bar_5.Position = UDim2.new(0, -2, 0, -2)
+Bar_5.Size = UDim2.new(0, 10, 0, 19)
+Bar_5.Font = Enum.Font.SourceSans
+Bar_5.Text = ""
+Bar_5.TextSize = 14
+
+ToSave.Name = "ToSave"
+ToSave.Parent = SaveMapWindow
+ToSave.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToSave.BackgroundTransparency = 1
+ToSave.Position = UDim2.new(0, 0, 0, 17)
+ToSave.Size = UDim2.new(1, 0, 0, 20)
+ToSave.Font = Enum.Font.SourceSans
+ToSave.Text = "To Save"
+ToSave.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToSave.TextSize = 18
+
+CopyList.Name = "CopyList"
+CopyList.Parent = SaveMapWindow
+CopyList.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+CopyList.BackgroundTransparency = 0.4
+CopyList.BorderSizePixel = 0
+CopyList.Position = UDim2.new(0, 0, 0, 37)
+CopyList.Size = UDim2.new(1, 0, 0, 163)
+
+Bottom.Name = "Bottom"
+Bottom.Parent = SaveMapWindow
+Bottom.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Bottom.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Bottom.BorderSizePixel = 0
+Bottom.Position = UDim2.new(0, 0, 1, -50)
+Bottom.Size = UDim2.new(1, 0, 0, 50)
+
+TextLabel_4.Parent = Bottom
+TextLabel_4.BackgroundTransparency = 1
+TextLabel_4.Position = UDim2.new(0, 4, 0, 0)
+TextLabel_4.Size = UDim2.new(1, -4, 1, 0)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = "After the map saves, open a new place on studio, then right click Lighting and \"Insert from file...\", then select your file and run the unpacker script inside the folder."
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextSize = 14
+TextLabel_4.TextWrapped = true
+TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_4.TextYAlignment = Enum.TextYAlignment.Top
+
+Save_2.Name = "Save"
+Save_2.Parent = SaveMapWindow
+Save_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Save_2.BackgroundTransparency = 0.4
+Save_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Save_2.BorderSizePixel = 0
+Save_2.Position = UDim2.new(0, 0, 1, -80)
+Save_2.Size = UDim2.new(1, 0, 0, 30)
+Save_2.Font = Enum.Font.SourceSans
+Save_2.Text = "Save"
+Save_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Save_2.TextSize = 18
+
+FileName_2.Name = "FileName"
+FileName_2.Parent = SaveMapWindow
+FileName_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+FileName_2.BackgroundTransparency = 0.4
+FileName_2.BorderSizePixel = 0
+FileName_2.Position = UDim2.new(0, 0, 1, -105)
+FileName_2.Size = UDim2.new(1, 0, 0, 25)
+FileName_2.Font = Enum.Font.SourceSans
+FileName_2.Text = "   PlaceName"
+FileName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+FileName_2.TextSize = 18
+FileName_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Entry_2.Name = "Entry"
+Entry_2.Parent = SaveMapWindow
+Entry_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Entry_2.BackgroundTransparency = 1
+Entry_2.BorderSizePixel = 0
+Entry_2.Size = UDim2.new(1, 0, 0, 22)
+Entry_2.Visible = false
+
+Change_6.Name = "Change"
+Change_6.Parent = Entry_2
+Change_6.BackgroundColor3 = Color3.fromRGB(255, 149, 0)
+Change_6.BackgroundTransparency = 0.6
+Change_6.Position = UDim2.new(0, 10, 0, 1)
+Change_6.Size = UDim2.new(0, 20, 0, 20)
+Change_6.ZIndex = 2
+Change_6.Font = Enum.Font.SourceSans
+Change_6.Text = ""
+Change_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Change_6.TextSize = 18
+
+enabled_3.Name = "enabled"
+enabled_3.Parent = Change_6
+enabled_3.BackgroundColor3 = Color3.fromRGB(209, 125, 0)
+enabled_3.BackgroundTransparency = 0.4
+enabled_3.BorderSizePixel = 0
+enabled_3.Position = UDim2.new(0, 3, 0, 3)
+enabled_3.Size = UDim2.new(0, 14, 0, 14)
+enabled_3.Font = Enum.Font.SourceSans
+enabled_3.Text = ""
+enabled_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+enabled_3.TextSize = 14
+
+Info.Name = "Info"
+Info.Parent = Entry_2
+Info.BackgroundTransparency = 1
+Info.Position = UDim2.new(0, 40, 0, 0)
+Info.Size = UDim2.new(1, -40, 0, 22)
+Info.Font = Enum.Font.SourceSans
+Info.Text = "Workspace"
+Info.TextColor3 = Color3.fromRGB(255, 255, 255)
+Info.TextSize = 18
+Info.TextXAlignment = Enum.TextXAlignment.Left
+
+RemoteDebugWindow.Name = "RemoteDebugWindow"
+RemoteDebugWindow.Parent = ROBLOX
+RemoteDebugWindow.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+RemoteDebugWindow.BorderColor3 = Color3.fromRGB(191, 191, 191)
+RemoteDebugWindow.BorderSizePixel = 0
+RemoteDebugWindow.Position = UDim2.new(1, 0, 0, 1)
+RemoteDebugWindow.Size = UDim2.new(0, 300, 1, 0)
+
+Header_4.Name = "Header"
+Header_4.Parent = RemoteDebugWindow
+Header_4.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Header_4.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Header_4.Size = UDim2.new(1, 0, 0, 17)
+
+TextLabel_5.Parent = Header_4
+TextLabel_5.BackgroundTransparency = 1
+TextLabel_5.Position = UDim2.new(0, 4, 0, 0)
+TextLabel_5.Size = UDim2.new(1, -4, 1, 0)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = "Remote Debugger"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextSize = 14
+TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+
+Desc_5.Name = "Desc"
+Desc_5.Parent = RemoteDebugWindow
+Desc_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Desc_5.BackgroundTransparency = 1
+Desc_5.Position = UDim2.new(0, 0, 0, 20)
+Desc_5.Size = UDim2.new(1, 0, 0, 40)
+Desc_5.Font = Enum.Font.SourceSans
+Desc_5.Text = "Have fun with remotes"
+Desc_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc_5.TextSize = 32
+Desc_5.TextWrapped = true
+
+AboutWindow.Name = "AboutWindow"
+AboutWindow.Parent = ROBLOX
+AboutWindow.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+AboutWindow.BorderColor3 = Color3.fromRGB(191, 191, 191)
+AboutWindow.BorderSizePixel = 0
+AboutWindow.Position = UDim2.new(1, 0, 0, 1)
+AboutWindow.Size = UDim2.new(0, 300, 1, 0)
+
+Header_5.Name = "Header"
+Header_5.Parent = AboutWindow
+Header_5.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Header_5.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Header_5.Size = UDim2.new(1, 0, 0, 17)
+
+TextLabel_6.Parent = Header_5
+TextLabel_6.BackgroundTransparency = 1
+TextLabel_6.Position = UDim2.new(0, 4, 0, 0)
+TextLabel_6.Size = UDim2.new(1, -4, 1, 0)
+TextLabel_6.Font = Enum.Font.SourceSans
+TextLabel_6.Text = "About"
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextSize = 14
+TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
+
+Desc_6.Name = "Desc"
+Desc_6.Parent = AboutWindow
+Desc_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Desc_6.BackgroundTransparency = 1
+Desc_6.Position = UDim2.new(0.1, 0, 0.1, 0)
+Desc_6.Size = UDim2.new(0.8, 0, 0, 200)
+Desc_6.Font = Enum.Font.SourceSans
+Desc_6.Text = "Dex v2.0"
+Desc_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc_6.TextSize = 24
+Desc_6.TextWrapped = true
+
 local NewGuiPart153 = Instance.new("BindableFunction")
 local NewGuiPart154 = Instance.new("BindableFunction")
 local NewGuiPart155 = Instance.new("BindableFunction")
@@ -162,1550 +1847,60 @@ local NewGuiPart160 = Instance.new("BindableEvent")
 local NewGuiPart161 = Instance.new("BindableFunction")
 local NewGuiPart162 = Instance.new("BindableFunction")
 local NewGuiPart163 = Instance.new("BindableEvent")
--- Properties
-
-NewGuiPart1.Name = "Dex"
-
-NewGuiPart2.Name = "PropertiesFrame"
-NewGuiPart2.Parent = NewGuiPart1
-NewGuiPart2.Active = true
-NewGuiPart2.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart2.BackgroundTransparency = 0.10000000149012
-NewGuiPart2.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart2.Position = UDim2.new(1, 0, 0.5, 36)
-NewGuiPart2.Size = UDim2.new(0, 300, 0.5, -36)
 
 NewGuiPart158.Name = "GetApi"
-NewGuiPart158.Parent = NewGuiPart2
+NewGuiPart158.Parent = PropertiesFrame
 NewGuiPart158.Archivable = true
 
 NewGuiPart159.Name = "GetAwaiting"
-NewGuiPart159.Parent = NewGuiPart2
+NewGuiPart159.Parent = PropertiesFrame
 NewGuiPart159.Archivable = true
 
 NewGuiPart160.Name = "SetAwaiting"
-NewGuiPart160.Parent = NewGuiPart2
+NewGuiPart160.Parent = PropertiesFrame
 NewGuiPart160.Archivable = true
 
-NewGuiPart3.Name = "Header"
-NewGuiPart3.Parent = NewGuiPart2
-NewGuiPart3.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart3.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart3.Position = UDim2.new(0, 0, 0, -36)
-NewGuiPart3.Size = UDim2.new(1, 0, 0, 35)
-
-NewGuiPart4.Parent = NewGuiPart3
-NewGuiPart4.BackgroundTransparency = 1
-NewGuiPart4.Position = UDim2.new(0, 4, 0, 0)
-NewGuiPart4.Size = UDim2.new(1, -4, 0.5, 0)
-NewGuiPart4.Font = Enum.Font.SourceSans
-NewGuiPart4.FontSize = Enum.FontSize.Size14
-NewGuiPart4.Text = "Properties"
-NewGuiPart4.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart4.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart5.Parent = NewGuiPart3
-NewGuiPart5.BackgroundTransparency = 0.80000001192093
-NewGuiPart5.Position = UDim2.new(0, 4, 0.5, 0)
-NewGuiPart5.Size = UDim2.new(1, -8, 0.5, -3)
-NewGuiPart5.Font = Enum.Font.SourceSans
-NewGuiPart5.FontSize = Enum.FontSize.Size14
-NewGuiPart5.Text = "Search Properties"
---NewGuiPart5.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart5.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart6.Name = "ExplorerPanel"
-NewGuiPart6.Parent = NewGuiPart1
-NewGuiPart6.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart6.BackgroundTransparency = 0.10000000149012
-NewGuiPart6.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart6.Position = UDim2.new(1, 0, 0, 0)
-NewGuiPart6.Size = UDim2.new(0, 300, 0.5, 0)
-
 NewGuiPart153.Name = "GetOption"
-NewGuiPart153.Parent = NewGuiPart6
+NewGuiPart153.Parent = ExplorerPanel
 NewGuiPart153.Archivable = true
 
 NewGuiPart154.Name = "GetSelection"
-NewGuiPart154.Parent = NewGuiPart6
+NewGuiPart154.Parent = ExplorerPanel
 NewGuiPart154.Archivable = true
 
 NewGuiPart155.Name = "SetOption"
-NewGuiPart155.Parent = NewGuiPart6
+NewGuiPart155.Parent = ExplorerPanel
 NewGuiPart155.Archivable = true
 
 NewGuiPart156.Name = "SetSelection"
-NewGuiPart156.Parent = NewGuiPart6
+NewGuiPart156.Parent = ExplorerPanel
 NewGuiPart156.Archivable = true
 
 NewGuiPart157.Name = "SelectionChanged"
-NewGuiPart157.Parent = NewGuiPart6
+NewGuiPart157.Parent = ExplorerPanel
 NewGuiPart157.Archivable = true
 
-NewGuiPart7.Name = "SideMenu"
-NewGuiPart7.Parent = NewGuiPart1
-NewGuiPart7.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart7.BackgroundTransparency = 1
-NewGuiPart7.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart7.BorderSizePixel = 0
-NewGuiPart7.Position = UDim2.new(1, -330, 0, 0)
-NewGuiPart7.Size = UDim2.new(0, 30, 0, 180)
-NewGuiPart7.Visible = false
-NewGuiPart7.ZIndex = 2
-
-NewGuiPart8.Name = "Toggle"
-NewGuiPart8.Parent = NewGuiPart7
-NewGuiPart8.Active = false
-NewGuiPart8.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart8.BorderSizePixel = 0
-NewGuiPart8.Position = UDim2.new(0, 0, 0, 60)
-NewGuiPart8.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart8.AutoButtonColor = false
-NewGuiPart8.Font = Enum.Font.SourceSans
-NewGuiPart8.FontSize = Enum.FontSize.Size24
-NewGuiPart8.Text = ">"
-NewGuiPart8.TextTransparency = 1
-NewGuiPart8.TextWrapped = true
-
-NewGuiPart9.Name = "Title"
-NewGuiPart9.Parent = NewGuiPart7
-NewGuiPart9.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart9.BackgroundTransparency = 1
-NewGuiPart9.Size = UDim2.new(0, 30, 0, 20)
-NewGuiPart9.ZIndex = 2
-NewGuiPart9.Font = Enum.Font.SourceSansBold
-NewGuiPart9.FontSize = Enum.FontSize.Size14
-NewGuiPart9.Text = "DEX"
-NewGuiPart9.TextWrapped = true
-
-NewGuiPart10.Name = "Version"
-NewGuiPart10.Parent = NewGuiPart7
-NewGuiPart10.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart10.BackgroundTransparency = 1
-NewGuiPart10.Position = UDim2.new(0, 0, 0, 15)
-NewGuiPart10.Size = UDim2.new(0, 30, 0, 20)
-NewGuiPart10.ZIndex = 2
-NewGuiPart10.Font = Enum.Font.SourceSansBold
-NewGuiPart10.FontSize = Enum.FontSize.Size12
-NewGuiPart10.Text = "V2.0.0"
-NewGuiPart10.TextWrapped = true
-
-NewGuiPart11.Name = "Slant"
-NewGuiPart11.Parent = NewGuiPart7
-NewGuiPart11.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart11.BackgroundTransparency = 1
-NewGuiPart11.Position = UDim2.new(0, 0, 0, 90)
-NewGuiPart11.Rotation = 180
-NewGuiPart11.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart11.Image = "rbxassetid://474172996"
-NewGuiPart11.ImageColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-
-NewGuiPart12.Name = "Main"
-NewGuiPart12.Parent = NewGuiPart7
-NewGuiPart12.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart12.BorderSizePixel = 0
-NewGuiPart12.Size = UDim2.new(0, 30, 0, 30)
-
-NewGuiPart13.Name = "SlideOut"
-NewGuiPart13.Parent = NewGuiPart7
-NewGuiPart13.BackgroundColor3 = Color3.new(0.862745, 0.862745, 0.862745)
-NewGuiPart13.BackgroundTransparency = 1
-NewGuiPart13.BorderSizePixel = 0
-NewGuiPart13.ClipsDescendants = true
-NewGuiPart13.Position = UDim2.new(0, 0, 0, 30)
-NewGuiPart13.Size = UDim2.new(0, 30, 0, 150)
-
-NewGuiPart14.Name = "SlideFrame"
-NewGuiPart14.Parent = NewGuiPart13
-NewGuiPart14.BackgroundColor3 = Color3.new(0.862745, 0.862745, 0.862745)
-NewGuiPart14.BorderSizePixel = 0
-NewGuiPart14.Position = UDim2.new(0, 0, 0, -150)
-NewGuiPart14.Size = UDim2.new(0, 30, 0, 150)
-
-NewGuiPart15.Name = "Explorer"
-NewGuiPart15.Parent = NewGuiPart14
-NewGuiPart15.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart15.BackgroundTransparency = 1
-NewGuiPart15.BorderSizePixel = 0
-NewGuiPart15.Position = UDim2.new(0, 0, 0, 120)
-NewGuiPart15.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart15.ZIndex = 2
-NewGuiPart15.AutoButtonColor = false
-NewGuiPart15.Font = Enum.Font.SourceSans
-NewGuiPart15.FontSize = Enum.FontSize.Size24
-NewGuiPart15.Text = ""
-
-NewGuiPart16.Name = "Icon"
-NewGuiPart16.Parent = NewGuiPart15
-NewGuiPart16.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart16.BackgroundTransparency = 1
-NewGuiPart16.Position = UDim2.new(0, 5, 0, 5)
-NewGuiPart16.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart16.ZIndex = 2
-NewGuiPart16.Image = "rbxassetid://472635937"
-NewGuiPart16.ImageColor3 = Color3.new(0.27451, 0.27451, 0.27451)
-
-NewGuiPart17.Name = "SaveMap"
-NewGuiPart17.Parent = NewGuiPart14
-NewGuiPart17.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart17.BackgroundTransparency = 1
-NewGuiPart17.BorderSizePixel = 0
-NewGuiPart17.Position = UDim2.new(0, 0, 0, 90)
-NewGuiPart17.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart17.ZIndex = 2
-NewGuiPart17.AutoButtonColor = false
-NewGuiPart17.Font = Enum.Font.SourceSans
-NewGuiPart17.FontSize = Enum.FontSize.Size24
-NewGuiPart17.Text = ""
-
-NewGuiPart18.Name = "Icon"
-NewGuiPart18.Parent = NewGuiPart17
-NewGuiPart18.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart18.BackgroundTransparency = 1
-NewGuiPart18.Position = UDim2.new(0, 5, 0, 5)
-NewGuiPart18.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart18.ZIndex = 2
-NewGuiPart18.Image = "rbxassetid://472636337"
-NewGuiPart18.ImageColor3 = Color3.new(0.27451, 0.27451, 0.27451)
-
-NewGuiPart19.Name = "Settings"
-NewGuiPart19.Parent = NewGuiPart14
-NewGuiPart19.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart19.BackgroundTransparency = 1
-NewGuiPart19.BorderSizePixel = 0
-NewGuiPart19.Position = UDim2.new(0, 0, 0, 30)
-NewGuiPart19.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart19.ZIndex = 2
-NewGuiPart19.AutoButtonColor = false
-NewGuiPart19.Font = Enum.Font.SourceSans
-NewGuiPart19.FontSize = Enum.FontSize.Size24
-NewGuiPart19.Text = ""
-
-NewGuiPart20.Name = "Icon"
-NewGuiPart20.Parent = NewGuiPart19
-NewGuiPart20.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart20.BackgroundTransparency = 1
-NewGuiPart20.Position = UDim2.new(0, 5, 0, 5)
-NewGuiPart20.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart20.ZIndex = 2
-NewGuiPart20.Image = "rbxassetid://472635774"
-NewGuiPart20.ImageColor3 = Color3.new(0.27451, 0.27451, 0.27451)
-
-NewGuiPart21.Name = "Remotes"
-NewGuiPart21.Parent = NewGuiPart14
-NewGuiPart21.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart21.BackgroundTransparency = 1
-NewGuiPart21.BorderSizePixel = 0
-NewGuiPart21.Position = UDim2.new(0, 0, 0, 60)
-NewGuiPart21.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart21.ZIndex = 2
-NewGuiPart21.AutoButtonColor = false
-NewGuiPart21.Font = Enum.Font.SourceSans
-NewGuiPart21.FontSize = Enum.FontSize.Size24
-NewGuiPart21.Text = ""
-
-NewGuiPart22.Name = "Icon"
-NewGuiPart22.Parent = NewGuiPart21
-NewGuiPart22.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart22.BackgroundTransparency = 1
-NewGuiPart22.Position = UDim2.new(0, 5, 0, 5)
-NewGuiPart22.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart22.ZIndex = 2
-NewGuiPart22.Image = "rbxassetid://472636187"
-NewGuiPart22.ImageColor3 = Color3.new(0.27451, 0.27451, 0.27451)
-
-NewGuiPart23.Name = "About"
-NewGuiPart23.Parent = NewGuiPart14
-NewGuiPart23.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart23.BackgroundTransparency = 1
-NewGuiPart23.BorderSizePixel = 0
-NewGuiPart23.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart23.ZIndex = 2
-NewGuiPart23.AutoButtonColor = false
-NewGuiPart23.Font = Enum.Font.SourceSans
-NewGuiPart23.FontSize = Enum.FontSize.Size24
-NewGuiPart23.Text = ""
-
-NewGuiPart24.Name = "Icon"
-NewGuiPart24.Parent = NewGuiPart23
-NewGuiPart24.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart24.BackgroundTransparency = 1
-NewGuiPart24.Position = UDim2.new(0, 5, 0, 5)
-NewGuiPart24.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart24.ZIndex = 2
-NewGuiPart24.Image = "rbxassetid://476354004"
-NewGuiPart24.ImageColor3 = Color3.new(0.27451, 0.27451, 0.27451)
-
-NewGuiPart25.Name = "OpenScriptEditor"
-NewGuiPart25.Parent = NewGuiPart7
-NewGuiPart25.Active = false
-NewGuiPart25.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart25.BorderSizePixel = 0
-NewGuiPart25.Position = UDim2.new(0, 0, 0, 30)
-NewGuiPart25.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart25.ZIndex = 2
-NewGuiPart25.AutoButtonColor = false
-NewGuiPart25.Font = Enum.Font.SourceSans
-NewGuiPart25.FontSize = Enum.FontSize.Size24
-NewGuiPart25.Text = ""
-
-NewGuiPart26.Name = "Icon"
-NewGuiPart26.Parent = NewGuiPart25
-NewGuiPart26.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart26.BackgroundTransparency = 1
-NewGuiPart26.Position = UDim2.new(0, 5, 0, 5)
-NewGuiPart26.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart26.ZIndex = 2
-NewGuiPart26.Image = "rbxassetid://475456048"
-NewGuiPart26.ImageColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-NewGuiPart26.ImageTransparency = 1
-
-NewGuiPart27.Name = "Toggle"
-NewGuiPart27.Parent = NewGuiPart1
-NewGuiPart27.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart27.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart27.Position = UDim2.new(1, 0, 0, 0)
-NewGuiPart27.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart27.Font = Enum.Font.SourceSans
-NewGuiPart27.FontSize = Enum.FontSize.Size24
-NewGuiPart27.Text = "<"
-
-NewGuiPart28.Name = "SettingsPanel"
-NewGuiPart28.Parent = NewGuiPart1
-NewGuiPart28.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart28.BackgroundTransparency = 0.10000000149012
-NewGuiPart28.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart28.Position = UDim2.new(1, 0, 0, 0)
-NewGuiPart28.Size = UDim2.new(0, 300, 1, 0)
-
-NewGuiPart162.Name = "GetSetting"
-NewGuiPart162.Parent = NewGuiPart28
-NewGuiPart162.Archivable = true
-
-NewGuiPart29.Name = "Header"
-NewGuiPart29.Parent = NewGuiPart28
-NewGuiPart29.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart29.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart29.Size = UDim2.new(1, 0, 0, 17)
-
-NewGuiPart30.Parent = NewGuiPart29
-NewGuiPart30.BackgroundTransparency = 1
-NewGuiPart30.Position = UDim2.new(0, 4, 0, 0)
-NewGuiPart30.Size = UDim2.new(1, -4, 1, 0)
-NewGuiPart30.Font = Enum.Font.SourceSans
-NewGuiPart30.FontSize = Enum.FontSize.Size14
-NewGuiPart30.Text = "Settings"
-NewGuiPart30.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart30.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart31.Name = "SettingTemplate"
-NewGuiPart31.Parent = NewGuiPart28
-NewGuiPart31.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart31.BackgroundTransparency = 1
-NewGuiPart31.Position = UDim2.new(0, 0, 0, 18)
-NewGuiPart31.Size = UDim2.new(1, 0, 0, 60)
-NewGuiPart31.Visible = false
-
-NewGuiPart32.Name = "SName"
-NewGuiPart32.Parent = NewGuiPart31
-NewGuiPart32.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart32.BackgroundTransparency = 1
-NewGuiPart32.Position = UDim2.new(0, 10, 0, 0)
-NewGuiPart32.Size = UDim2.new(1, -20, 0, 30)
-NewGuiPart32.Font = Enum.Font.SourceSans
-NewGuiPart32.FontSize = Enum.FontSize.Size18
-NewGuiPart32.Text = "SettingName"
-NewGuiPart32.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart33.Name = "Status"
-NewGuiPart33.Parent = NewGuiPart31
-NewGuiPart33.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart33.BackgroundTransparency = 1
-NewGuiPart33.Position = UDim2.new(0, 60, 0, 30)
-NewGuiPart33.Size = UDim2.new(0, 50, 0, 15)
-NewGuiPart33.Font = Enum.Font.SourceSans
-NewGuiPart33.FontSize = Enum.FontSize.Size18
-NewGuiPart33.Text = "Off"
-NewGuiPart33.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart34.Name = "Change"
-NewGuiPart34.Parent = NewGuiPart31
-NewGuiPart34.BackgroundColor3 = Color3.new(0.862745, 0.862745, 0.862745)
-NewGuiPart34.BorderSizePixel = 0
-NewGuiPart34.Position = UDim2.new(0, 10, 0, 30)
-NewGuiPart34.Size = UDim2.new(0, 40, 0, 15)
-NewGuiPart34.Font = Enum.Font.SourceSans
-NewGuiPart34.FontSize = Enum.FontSize.Size14
-NewGuiPart34.Text = ""
-
-NewGuiPart35.Name = "OnBar"
-NewGuiPart35.Parent = NewGuiPart34
-NewGuiPart35.BackgroundColor3 = Color3.new(0, 0.576471, 0.862745)
-NewGuiPart35.BorderSizePixel = 0
-NewGuiPart35.Size = UDim2.new(0, 0, 0, 15)
-NewGuiPart35.Font = Enum.Font.SourceSans
-NewGuiPart35.FontSize = Enum.FontSize.Size14
-NewGuiPart35.Text = ""
-
-NewGuiPart36.Name = "Bar"
-NewGuiPart36.Parent = NewGuiPart34
-NewGuiPart36.BackgroundColor3 = Color3.new(0, 0, 0)
-NewGuiPart36.BorderSizePixel = 0
-NewGuiPart36.ClipsDescendants = true
-NewGuiPart36.Position = UDim2.new(0, -2, 0, -2)
-NewGuiPart36.Size = UDim2.new(0, 10, 0, 19)
-NewGuiPart36.Font = Enum.Font.SourceSans
-NewGuiPart36.FontSize = Enum.FontSize.Size14
-NewGuiPart36.Text = ""
-
-NewGuiPart37.Name = "SettingList"
-NewGuiPart37.Parent = NewGuiPart28
-NewGuiPart37.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart37.BackgroundTransparency = 1
-NewGuiPart37.Position = UDim2.new(0, 0, 0, 17)
-NewGuiPart37.Size = UDim2.new(1, 0, 1, -17)
-
-NewGuiPart38.Name = "SaveInstance"
-NewGuiPart38.Parent = NewGuiPart1
-NewGuiPart38.Active = true
-NewGuiPart38.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart38.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart38.Draggable = true
-NewGuiPart38.Position = UDim2.new(0.300000012, 0, 0.300000012, 0)
-NewGuiPart38.Size = UDim2.new(0, 350, 0, 20)
-NewGuiPart38.Visible = false
-NewGuiPart38.ZIndex = 2
-
-NewGuiPart39.Name = "Title"
-NewGuiPart39.Parent = NewGuiPart38
-NewGuiPart39.BackgroundTransparency = 1
-NewGuiPart39.Size = UDim2.new(1, 0, 1, 0)
-NewGuiPart39.ZIndex = 2
-NewGuiPart39.Font = Enum.Font.SourceSans
-NewGuiPart39.FontSize = Enum.FontSize.Size14
-NewGuiPart39.Text = "Save Instance"
-NewGuiPart39.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart39.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart40.Name = "MainWindow"
-NewGuiPart40.Parent = NewGuiPart38
-NewGuiPart40.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart40.BackgroundTransparency = 0.10000000149012
-NewGuiPart40.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart40.Size = UDim2.new(1, 0, 0, 200)
-
-NewGuiPart41.Name = "Save"
-NewGuiPart41.Parent = NewGuiPart40
-NewGuiPart41.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart41.BackgroundTransparency = 0.5
-NewGuiPart41.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart41.Position = UDim2.new(0.075000003, 0, 1, -40)
-NewGuiPart41.Size = UDim2.new(0.400000006, 0, 0, 30)
-NewGuiPart41.Font = Enum.Font.SourceSans
-NewGuiPart41.FontSize = Enum.FontSize.Size18
-NewGuiPart41.Text = "Save"
-
-NewGuiPart42.Name = "Desc"
-NewGuiPart42.Parent = NewGuiPart40
-NewGuiPart42.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart42.BackgroundTransparency = 1
-NewGuiPart42.Position = UDim2.new(0, 0, 0, 20)
-NewGuiPart42.Size = UDim2.new(1, 0, 0, 40)
-NewGuiPart42.Font = Enum.Font.SourceSans
-NewGuiPart42.FontSize = Enum.FontSize.Size14
-NewGuiPart42.Text = "This will save an instance to your PC. Type in the name for your instance. (.rbxmx will be added automatically.)"
-NewGuiPart42.TextWrapped = true
-
-NewGuiPart43.Name = "Cancel"
-NewGuiPart43.Parent = NewGuiPart40
-NewGuiPart43.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart43.BackgroundTransparency = 0.5
-NewGuiPart43.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart43.Position = UDim2.new(0.524999976, 0, 1, -40)
-NewGuiPart43.Size = UDim2.new(0.400000006, 0, 0, 30)
-NewGuiPart43.Font = Enum.Font.SourceSans
-NewGuiPart43.FontSize = Enum.FontSize.Size18
-NewGuiPart43.Text = "Cancel"
-
-NewGuiPart44.Name = "FileName"
-NewGuiPart44.Parent = NewGuiPart40
-NewGuiPart44.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart44.BackgroundTransparency = 0.20000000298023
-NewGuiPart44.Position = UDim2.new(0.075000003, 0, 0.400000006, 0)
-NewGuiPart44.Size = UDim2.new(0.850000024, 0, 0, 30)
-NewGuiPart44.Font = Enum.Font.SourceSans
-NewGuiPart44.FontSize = Enum.FontSize.Size18
-NewGuiPart44.Text = ""
-NewGuiPart44.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart45.Name = "SaveObjects"
-NewGuiPart45.Parent = NewGuiPart40
-NewGuiPart45.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart45.BackgroundTransparency = 0.60000002384186
-NewGuiPart45.Position = UDim2.new(0.075000003, 0, 0.625, 0)
-NewGuiPart45.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart45.ZIndex = 2
-NewGuiPart45.Font = Enum.Font.SourceSans
-NewGuiPart45.FontSize = Enum.FontSize.Size18
-NewGuiPart45.Text = ""
-NewGuiPart45.TextColor3 = Color3.new(1, 1, 1)
-
-NewGuiPart46.Name = "enabled"
-NewGuiPart46.Parent = NewGuiPart45
-NewGuiPart46.BackgroundColor3 = Color3.new(0.380392, 0.380392, 0.380392)
-NewGuiPart46.BackgroundTransparency = 0.40000000596046
-NewGuiPart46.BorderSizePixel = 0
-NewGuiPart46.Position = UDim2.new(0, 3, 0, 3)
-NewGuiPart46.Size = UDim2.new(0, 14, 0, 14)
-NewGuiPart46.Font = Enum.Font.SourceSans
-NewGuiPart46.FontSize = Enum.FontSize.Size14
-NewGuiPart46.Text = ""
-
-NewGuiPart47.Name = "Desc2"
-NewGuiPart47.Parent = NewGuiPart40
-NewGuiPart47.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart47.BackgroundTransparency = 1
-NewGuiPart47.Position = UDim2.new(0.075000003, 30, 0.625, 0)
-NewGuiPart47.Size = UDim2.new(0.925000012, -30, 0, 20)
-NewGuiPart47.Font = Enum.Font.SourceSans
-NewGuiPart47.FontSize = Enum.FontSize.Size14
-NewGuiPart47.Text = "Save \"Object\" type values"
-NewGuiPart47.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart48.Name = "Confirmation"
-NewGuiPart48.Parent = NewGuiPart1
-NewGuiPart48.Active = true
-NewGuiPart48.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart48.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart48.Draggable = true
-NewGuiPart48.Position = UDim2.new(0.300000012, 0, 0.349999994, 0)
-NewGuiPart48.Size = UDim2.new(0, 350, 0, 20)
-NewGuiPart48.Visible = false
-NewGuiPart48.ZIndex = 3
-
-NewGuiPart49.Name = "Title"
-NewGuiPart49.Parent = NewGuiPart48
-NewGuiPart49.BackgroundTransparency = 1
-NewGuiPart49.Size = UDim2.new(1, 0, 1, 0)
-NewGuiPart49.ZIndex = 3
-NewGuiPart49.Font = Enum.Font.SourceSans
-NewGuiPart49.FontSize = Enum.FontSize.Size14
-NewGuiPart49.Text = "Confirm"
-NewGuiPart49.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart49.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart50.Name = "MainWindow"
-NewGuiPart50.Parent = NewGuiPart48
-NewGuiPart50.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart50.BackgroundTransparency = 0.10000000149012
-NewGuiPart50.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart50.Size = UDim2.new(1, 0, 0, 150)
-NewGuiPart50.ZIndex = 2
-
-NewGuiPart51.Name = "Yes"
-NewGuiPart51.Parent = NewGuiPart50
-NewGuiPart51.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart51.BackgroundTransparency = 0.5
-NewGuiPart51.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart51.Position = UDim2.new(0.075000003, 0, 1, -40)
-NewGuiPart51.Size = UDim2.new(0.400000006, 0, 0, 30)
-NewGuiPart51.ZIndex = 2
-NewGuiPart51.Font = Enum.Font.SourceSans
-NewGuiPart51.FontSize = Enum.FontSize.Size18
-NewGuiPart51.Text = "Yes"
-
-NewGuiPart52.Name = "Desc"
-NewGuiPart52.Parent = NewGuiPart50
-NewGuiPart52.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart52.BackgroundTransparency = 1
-NewGuiPart52.Position = UDim2.new(0, 0, 0, 20)
-NewGuiPart52.Size = UDim2.new(1, 0, 0, 40)
-NewGuiPart52.ZIndex = 2
-NewGuiPart52.Font = Enum.Font.SourceSans
-NewGuiPart52.FontSize = Enum.FontSize.Size14
-NewGuiPart52.Text = "The file, FILENAME, already exists. Overwrite?"
-NewGuiPart52.TextWrapped = true
-
-NewGuiPart53.Name = "No"
-NewGuiPart53.Parent = NewGuiPart50
-NewGuiPart53.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart53.BackgroundTransparency = 0.5
-NewGuiPart53.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart53.Position = UDim2.new(0.524999976, 0, 1, -40)
-NewGuiPart53.Size = UDim2.new(0.400000006, 0, 0, 30)
-NewGuiPart53.ZIndex = 2
-NewGuiPart53.Font = Enum.Font.SourceSans
-NewGuiPart53.FontSize = Enum.FontSize.Size18
-NewGuiPart53.Text = "No"
-
-NewGuiPart54.Name = "Caution"
-NewGuiPart54.Parent = NewGuiPart1
-NewGuiPart54.Active = true
-NewGuiPart54.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart54.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart54.Draggable = true
-NewGuiPart54.Position = UDim2.new(0.300000012, 0, 0.300000012, 0)
-NewGuiPart54.Size = UDim2.new(0, 350, 0, 20)
-NewGuiPart54.Visible = false
-NewGuiPart54.ZIndex = 5
-
-NewGuiPart55.Name = "Title"
-NewGuiPart55.Parent = NewGuiPart54
-NewGuiPart55.BackgroundTransparency = 1
-NewGuiPart55.Size = UDim2.new(1, 0, 1, 0)
-NewGuiPart55.ZIndex = 5
-NewGuiPart55.Font = Enum.Font.SourceSans
-NewGuiPart55.FontSize = Enum.FontSize.Size14
-NewGuiPart55.Text = "Caution"
-NewGuiPart55.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart55.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart56.Name = "MainWindow"
-NewGuiPart56.Parent = NewGuiPart54
-NewGuiPart56.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart56.BackgroundTransparency = 0.10000000149012
-NewGuiPart56.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart56.Size = UDim2.new(1, 0, 0, 150)
-NewGuiPart56.ZIndex = 4
-
-NewGuiPart57.Name = "Desc"
-NewGuiPart57.Parent = NewGuiPart56
-NewGuiPart57.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart57.BackgroundTransparency = 1
-NewGuiPart57.Position = UDim2.new(0, 0, 0, 20)
-NewGuiPart57.Size = UDim2.new(1, 0, 0, 42)
-NewGuiPart57.ZIndex = 4
-NewGuiPart57.Font = Enum.Font.SourceSans
-NewGuiPart57.FontSize = Enum.FontSize.Size14
-NewGuiPart57.Text = "The file, FILENAME, already exists. Overwrite?"
-NewGuiPart57.TextWrapped = true
-
-NewGuiPart58.Name = "Ok"
-NewGuiPart58.Parent = NewGuiPart56
-NewGuiPart58.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart58.BackgroundTransparency = 0.5
-NewGuiPart58.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart58.Position = UDim2.new(0.300000012, 0, 1, -40)
-NewGuiPart58.Size = UDim2.new(0.400000006, 0, 0, 30)
-NewGuiPart58.ZIndex = 4
-NewGuiPart58.Font = Enum.Font.SourceSans
-NewGuiPart58.FontSize = Enum.FontSize.Size18
-NewGuiPart58.Text = "Ok"
-
-NewGuiPart59.Name = "CallRemote"
-NewGuiPart59.Parent = NewGuiPart1
-NewGuiPart59.Active = true
-NewGuiPart59.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart59.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart59.Draggable = true
-NewGuiPart59.Position = UDim2.new(0.300000012, 0, 0.300000012, 0)
-NewGuiPart59.Size = UDim2.new(0, 350, 0, 20)
-NewGuiPart59.Visible = false
-NewGuiPart59.ZIndex = 2
-
-NewGuiPart60.Name = "Title"
-NewGuiPart60.Parent = NewGuiPart59
-NewGuiPart60.BackgroundTransparency = 1
-NewGuiPart60.Size = UDim2.new(1, 0, 1, 0)
-NewGuiPart60.ZIndex = 2
-NewGuiPart60.Font = Enum.Font.SourceSans
-NewGuiPart60.FontSize = Enum.FontSize.Size14
-NewGuiPart60.Text = "Call Remote"
-NewGuiPart60.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart60.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart61.Name = "MainWindow"
-NewGuiPart61.Parent = NewGuiPart59
-NewGuiPart61.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart61.BackgroundTransparency = 0.10000000149012
-NewGuiPart61.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart61.Size = UDim2.new(1, 0, 0, 200)
-
-NewGuiPart62.Name = "Desc"
-NewGuiPart62.Parent = NewGuiPart61
-NewGuiPart62.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart62.BackgroundTransparency = 1
-NewGuiPart62.Position = UDim2.new(0, 0, 0, 20)
-NewGuiPart62.Size = UDim2.new(1, 0, 0, 20)
-NewGuiPart62.Font = Enum.Font.SourceSans
-NewGuiPart62.FontSize = Enum.FontSize.Size14
-NewGuiPart62.Text = "Arguments"
-NewGuiPart62.TextWrapped = true
-
-NewGuiPart63.Name = "Arguments"
-NewGuiPart63.Parent = NewGuiPart61
-NewGuiPart63.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart63.BackgroundTransparency = 1
-NewGuiPart63.Position = UDim2.new(0, 0, 0, 40)
-NewGuiPart63.Size = UDim2.new(1, 0, 0, 80)
-NewGuiPart63.BottomImage = "rbxasset://textures/blackBkg_square.png"
-NewGuiPart63.CanvasSize = UDim2.new(0, 0, 0, 0)
-NewGuiPart63.MidImage = "rbxasset://textures/blackBkg_square.png"
-NewGuiPart63.TopImage = "rbxasset://textures/blackBkg_square.png"
-
-NewGuiPart64.Name = "DisplayReturned"
-NewGuiPart64.Parent = NewGuiPart61
-NewGuiPart64.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart64.BackgroundTransparency = 0.60000002384186
-NewGuiPart64.Position = UDim2.new(0.075000003, 0, 0.625, 0)
-NewGuiPart64.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart64.ZIndex = 2
-NewGuiPart64.Font = Enum.Font.SourceSans
-NewGuiPart64.FontSize = Enum.FontSize.Size18
-NewGuiPart64.Text = ""
-NewGuiPart64.TextColor3 = Color3.new(1, 1, 1)
-
-NewGuiPart65.Name = "enabled"
-NewGuiPart65.Parent = NewGuiPart64
-NewGuiPart65.BackgroundColor3 = Color3.new(0.380392, 0.380392, 0.380392)
-NewGuiPart65.BackgroundTransparency = 0.40000000596046
-NewGuiPart65.BorderSizePixel = 0
-NewGuiPart65.Position = UDim2.new(0, 3, 0, 3)
-NewGuiPart65.Size = UDim2.new(0, 14, 0, 14)
-NewGuiPart65.Visible = false
-NewGuiPart65.Font = Enum.Font.SourceSans
-NewGuiPart65.FontSize = Enum.FontSize.Size14
-NewGuiPart65.Text = ""
-
-NewGuiPart66.Name = "Desc2"
-NewGuiPart66.Parent = NewGuiPart61
-NewGuiPart66.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart66.BackgroundTransparency = 1
-NewGuiPart66.Position = UDim2.new(0.075000003, 30, 0.625, 0)
-NewGuiPart66.Size = UDim2.new(0.925000012, -30, 0, 20)
-NewGuiPart66.Font = Enum.Font.SourceSans
-NewGuiPart66.FontSize = Enum.FontSize.Size14
-NewGuiPart66.Text = "Display values returned"
-NewGuiPart66.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart67.Name = "Add"
-NewGuiPart67.Parent = NewGuiPart61
-NewGuiPart67.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart67.BackgroundTransparency = 0.5
-NewGuiPart67.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart67.Position = UDim2.new(0.800000012, 0, 0.625, 0)
-NewGuiPart67.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart67.Font = Enum.Font.SourceSansBold
-NewGuiPart67.FontSize = Enum.FontSize.Size24
-NewGuiPart67.Text = "+"
-
-NewGuiPart68.Name = "Subtract"
-NewGuiPart68.Parent = NewGuiPart61
-NewGuiPart68.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart68.BackgroundTransparency = 0.5
-NewGuiPart68.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart68.Position = UDim2.new(0.899999976, 0, 0.625, 0)
-NewGuiPart68.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart68.Font = Enum.Font.SourceSansBold
-NewGuiPart68.FontSize = Enum.FontSize.Size24
-NewGuiPart68.Text = "-"
-
-NewGuiPart69.Name = "ArgumentTemplate"
-NewGuiPart69.Parent = NewGuiPart61
-NewGuiPart69.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart69.BackgroundTransparency = 0.5
-NewGuiPart69.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart69.Size = UDim2.new(1, 0, 0, 20)
-NewGuiPart69.Visible = false
-
-NewGuiPart70.Name = "Type"
-NewGuiPart70.Parent = NewGuiPart69
-NewGuiPart70.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart70.BackgroundTransparency = 0.89999997615814
-NewGuiPart70.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart70.Size = UDim2.new(0.400000006, 0, 0, 20)
-NewGuiPart70.Font = Enum.Font.SourceSans
-NewGuiPart70.FontSize = Enum.FontSize.Size18
-NewGuiPart70.Text = "Script"
-
-NewGuiPart71.Name = "Value"
-NewGuiPart71.Parent = NewGuiPart69
-NewGuiPart71.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart71.BackgroundTransparency = 0.89999997615814
-NewGuiPart71.Position = UDim2.new(0.400000006, 0, 0, 0)
-NewGuiPart71.Size = UDim2.new(0.600000024, -12, 0, 20)
-NewGuiPart71.Font = Enum.Font.SourceSans
-NewGuiPart71.FontSize = Enum.FontSize.Size14
-NewGuiPart71.Text = ""
-NewGuiPart71.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart72.Name = "Cancel"
-NewGuiPart72.Parent = NewGuiPart61
-NewGuiPart72.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart72.BackgroundTransparency = 0.5
-NewGuiPart72.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart72.Size = UDim2.new(0.400000006, 0, 0, 30)
-NewGuiPart72.Font = Enum.Font.SourceSans
-NewGuiPart72.FontSize = Enum.FontSize.Size18
-NewGuiPart72.Text = "Cancel"
-
-NewGuiPart73.Name = "Ok"
-NewGuiPart73.Parent = NewGuiPart61
-NewGuiPart73.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart73.BackgroundTransparency = 0.5
-NewGuiPart73.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart73.Position = UDim2.new(0.075000003, 0, 1, -40)
-NewGuiPart73.Size = UDim2.new(0.400000006, 0, 0, 30)
-NewGuiPart73.Font = Enum.Font.SourceSans
-NewGuiPart73.FontSize = Enum.FontSize.Size18
-NewGuiPart73.Text = "Call"
-
-NewGuiPart74.Name = "TableCaution"
-NewGuiPart74.Parent = NewGuiPart1
-NewGuiPart74.Active = true
-NewGuiPart74.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart74.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart74.Draggable = true
-NewGuiPart74.Position = UDim2.new(0.300000012, 0, 0.300000012, 0)
-NewGuiPart74.Size = UDim2.new(0, 350, 0, 20)
-NewGuiPart74.Visible = false
-NewGuiPart74.ZIndex = 2
-
-NewGuiPart75.Name = "MainWindow"
-NewGuiPart75.Parent = NewGuiPart74
-NewGuiPart75.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart75.BackgroundTransparency = 0.10000000149012
-NewGuiPart75.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart75.Size = UDim2.new(1, 0, 0, 150)
-
-NewGuiPart76.Name = "Ok"
-NewGuiPart76.Parent = NewGuiPart75
-NewGuiPart76.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart76.BackgroundTransparency = 0.5
-NewGuiPart76.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart76.Position = UDim2.new(0.300000012, 0, 1, -40)
-NewGuiPart76.Size = UDim2.new(0.400000006, 0, 0, 30)
-NewGuiPart76.Font = Enum.Font.SourceSans
-NewGuiPart76.FontSize = Enum.FontSize.Size18
-NewGuiPart76.Text = "Ok"
-
-NewGuiPart77.Name = "TableResults"
-NewGuiPart77.Parent = NewGuiPart75
-NewGuiPart77.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart77.BackgroundTransparency = 1
-NewGuiPart77.Position = UDim2.new(0, 0, 0, 20)
-NewGuiPart77.Size = UDim2.new(1, 0, 0, 80)
-NewGuiPart77.BottomImage = "rbxasset://textures/blackBkg_square.png"
-NewGuiPart77.CanvasSize = UDim2.new(0, 0, 0, 0)
-NewGuiPart77.MidImage = "rbxasset://textures/blackBkg_square.png"
-NewGuiPart77.TopImage = "rbxasset://textures/blackBkg_square.png"
-
-NewGuiPart78.Name = "TableTemplate"
-NewGuiPart78.Parent = NewGuiPart75
-NewGuiPart78.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart78.BackgroundTransparency = 0.5
-NewGuiPart78.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart78.Size = UDim2.new(1, 0, 0, 20)
-NewGuiPart78.Visible = false
-
-NewGuiPart79.Name = "Type"
-NewGuiPart79.Parent = NewGuiPart78
-NewGuiPart79.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart79.BackgroundTransparency = 0.89999997615814
-NewGuiPart79.Size = UDim2.new(0.400000006, 0, 0, 20)
-NewGuiPart79.Font = Enum.Font.SourceSans
-NewGuiPart79.FontSize = Enum.FontSize.Size18
-NewGuiPart79.Text = "Script"
-
-NewGuiPart80.Name = "Value"
-NewGuiPart80.Parent = NewGuiPart78
-NewGuiPart80.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart80.BackgroundTransparency = 0.89999997615814
-NewGuiPart80.Position = UDim2.new(0.400000006, 0, 0, 0)
-NewGuiPart80.Size = UDim2.new(0.600000024, -12, 0, 20)
-NewGuiPart80.Font = Enum.Font.SourceSans
-NewGuiPart80.FontSize = Enum.FontSize.Size14
-NewGuiPart80.Text = "Script"
-
-NewGuiPart81.Name = "Title"
-NewGuiPart81.Parent = NewGuiPart74
-NewGuiPart81.BackgroundTransparency = 1
-NewGuiPart81.Size = UDim2.new(1, 0, 1, 0)
-NewGuiPart81.ZIndex = 2
-NewGuiPart81.Font = Enum.Font.SourceSans
-NewGuiPart81.FontSize = Enum.FontSize.Size14
-NewGuiPart81.Text = "Caution"
-NewGuiPart81.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart81.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart82.Name = "ScriptEditor"
-NewGuiPart82.Parent = NewGuiPart1
-NewGuiPart82.Active = true
-NewGuiPart82.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart82.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart82.Draggable = true
-NewGuiPart82.Position = UDim2.new(0.300000012, 0, 0.300000012, 0)
-NewGuiPart82.Size = UDim2.new(0, 516, 0, 20)
-NewGuiPart82.Visible = false
-NewGuiPart82.ZIndex = 5
-
-NewGuiPart163.Name = "OpenScript"
-NewGuiPart163.Parent = NewGuiPart82
-NewGuiPart163.Archivable = true
-
-NewGuiPart83.Name = "Title"
-NewGuiPart83.Parent = NewGuiPart82
-NewGuiPart83.BackgroundTransparency = 1
-NewGuiPart83.Size = UDim2.new(1, 0, 1, 0)
-NewGuiPart83.ZIndex = 5
-NewGuiPart83.Font = Enum.Font.SourceSans
-NewGuiPart83.FontSize = Enum.FontSize.Size14
-NewGuiPart83.Text = "Script Viewer"
-NewGuiPart83.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart83.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart84.Name = "Cover"
-NewGuiPart84.Parent = NewGuiPart82
-NewGuiPart84.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart84.BorderSizePixel = 0
-NewGuiPart84.Position = UDim2.new(0, 0, 3, 0)
-NewGuiPart84.Size = UDim2.new(0, 516, 0, 416)
-
-NewGuiPart85.Name = "EditorGrid"
-NewGuiPart85.Parent = NewGuiPart82
-NewGuiPart85.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart85.BorderSizePixel = 0
-NewGuiPart85.Position = UDim2.new(0, 0, 3, 0)
-NewGuiPart85.Size = UDim2.new(0, 500, 0, 400)
-
-NewGuiPart86.Name = "TopBar"
-NewGuiPart86.Parent = NewGuiPart82
-NewGuiPart86.BackgroundColor3 = Color3.new(0.941177, 0.941177, 0.941177)
-NewGuiPart86.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart86.Size = UDim2.new(1, 0, 3, 0)
-
-NewGuiPart87.Name = "ScriptBarLeft"
-NewGuiPart87.Parent = NewGuiPart86
-NewGuiPart87.Active = false
-NewGuiPart87.BackgroundColor3 = Color3.new(0.866667, 0.866667, 0.866667)
-NewGuiPart87.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart87.Position = UDim2.new(1, -32, 0, 40)
-NewGuiPart87.Size = UDim2.new(0, 16, 0, 20)
-NewGuiPart87.AutoButtonColor = false
-
-NewGuiPart88.Name = "Arrow Graphic"
-NewGuiPart88.Parent = NewGuiPart87
-NewGuiPart88.BackgroundTransparency = 1
-NewGuiPart88.BorderSizePixel = 0
-NewGuiPart88.Position = UDim2.new(0.5, -4, 0.5, -4)
-NewGuiPart88.Size = UDim2.new(0, 8, 0, 8)
-
-NewGuiPart89.Name = "Graphic"
-NewGuiPart89.Parent = NewGuiPart88
-NewGuiPart89.BackgroundColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart89.BackgroundTransparency = 0.69999998807907
-NewGuiPart89.BorderSizePixel = 0
-NewGuiPart89.Position = UDim2.new(0.25, 0, 0.375, 0)
-NewGuiPart89.Size = UDim2.new(0.125, 0, 0.25, 0)
-
-NewGuiPart90.Name = "Graphic"
-NewGuiPart90.Parent = NewGuiPart88
-NewGuiPart90.BackgroundColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart90.BackgroundTransparency = 0.69999998807907
-NewGuiPart90.BorderSizePixel = 0
-NewGuiPart90.Position = UDim2.new(0.375, 0, 0.25, 0)
-NewGuiPart90.Size = UDim2.new(0.125, 0, 0.5, 0)
-
-NewGuiPart91.Name = "Graphic"
-NewGuiPart91.Parent = NewGuiPart88
-NewGuiPart91.BackgroundColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart91.BackgroundTransparency = 0.69999998807907
-NewGuiPart91.BorderSizePixel = 0
-NewGuiPart91.Position = UDim2.new(0.5, 0, 0.125, 0)
-NewGuiPart91.Size = UDim2.new(0.125, 0, 0.75, 0)
-
-NewGuiPart92.Name = "Graphic"
-NewGuiPart92.Parent = NewGuiPart88
-NewGuiPart92.BackgroundColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart92.BackgroundTransparency = 0.69999998807907
-NewGuiPart92.BorderSizePixel = 0
-NewGuiPart92.Position = UDim2.new(0.625, 0, 0, 0)
-NewGuiPart92.Size = UDim2.new(0.125, 0, 1, 0)
-
-NewGuiPart93.Name = "ScriptBarRight"
-NewGuiPart93.Parent = NewGuiPart86
-NewGuiPart93.Active = false
-NewGuiPart93.BackgroundColor3 = Color3.new(0.866667, 0.866667, 0.866667)
-NewGuiPart93.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart93.Position = UDim2.new(1, -16, 0, 40)
-NewGuiPart93.Size = UDim2.new(0, 16, 0, 20)
-NewGuiPart93.AutoButtonColor = false
-
-NewGuiPart94.Name = "Arrow Graphic"
-NewGuiPart94.Parent = NewGuiPart93
-NewGuiPart94.BackgroundTransparency = 1
-NewGuiPart94.BorderSizePixel = 0
-NewGuiPart94.Position = UDim2.new(0.5, -4, 0.5, -4)
-NewGuiPart94.Size = UDim2.new(0, 8, 0, 8)
-
-NewGuiPart95.Name = "Graphic"
-NewGuiPart95.Parent = NewGuiPart94
-NewGuiPart95.BackgroundColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart95.BackgroundTransparency = 0.69999998807907
-NewGuiPart95.BorderSizePixel = 0
-NewGuiPart95.Position = UDim2.new(0.625, 0, 0.375, 0)
-NewGuiPart95.Size = UDim2.new(0.125, 0, 0.25, 0)
-
-NewGuiPart96.Name = "Graphic"
-NewGuiPart96.Parent = NewGuiPart94
-NewGuiPart96.BackgroundColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart96.BackgroundTransparency = 0.69999998807907
-NewGuiPart96.BorderSizePixel = 0
-NewGuiPart96.Position = UDim2.new(0.5, 0, 0.25, 0)
-NewGuiPart96.Size = UDim2.new(0.125, 0, 0.5, 0)
-
-NewGuiPart97.Name = "Graphic"
-NewGuiPart97.Parent = NewGuiPart94
-NewGuiPart97.BackgroundColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart97.BackgroundTransparency = 0.69999998807907
-NewGuiPart97.BorderSizePixel = 0
-NewGuiPart97.Position = UDim2.new(0.375, 0, 0.125, 0)
-NewGuiPart97.Size = UDim2.new(0.125, 0, 0.75, 0)
-
-NewGuiPart98.Name = "Graphic"
-NewGuiPart98.Parent = NewGuiPart94
-NewGuiPart98.BackgroundColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart98.BackgroundTransparency = 0.69999998807907
-NewGuiPart98.BorderSizePixel = 0
-NewGuiPart98.Position = UDim2.new(0.25, 0, 0, 0)
-NewGuiPart98.Size = UDim2.new(0.125, 0, 1, 0)
-
-NewGuiPart99.Name = "Clipboard"
-NewGuiPart99.Parent = NewGuiPart86
-NewGuiPart99.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart99.BackgroundTransparency = 0.5
-NewGuiPart99.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart99.Position = UDim2.new(0, 0, 0, 20)
-NewGuiPart99.Size = UDim2.new(0, 80, 0, 20)
-NewGuiPart99.Font = Enum.Font.SourceSans
-NewGuiPart99.FontSize = Enum.FontSize.Size14
-NewGuiPart99.Text = "To Clipboard"
-
-NewGuiPart100.Name = "ScriptBar"
-NewGuiPart100.Parent = NewGuiPart86
-NewGuiPart100.BackgroundColor3 = Color3.new(0.823529, 0.823529, 0.823529)
-NewGuiPart100.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart100.ClipsDescendants = true
-NewGuiPart100.Position = UDim2.new(0, 0, 0, 40)
-NewGuiPart100.Size = UDim2.new(1, -32, 0, 20)
-
-NewGuiPart101.Name = "Entry"
-NewGuiPart101.Parent = NewGuiPart86
-NewGuiPart101.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart101.BackgroundTransparency = 1
-NewGuiPart101.Size = UDim2.new(0, 100, 1, 0)
-NewGuiPart101.Visible = false
-
-NewGuiPart102.Name = "Button"
-NewGuiPart102.Parent = NewGuiPart101
-NewGuiPart102.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart102.BackgroundTransparency = 0.60000002384186
-NewGuiPart102.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart102.ClipsDescendants = true
-NewGuiPart102.Size = UDim2.new(1, 0, 1, 0)
-NewGuiPart102.ZIndex = 4
-NewGuiPart102.Font = Enum.Font.SourceSans
-NewGuiPart102.FontSize = Enum.FontSize.Size12
-NewGuiPart102.Text = ""
-NewGuiPart102.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart103.Name = "Close"
-NewGuiPart103.Parent = NewGuiPart101
-NewGuiPart103.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart103.BackgroundTransparency = 1
-NewGuiPart103.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart103.Position = UDim2.new(1, -20, 0, 0)
-NewGuiPart103.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart103.ZIndex = 4
-NewGuiPart103.Font = Enum.Font.SourceSans
-NewGuiPart103.FontSize = Enum.FontSize.Size14
-NewGuiPart103.Text = "X"
-
-NewGuiPart104.Name = "Close"
-NewGuiPart104.Parent = NewGuiPart82
-NewGuiPart104.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart104.BackgroundTransparency = 1
-NewGuiPart104.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart104.Position = UDim2.new(1, -20, 0, 0)
-NewGuiPart104.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart104.ZIndex = 5
-NewGuiPart104.Font = Enum.Font.SourceSans
-NewGuiPart104.FontSize = Enum.FontSize.Size14
-NewGuiPart104.Text = "X"
-
-NewGuiPart105.Name = "IntroFrame"
-NewGuiPart105.Parent = NewGuiPart1
-NewGuiPart105.BackgroundColor3 = Color3.new(0.960784, 0.960784, 0.960784)
-NewGuiPart105.BorderSizePixel = 0
-NewGuiPart105.Position = UDim2.new(1, 30, 0, 0)
-NewGuiPart105.Size = UDim2.new(0, 300, 1, 0)
-NewGuiPart105.ZIndex = 2
-
-NewGuiPart106.Name = "Main"
-NewGuiPart106.Parent = NewGuiPart105
-NewGuiPart106.BackgroundColor3 = Color3.new(0.960784, 0.960784, 0.960784)
-NewGuiPart106.BorderSizePixel = 0
-NewGuiPart106.Position = UDim2.new(0, -30, 0, 0)
-NewGuiPart106.Size = UDim2.new(0, 30, 0, 90)
-NewGuiPart106.ZIndex = 2
-
-NewGuiPart107.Name = "Title"
-NewGuiPart107.Parent = NewGuiPart105
-NewGuiPart107.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart107.BackgroundTransparency = 1
-NewGuiPart107.Position = UDim2.new(0, 100, 0, 150)
-NewGuiPart107.Size = UDim2.new(0, 100, 0, 60)
-NewGuiPart107.ZIndex = 2
-NewGuiPart107.Font = Enum.Font.SourceSansBold
-NewGuiPart107.FontSize = Enum.FontSize.Size60
-NewGuiPart107.Text = "DEX"
-NewGuiPart107.TextWrapped = true
-
-NewGuiPart108.Name = "Version"
-NewGuiPart108.Parent = NewGuiPart105
-NewGuiPart108.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart108.BackgroundTransparency = 1
-NewGuiPart108.Position = UDim2.new(0, 100, 0, 210)
-NewGuiPart108.Size = UDim2.new(0, 100, 0, 30)
-NewGuiPart108.ZIndex = 2
-NewGuiPart108.Font = Enum.Font.SourceSansBold
-NewGuiPart108.FontSize = Enum.FontSize.Size28
-NewGuiPart108.Text = "V2.0.0"
-NewGuiPart108.TextWrapped = true
-
-NewGuiPart109.Name = "Creator"
-NewGuiPart109.Parent = NewGuiPart105
-NewGuiPart109.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart109.BackgroundTransparency = 1
-NewGuiPart109.Position = UDim2.new(0, 80, 0, 300)
-NewGuiPart109.Size = UDim2.new(0, 140, 0, 30)
-NewGuiPart109.ZIndex = 2
-NewGuiPart109.Font = Enum.Font.SourceSansBold
-NewGuiPart109.FontSize = Enum.FontSize.Size28
-NewGuiPart109.Text = "Raspberry Pi , Script Made By Advancedev"
-NewGuiPart109.TextWrapped = true
-
-NewGuiPart110.Name = "Slant"
-NewGuiPart110.Parent = NewGuiPart105
-NewGuiPart110.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart110.BackgroundTransparency = 1
-NewGuiPart110.Position = UDim2.new(0, -30, 0, 90)
-NewGuiPart110.Rotation = 180
-NewGuiPart110.Size = UDim2.new(0, 30, 0, 30)
-NewGuiPart110.ZIndex = 2
-NewGuiPart110.Image = "rbxassetid://474172996"
-NewGuiPart110.ImageColor3 = Color3.new(0.960784, 0.960784, 0.960784)
-
-NewGuiPart111.Name = "SaveMapWindow"
-NewGuiPart111.Parent = NewGuiPart1
-NewGuiPart111.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart111.BackgroundTransparency = 0.10000000149012
-NewGuiPart111.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart111.Position = UDim2.new(1, 0, 0, 0)
-NewGuiPart111.Size = UDim2.new(0, 300, 1, 0)
-
-NewGuiPart112.Name = "Header"
-NewGuiPart112.Parent = NewGuiPart111
-NewGuiPart112.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart112.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart112.Size = UDim2.new(1, 0, 0, 17)
-
-NewGuiPart113.Parent = NewGuiPart112
-NewGuiPart113.BackgroundTransparency = 1
-NewGuiPart113.Position = UDim2.new(0, 4, 0, 0)
-NewGuiPart113.Size = UDim2.new(1, -4, 1, 0)
-NewGuiPart113.Font = Enum.Font.SourceSans
-NewGuiPart113.FontSize = Enum.FontSize.Size14
-NewGuiPart113.Text = "Map Downloader"
-NewGuiPart113.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart113.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart114.Name = "MapSettings"
-NewGuiPart114.Parent = NewGuiPart111
-NewGuiPart114.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart114.BackgroundTransparency = 1
-NewGuiPart114.Position = UDim2.new(0, 0, 0, 200)
-NewGuiPart114.Size = UDim2.new(1, 0, 0, 240)
-
-NewGuiPart115.Name = "Terrain"
-NewGuiPart115.Parent = NewGuiPart114
-NewGuiPart115.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart115.BackgroundTransparency = 1
-NewGuiPart115.Position = UDim2.new(0, 0, 0, 60)
-NewGuiPart115.Size = UDim2.new(1, 0, 0, 60)
-
-NewGuiPart116.Name = "SName"
-NewGuiPart116.Parent = NewGuiPart115
-NewGuiPart116.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart116.BackgroundTransparency = 1
-NewGuiPart116.Position = UDim2.new(0, 10, 0, 0)
-NewGuiPart116.Size = UDim2.new(1, -20, 0, 30)
-NewGuiPart116.Font = Enum.Font.SourceSans
-NewGuiPart116.FontSize = Enum.FontSize.Size18
-NewGuiPart116.Text = "Save Terrain"
-NewGuiPart116.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart117.Name = "Status"
-NewGuiPart117.Parent = NewGuiPart115
-NewGuiPart117.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart117.BackgroundTransparency = 1
-NewGuiPart117.Position = UDim2.new(0, 60, 0, 30)
-NewGuiPart117.Size = UDim2.new(0, 50, 0, 15)
-NewGuiPart117.Font = Enum.Font.SourceSans
-NewGuiPart117.FontSize = Enum.FontSize.Size18
-NewGuiPart117.Text = "Off"
-NewGuiPart117.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart118.Name = "Change"
-NewGuiPart118.Parent = NewGuiPart115
-NewGuiPart118.BackgroundColor3 = Color3.new(0.862745, 0.862745, 0.862745)
-NewGuiPart118.BorderSizePixel = 0
-NewGuiPart118.Position = UDim2.new(0, 10, 0, 30)
-NewGuiPart118.Size = UDim2.new(0, 40, 0, 15)
-NewGuiPart118.Font = Enum.Font.SourceSans
-NewGuiPart118.FontSize = Enum.FontSize.Size14
-NewGuiPart118.Text = ""
-
-NewGuiPart119.Name = "OnBar"
-NewGuiPart119.Parent = NewGuiPart118
-NewGuiPart119.BackgroundColor3 = Color3.new(0, 0.576471, 0.862745)
-NewGuiPart119.BorderSizePixel = 0
-NewGuiPart119.Size = UDim2.new(0, 0, 0, 15)
-NewGuiPart119.Font = Enum.Font.SourceSans
-NewGuiPart119.FontSize = Enum.FontSize.Size14
-NewGuiPart119.Text = ""
-
-NewGuiPart120.Name = "Bar"
-NewGuiPart120.Parent = NewGuiPart118
-NewGuiPart120.BackgroundColor3 = Color3.new(0, 0, 0)
-NewGuiPart120.BorderSizePixel = 0
-NewGuiPart120.ClipsDescendants = true
-NewGuiPart120.Position = UDim2.new(0, -2, 0, -2)
-NewGuiPart120.Size = UDim2.new(0, 10, 0, 19)
-NewGuiPart120.Font = Enum.Font.SourceSans
-NewGuiPart120.FontSize = Enum.FontSize.Size14
-NewGuiPart120.Text = ""
-
-NewGuiPart121.Name = "Lighting"
-NewGuiPart121.Parent = NewGuiPart114
-NewGuiPart121.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart121.BackgroundTransparency = 1
-NewGuiPart121.Position = UDim2.new(0, 0, 0, 120)
-NewGuiPart121.Size = UDim2.new(1, 0, 0, 60)
-
-NewGuiPart122.Name = "SName"
-NewGuiPart122.Parent = NewGuiPart121
-NewGuiPart122.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart122.BackgroundTransparency = 1
-NewGuiPart122.Position = UDim2.new(0, 10, 0, 0)
-NewGuiPart122.Size = UDim2.new(1, -20, 0, 30)
-NewGuiPart122.Font = Enum.Font.SourceSans
-NewGuiPart122.FontSize = Enum.FontSize.Size18
-NewGuiPart122.Text = "Lighting Properties"
-NewGuiPart122.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart123.Name = "Status"
-NewGuiPart123.Parent = NewGuiPart121
-NewGuiPart123.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart123.BackgroundTransparency = 1
-NewGuiPart123.Position = UDim2.new(0, 60, 0, 30)
-NewGuiPart123.Size = UDim2.new(0, 50, 0, 15)
-NewGuiPart123.Font = Enum.Font.SourceSans
-NewGuiPart123.FontSize = Enum.FontSize.Size18
-NewGuiPart123.Text = "Off"
-NewGuiPart123.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart124.Name = "Change"
-NewGuiPart124.Parent = NewGuiPart121
-NewGuiPart124.BackgroundColor3 = Color3.new(0.862745, 0.862745, 0.862745)
-NewGuiPart124.BorderSizePixel = 0
-NewGuiPart124.Position = UDim2.new(0, 10, 0, 30)
-NewGuiPart124.Size = UDim2.new(0, 40, 0, 15)
-NewGuiPart124.Font = Enum.Font.SourceSans
-NewGuiPart124.FontSize = Enum.FontSize.Size14
-NewGuiPart124.Text = ""
-
-NewGuiPart125.Name = "OnBar"
-NewGuiPart125.Parent = NewGuiPart124
-NewGuiPart125.BackgroundColor3 = Color3.new(0, 0.576471, 0.862745)
-NewGuiPart125.BorderSizePixel = 0
-NewGuiPart125.Size = UDim2.new(0, 0, 0, 15)
-NewGuiPart125.Font = Enum.Font.SourceSans
-NewGuiPart125.FontSize = Enum.FontSize.Size14
-NewGuiPart125.Text = ""
-
-NewGuiPart126.Name = "Bar"
-NewGuiPart126.Parent = NewGuiPart124
-NewGuiPart126.BackgroundColor3 = Color3.new(0, 0, 0)
-NewGuiPart126.BorderSizePixel = 0
-NewGuiPart126.ClipsDescendants = true
-NewGuiPart126.Position = UDim2.new(0, -2, 0, -2)
-NewGuiPart126.Size = UDim2.new(0, 10, 0, 19)
-NewGuiPart126.Font = Enum.Font.SourceSans
-NewGuiPart126.FontSize = Enum.FontSize.Size14
-NewGuiPart126.Text = ""
-
-NewGuiPart127.Name = "CameraInstances"
-NewGuiPart127.Parent = NewGuiPart114
-NewGuiPart127.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart127.BackgroundTransparency = 1
-NewGuiPart127.Position = UDim2.new(0, 0, 0, 180)
-NewGuiPart127.Size = UDim2.new(1, 0, 0, 60)
-
-NewGuiPart128.Name = "SName"
-NewGuiPart128.Parent = NewGuiPart127
-NewGuiPart128.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart128.BackgroundTransparency = 1
-NewGuiPart128.Position = UDim2.new(0, 10, 0, 0)
-NewGuiPart128.Size = UDim2.new(1, -20, 0, 30)
-NewGuiPart128.Font = Enum.Font.SourceSans
-NewGuiPart128.FontSize = Enum.FontSize.Size18
-NewGuiPart128.Text = "Camera Instances"
-NewGuiPart128.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart129.Name = "Status"
-NewGuiPart129.Parent = NewGuiPart127
-NewGuiPart129.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart129.BackgroundTransparency = 1
-NewGuiPart129.Position = UDim2.new(0, 60, 0, 30)
-NewGuiPart129.Size = UDim2.new(0, 50, 0, 15)
-NewGuiPart129.Font = Enum.Font.SourceSans
-NewGuiPart129.FontSize = Enum.FontSize.Size18
-NewGuiPart129.Text = "Off"
-NewGuiPart129.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart130.Name = "Change"
-NewGuiPart130.Parent = NewGuiPart127
-NewGuiPart130.BackgroundColor3 = Color3.new(0.862745, 0.862745, 0.862745)
-NewGuiPart130.BorderSizePixel = 0
-NewGuiPart130.Position = UDim2.new(0, 10, 0, 30)
-NewGuiPart130.Size = UDim2.new(0, 40, 0, 15)
-NewGuiPart130.Font = Enum.Font.SourceSans
-NewGuiPart130.FontSize = Enum.FontSize.Size14
-NewGuiPart130.Text = ""
-
-NewGuiPart131.Name = "OnBar"
-NewGuiPart131.Parent = NewGuiPart130
-NewGuiPart131.BackgroundColor3 = Color3.new(0, 0.576471, 0.862745)
-NewGuiPart131.BorderSizePixel = 0
-NewGuiPart131.Size = UDim2.new(0, 0, 0, 15)
-NewGuiPart131.Font = Enum.Font.SourceSans
-NewGuiPart131.FontSize = Enum.FontSize.Size14
-NewGuiPart131.Text = ""
-
-NewGuiPart132.Name = "Bar"
-NewGuiPart132.Parent = NewGuiPart130
-NewGuiPart132.BackgroundColor3 = Color3.new(0, 0, 0)
-NewGuiPart132.BorderSizePixel = 0
-NewGuiPart132.ClipsDescendants = true
-NewGuiPart132.Position = UDim2.new(0, -2, 0, -2)
-NewGuiPart132.Size = UDim2.new(0, 10, 0, 19)
-NewGuiPart132.Font = Enum.Font.SourceSans
-NewGuiPart132.FontSize = Enum.FontSize.Size14
-NewGuiPart132.Text = ""
-
-NewGuiPart133.Name = "Scripts"
-NewGuiPart133.Parent = NewGuiPart114
-NewGuiPart133.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart133.BackgroundTransparency = 1
-NewGuiPart133.Size = UDim2.new(1, 0, 0, 60)
-
-NewGuiPart134.Name = "SName"
-NewGuiPart134.Parent = NewGuiPart133
-NewGuiPart134.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart134.BackgroundTransparency = 1
-NewGuiPart134.Position = UDim2.new(0, 10, 0, 0)
-NewGuiPart134.Size = UDim2.new(1, -20, 0, 30)
-NewGuiPart134.Font = Enum.Font.SourceSans
-NewGuiPart134.FontSize = Enum.FontSize.Size18
-NewGuiPart134.Text = "Save Scripts"
-NewGuiPart134.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart135.Name = "Status"
-NewGuiPart135.Parent = NewGuiPart133
-NewGuiPart135.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart135.BackgroundTransparency = 1
-NewGuiPart135.Position = UDim2.new(0, 60, 0, 30)
-NewGuiPart135.Size = UDim2.new(0, 50, 0, 15)
-NewGuiPart135.Font = Enum.Font.SourceSans
-NewGuiPart135.FontSize = Enum.FontSize.Size18
-NewGuiPart135.Text = "Off"
-NewGuiPart135.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart136.Name = "Change"
-NewGuiPart136.Parent = NewGuiPart133
-NewGuiPart136.BackgroundColor3 = Color3.new(0.862745, 0.862745, 0.862745)
-NewGuiPart136.BorderSizePixel = 0
-NewGuiPart136.Position = UDim2.new(0, 10, 0, 30)
-NewGuiPart136.Size = UDim2.new(0, 40, 0, 15)
-NewGuiPart136.Font = Enum.Font.SourceSans
-NewGuiPart136.FontSize = Enum.FontSize.Size14
-NewGuiPart136.Text = ""
-
-NewGuiPart137.Name = "OnBar"
-NewGuiPart137.Parent = NewGuiPart136
-NewGuiPart137.BackgroundColor3 = Color3.new(0, 0.576471, 0.862745)
-NewGuiPart137.BorderSizePixel = 0
-NewGuiPart137.Size = UDim2.new(0, 0, 0, 15)
-NewGuiPart137.Font = Enum.Font.SourceSans
-NewGuiPart137.FontSize = Enum.FontSize.Size14
-NewGuiPart137.Text = ""
-
-NewGuiPart138.Name = "Bar"
-NewGuiPart138.Parent = NewGuiPart136
-NewGuiPart138.BackgroundColor3 = Color3.new(0, 0, 0)
-NewGuiPart138.BorderSizePixel = 0
-NewGuiPart138.ClipsDescendants = true
-NewGuiPart138.Position = UDim2.new(0, -2, 0, -2)
-NewGuiPart138.Size = UDim2.new(0, 10, 0, 19)
-NewGuiPart138.Font = Enum.Font.SourceSans
-NewGuiPart138.FontSize = Enum.FontSize.Size14
-NewGuiPart138.Text = ""
-
-NewGuiPart139.Name = "ToSave"
-NewGuiPart139.Parent = NewGuiPart111
-NewGuiPart139.BackgroundTransparency = 1
-NewGuiPart139.Position = UDim2.new(0, 0, 0, 17)
-NewGuiPart139.Size = UDim2.new(1, 0, 0, 20)
-NewGuiPart139.Font = Enum.Font.SourceSans
-NewGuiPart139.FontSize = Enum.FontSize.Size18
-NewGuiPart139.Text = "To Save"
-NewGuiPart139.TextColor3 = Color3.new(0, 0, 0)
-
-NewGuiPart140.Name = "CopyList"
-NewGuiPart140.Parent = NewGuiPart111
-NewGuiPart140.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart140.BackgroundTransparency = 0.80000001192093
-NewGuiPart140.Position = UDim2.new(0, 0, 0, 37)
-NewGuiPart140.Size = UDim2.new(1, 0, 0, 163)
-
-NewGuiPart141.Name = "Bottom"
-NewGuiPart141.Parent = NewGuiPart111
-NewGuiPart141.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart141.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart141.Position = UDim2.new(0, 0, 1, -50)
-NewGuiPart141.Size = UDim2.new(1, 0, 0, 50)
-
-NewGuiPart142.Parent = NewGuiPart141
-NewGuiPart142.BackgroundTransparency = 1
-NewGuiPart142.Position = UDim2.new(0, 4, 0, 0)
-NewGuiPart142.Size = UDim2.new(1, -4, 1, 0)
-NewGuiPart142.Font = Enum.Font.SourceSans
-NewGuiPart142.FontSize = Enum.FontSize.Size14
-NewGuiPart142.Text = "After the map saves, open a new place on studio, then right click Lighting and \"Insert from file...\", then select your file and run the unpacker script inside the folder."
-NewGuiPart142.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart142.TextWrapped = true
-NewGuiPart142.TextXAlignment = Enum.TextXAlignment.Left
-NewGuiPart142.TextYAlignment = Enum.TextYAlignment.Top
-
-NewGuiPart143.Name = "Save"
-NewGuiPart143.Parent = NewGuiPart111
-NewGuiPart143.BackgroundColor3 = Color3.new(0.941177, 0.941177, 0.941177)
-NewGuiPart143.BackgroundTransparency = 0.80000001192093
-NewGuiPart143.BorderColor3 = Color3.new(0, 0, 0)
-NewGuiPart143.Position = UDim2.new(0, 0, 1, -80)
-NewGuiPart143.Size = UDim2.new(1, 0, 0, 30)
-NewGuiPart143.Font = Enum.Font.SourceSans
-NewGuiPart143.FontSize = Enum.FontSize.Size18
-NewGuiPart143.Text = "Save"
-
-NewGuiPart144.Name = "FileName"
-NewGuiPart144.Parent = NewGuiPart111
-NewGuiPart144.BackgroundColor3 = Color3.new(0.941177, 0.941177, 0.941177)
-NewGuiPart144.BackgroundTransparency = 0.60000002384186
-NewGuiPart144.Position = UDim2.new(0, 0, 1, -105)
-NewGuiPart144.Size = UDim2.new(1, 0, 0, 25)
-NewGuiPart144.Font = Enum.Font.SourceSans
-NewGuiPart144.FontSize = Enum.FontSize.Size18
-NewGuiPart144.Text = "PlaceName"
-NewGuiPart144.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart145.Name = "Entry"
-NewGuiPart145.Parent = NewGuiPart111
-NewGuiPart145.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart145.BackgroundTransparency = 1
-NewGuiPart145.Size = UDim2.new(1, 0, 0, 22)
-NewGuiPart145.Visible = false
-
-NewGuiPart146.Name = "Change"
-NewGuiPart146.Parent = NewGuiPart145
-NewGuiPart146.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart146.BackgroundTransparency = 0.60000002384186
-NewGuiPart146.Position = UDim2.new(0, 10, 0, 1)
-NewGuiPart146.Size = UDim2.new(0, 20, 0, 20)
-NewGuiPart146.ZIndex = 2
-NewGuiPart146.Font = Enum.Font.SourceSans
-NewGuiPart146.FontSize = Enum.FontSize.Size18
-NewGuiPart146.Text = ""
-NewGuiPart146.TextColor3 = Color3.new(1, 1, 1)
-
-NewGuiPart147.Name = "enabled"
-NewGuiPart147.Parent = NewGuiPart146
-NewGuiPart147.BackgroundColor3 = Color3.new(0.380392, 0.380392, 0.380392)
-NewGuiPart147.BackgroundTransparency = 0.40000000596046
-NewGuiPart147.BorderSizePixel = 0
-NewGuiPart147.Position = UDim2.new(0, 3, 0, 3)
-NewGuiPart147.Size = UDim2.new(0, 14, 0, 14)
-NewGuiPart147.Font = Enum.Font.SourceSans
-NewGuiPart147.FontSize = Enum.FontSize.Size14
-NewGuiPart147.Text = ""
-
-NewGuiPart148.Name = "Info"
-NewGuiPart148.Parent = NewGuiPart145
-NewGuiPart148.BackgroundTransparency = 1
-NewGuiPart148.Position = UDim2.new(0, 40, 0, 0)
-NewGuiPart148.Size = UDim2.new(1, -40, 0, 22)
-NewGuiPart148.Font = Enum.Font.SourceSans
-NewGuiPart148.FontSize = Enum.FontSize.Size18
-NewGuiPart148.Text = "Workspace"
-NewGuiPart148.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart148.TextXAlignment = Enum.TextXAlignment.Left
-
-NewGuiPart149.Name = "RemoteDebugWindow"
-NewGuiPart149.Parent = NewGuiPart1
-NewGuiPart149.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart149.BackgroundTransparency = 0.10000000149012
-NewGuiPart149.BorderColor3 = Color3.new(0.74902, 0.74902, 0.74902)
-NewGuiPart149.Position = UDim2.new(1, 0, 0, 0)
-NewGuiPart149.Size = UDim2.new(0, 300, 1, 0)
-
 NewGuiPart161.Name = "GetSetting"
-NewGuiPart161.Parent = NewGuiPart149
+NewGuiPart161.Parent = RemoteDebugWindow
 NewGuiPart161.Archivable = true
 
-NewGuiPart150.Name = "Header"
-NewGuiPart150.Parent = NewGuiPart149
-NewGuiPart150.BackgroundColor3 = Color3.new(0.913726, 0.913726, 0.913726)
-NewGuiPart150.BorderColor3 = Color3.new(0.584314, 0.584314, 0.584314)
-NewGuiPart150.Size = UDim2.new(1, 0, 0, 17)
+NewGuiPart162.Name = "GetSetting"
+NewGuiPart162.Parent = SettingsPanel
+NewGuiPart162.Archivable = true
 
-NewGuiPart151.Parent = NewGuiPart150
-NewGuiPart151.BackgroundTransparency = 1
-NewGuiPart151.Position = UDim2.new(0, 4, 0, 0)
-NewGuiPart151.Size = UDim2.new(1, -4, 1, 0)
-NewGuiPart151.Font = Enum.Font.SourceSans
-NewGuiPart151.FontSize = Enum.FontSize.Size14
-NewGuiPart151.Text = "Remote Debugger"
-NewGuiPart151.TextColor3 = Color3.new(0, 0, 0)
-NewGuiPart151.TextXAlignment = Enum.TextXAlignment.Left
+NewGuiPart163.Name = "OpenScript"
+NewGuiPart163.Parent = ScriptEditor
+NewGuiPart163.Archivable = true
 
-NewGuiPart152.Name = "Desc"
-NewGuiPart152.Parent = NewGuiPart149
-NewGuiPart152.BackgroundColor3 = Color3.new(1, 1, 1)
-NewGuiPart152.BackgroundTransparency = 1
-NewGuiPart152.Position = UDim2.new(0, 0, 0, 20)
-NewGuiPart152.Size = UDim2.new(1, 0, 0, 40)
-NewGuiPart152.Font = Enum.Font.SourceSans
-NewGuiPart152.FontSize = Enum.FontSize.Size32
-NewGuiPart152.Text = "Have fun with remotes"
-NewGuiPart152.TextWrapped = true
-return NewGuiPart1
+return ROBLOX
 end
+
 local D_E_X = CreateGui()
-D_E_X.Parent = game.Players.LocalPlayer.PlayerGui
+D_E_X.Parent = game.CoreGui.RobloxGui;
+
 spawn(function()
-	local Gui = D_E_X
-	
+
+local Gui = D_E_X
 
 local IntroFrame = Gui:WaitForChild("IntroFrame")
 
@@ -1730,6 +1925,7 @@ local ExplorerPanel = Gui:WaitForChild("ExplorerPanel")
 local PropertiesFrame = Gui:WaitForChild("PropertiesFrame")
 local SaveMapWindow = Gui:WaitForChild("SaveMapWindow")
 local RemoteDebugWindow = Gui:WaitForChild("RemoteDebugWindow")
+local AboutWindow = Gui:WaitForChild("AboutWindow")
 
 local SettingsPanel = Gui:WaitForChild("SettingsPanel")
 local SettingsListener = SettingsPanel:WaitForChild("GetSetting")
@@ -1772,7 +1968,8 @@ local Windows = {
 	},
 	Settings = {SettingsPanel},
 	SaveMap = {SaveMapWindow},
-	Remotes = {RemoteDebugWindow}
+	Remotes = {RemoteDebugWindow},
+	About = {AboutWindow}
 }
 
 function switchWindows(wName,over)
@@ -1783,25 +1980,28 @@ function switchWindows(wName,over)
 	for i,v in pairs(Windows) do
 		count = 0
 		if i ~= wName then
-			for _,c in pairs(v) do c:TweenPosition(UDim2.new(1, 30, count * 0.5, count * 36), "Out", "Quad", 0.5, true) count = count + 1 end
+			for _,c in pairs(v) do c:TweenPosition(UDim2.new(1, 30, c.Position.Y.Scale, c.Position.Y.Offset), "Out", "Quad", 0.5, true) count = count + 1 end
+			-- for _,c in pairs(v) do c:TweenPosition(UDim2.new(1, 30, count * 0.5, count * 36), "Out", "Quad", 0.5, true) count = count + 1 end
 		end
 	end
 	
 	count = 0
 	
 	if Windows[wName] then
-		for _,c in pairs(Windows[wName]) do c:TweenPosition(UDim2.new(1, -300, count * 0.5, count * 36), "Out", "Quad", 0.5, true) count = count + 1 end
+		for _,c in pairs(Windows[wName]) do c:TweenPosition(UDim2.new(1, -300, c.Position.Y.Scale, c.Position.Y.Offset), "Out", "Quad", 0.5, true) count = count + 1 end
+		-- for _,c in pairs(Windows[wName]) do c:TweenPosition(UDim2.new(1, -300, count * 0.5, count * 36), "Out", "Quad", 0.5, true) count = count + 1 end
 	end
 	
 	if wName ~= "Nothing c:" then
 		CurrentWindow = wName
 		for i,v in pairs(SlideFrame:GetChildren()) do
+			v.AutoButtonColor = false;
 			v.BackgroundTransparency = 1
-			v.Icon.ImageColor3 = Color3.new(70/255, 70/255, 70/255)
+			v.Icon.ImageColor3 = Color3.fromRGB(185, 185, 185)
 		end
 		if SlideFrame:FindFirstChild(wName) then
-			SlideFrame[wName].BackgroundTransparency = 0.5
-			SlideFrame[wName].Icon.ImageColor3 = Color3.new(0,0,0)
+			-- SlideFrame[wName].BackgroundTransparency = 1
+			SlideFrame[wName].Icon.ImageColor3 = Color3.new(255,255,255)
 		end
 	end
 end
@@ -1819,11 +2019,11 @@ function toggleDex(on)
 end
 
 local Settings = {
-	ClickSelect = false,
-	SelBox = false,
-	ClearProps = false,
-	SelectUngrouped = true,
-	SaveInstanceScripts = true
+	ClickSelect = false;
+	SelBox = false;
+	ClearProps = false;
+	SelectUngrouped = true;
+	SaveInstanceScripts = true;
 }
 
 function ReturnSetting(set)
@@ -1855,12 +2055,12 @@ for i,v in pairs(SlideFrame:GetChildren()) do
 		switchWindows(v.Name)
 	end)
 	
-	v.MouseEnter:connect(function()v.BackgroundTransparency = 0.5 end)
-	v.MouseLeave:connect(function()if CurrentWindow~=v.Name then v.BackgroundTransparency = 1 end end)
+	-- v.MouseEnter:connect(function()v.BackgroundTransparency = 0.5 end)
+	-- v.MouseLeave:connect(function()if CurrentWindow~=v.Name then v.BackgroundTransparency = 1 end end)
 end
 
 
-function createSetting(name,interName,defaultOn)
+function createSetting(name, interName, defaultOn, func)
 	local newSetting = SettingTemplate:Clone()
 	newSetting.Position = UDim2.new(0,0,0,#SettingList:GetChildren() * 60)
 	newSetting.SName.Text = name
@@ -1881,6 +2081,7 @@ function createSetting(name,interName,defaultOn)
 	
 	newSetting.Change.MouseButton1Click:connect(function()
 		toggle(not Settings[interName])
+		if func then pcall(func, Settings[interName]) end
 	end)
 	
 	newSetting.Visible = true
@@ -2001,7 +2202,7 @@ SaveMapName.Text = tostring(game.PlaceId).."MapCopy"
 SaveMapButton.MouseButton1Click:connect(function()
 	local copyWhat = {}
 
-	local copyGroup = Instance.new("Model",game.ReplicatedStorage)
+	local copyGroup = Instance.new("Model",game:GetService'ReplicatedStorage')
 
 	local copyScripts = SaveMapSettings.SaveScripts
 
@@ -2028,7 +2229,7 @@ SaveMapButton.MouseButton1Click:connect(function()
 
 	function archivable(root)
 		for i,v in pairs(root:GetChildren()) do
-			if not game.Players:GetPlayerFromCharacter(v) then
+			if not game:GetService'Players':GetPlayerFromCharacter(v) then
 				v.Archivable = true
 				archivable(v)
 			end
@@ -2129,18 +2330,18 @@ SaveMapButton.MouseButton1Click:connect(function()
 		local lightingProps = Instance.new("Model",copyGroup)
 		lightingProps.Name = "LightingProperties"
 	
-		saveProp(game.Lighting,"Ambient",lightingProps)
-		saveProp(game.Lighting,"Brightness",lightingProps)
-		saveProp(game.Lighting,"ColorShift_Bottom",lightingProps)
-		saveProp(game.Lighting,"ColorShift_Top",lightingProps)
-		saveProp(game.Lighting,"GlobalShadows",lightingProps)
-		saveProp(game.Lighting,"OutdoorAmbient",lightingProps)
-		saveProp(game.Lighting,"Outlines",lightingProps)
-		saveProp(game.Lighting,"GeographicLatitude",lightingProps)
-		saveProp(game.Lighting,"TimeOfDay",lightingProps)
-		saveProp(game.Lighting,"FogColor",lightingProps)
-		saveProp(game.Lighting,"FogEnd",lightingProps)
-		saveProp(game.Lighting,"FogStart",lightingProps)
+		saveProp(game:GetService'Lighting',"Ambient",lightingProps)
+		saveProp(game:GetService'Lighting',"Brightness",lightingProps)
+		saveProp(game:GetService'Lighting',"ColorShift_Bottom",lightingProps)
+		saveProp(game:GetService'Lighting',"ColorShift_Top",lightingProps)
+		saveProp(game:GetService'Lighting',"GlobalShadows",lightingProps)
+		saveProp(game:GetService'Lighting',"OutdoorAmbient",lightingProps)
+		saveProp(game:GetService'Lighting',"Outlines",lightingProps)
+		saveProp(game:GetService'Lighting',"GeographicLatitude",lightingProps)
+		saveProp(game:GetService'Lighting',"TimeOfDay",lightingProps)
+		saveProp(game:GetService'Lighting',"FogColor",lightingProps)
+		saveProp(game:GetService'Lighting',"FogEnd",lightingProps)
+		saveProp(game:GetService'Lighting',"FogStart",lightingProps)
 	end
 
 	if decompile and copyScripts then
@@ -2150,7 +2351,7 @@ SaveMapButton.MouseButton1Click:connect(function()
 	if SaveInstance then
 		SaveInstance(copyGroup,SaveMapName.Text..".rbxm")
 	elseif saveinstance then
-		saveinstance(getelysianpath()..SaveMapName.Text..".rbxm",copyGroup)
+		saveinstance(SaveMapName.Text..".rbxm", copyGroup)
 	end
 	--print("Saved!")
 	if consoleFunc then
@@ -2176,7 +2377,7 @@ SideMenu.Visible = true
 for i = 0,1,0.1 do
 	IntroFrame.BackgroundTransparency = i
 	IntroFrame.Main.BackgroundTransparency = i
-	IntroFrame.Slant.ImageTransparency = i
+	IntroFrame.Slant.ImageLabel.ImageTransparency = i
 	IntroFrame.Title.TextTransparency = i
 	IntroFrame.Version.TextTransparency = i
 	IntroFrame.Creator.TextTransparency = i
@@ -2359,20 +2560,36 @@ local FONT_SIZE do
 end
 
 local GuiColor = {
-	Background      = Color3.new(233/255, 233/255, 233/255);
-	Border          = Color3.new(149/255, 149/255, 149/255);
-	Selected        = Color3.new( 96/255, 140/255, 211/255);
-	BorderSelected  = Color3.new( 86/255, 125/255, 188/255);
-	Text            = Color3.new(  0/255,   0/255,   0/255);
-	TextDisabled    = Color3.new(128/255, 128/255, 128/255);
-	TextSelected    = Color3.new(255/255, 255/255, 255/255);
-	Button          = Color3.new(221/255, 221/255, 221/255);
-	ButtonBorder    = Color3.new(149/255, 149/255, 149/255);
-	ButtonSelected  = Color3.new(255/255,   0/255,   0/255);
-	Field           = Color3.new(255/255, 255/255, 255/255);
-	FieldBorder     = Color3.new(191/255, 191/255, 191/255);
-	TitleBackground = Color3.new(178/255, 178/255, 178/255);
+	Background      = Color3.fromRGB( 43,  43,  43);
+	Border          = Color3.fromRGB( 20,  20,  20);
+	Selected        = Color3.fromRGB(215, 125,   0);
+	BorderSelected  = Color3.fromRGB(188, 118,   4);
+	Text            = Color3.fromRGB(245, 245, 245);
+	TextDisabled    = Color3.fromRGB(188, 188, 188);
+	TextSelected    = Color3.fromRGB(255, 255, 255);
+	Button          = Color3.fromRGB( 33,  33,  33);
+	ButtonBorder    = Color3.fromRGB(133, 133, 133);
+	ButtonSelected  = Color3.fromRGB(255, 188,   0);
+	Field           = Color3.fromRGB( 43,  43,  43);
+	FieldBorder     = Color3.fromRGB( 50,  50,  50);
+	TitleBackground = Color3.fromRGB( 11,  11,  11);
 }
+
+--[[
+Background      = Color3.fromRGB(233, 233, 233);
+Border          = Color3.fromRGB(149, 149, 149);
+Selected        = Color3.fromRGB( 96, 140, 211);
+BorderSelected  = Color3.fromRGB( 86, 125, 188);
+Text            = Color3.fromRGB(  0,   0,   0);
+TextDisabled    = Color3.fromRGB(128, 128, 128);
+TextSelected    = Color3.fromRGB(255, 255, 255);
+Button          = Color3.fromRGB(221, 221, 221);
+ButtonBorder    = Color3.fromRGB(149, 149, 149);
+ButtonSelected  = Color3.fromRGB(255,   0,   0);
+Field           = Color3.fromRGB(255, 255, 255);
+FieldBorder     = Color3.fromRGB(191, 191, 191);
+TitleBackground = Color3.fromRGB(178, 178, 178);
+]]
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
@@ -2793,6 +3010,8 @@ do
 			template.BorderSizePixel = 0
 		end
 
+		template.BackgroundColor3 = Color3.new(1, 1, 1);
+
 		local transform
 		if dir == nil or dir == 'Up' then
 			function transform(p,s) return p,s end
@@ -2847,6 +3066,11 @@ do
 			t.Size = s
 			t.Parent = Frame
 		end
+
+		for i,v in pairs(Frame:GetChildren()) do
+			v.BackgroundColor3 = Color3.new(1, 1, 1);
+		end
+
 		return Frame
 	end
 
@@ -2925,43 +3149,60 @@ do
 	mt.__index.ScrollLeft = mt.__index.ScrollUp
 	mt.__index.ScrollRight = mt.__index.ScrollDown
 
+	local ScrollStyles = {
+		Background      = Color3.fromRGB(233, 233, 233);
+		Border          = Color3.fromRGB(149, 149, 149);
+		Selected        = Color3.fromRGB( 63, 119, 189);
+		BorderSelected  = Color3.fromRGB( 55, 106, 167);
+		Text            = Color3.fromRGB(  0,   0,   0);
+		TextDisabled    = Color3.fromRGB(128, 128, 128);
+		TextSelected    = Color3.fromRGB(255, 255, 255);
+		Button          = Color3.fromRGB( 35,  35,  35);
+		ButtonBorder    = Color3.fromRGB(149, 149, 149);
+		ButtonSelected  = Color3.fromRGB(255,   0,   0);
+		Field           = Color3.fromRGB(255, 255, 255);
+		FieldBorder     = Color3.fromRGB(191, 191, 191);
+		TitleBackground = Color3.fromRGB(178, 178, 178);
+	}
+
 	function ScrollBar(horizontal)
 		-- create row scroll bar
+		local ScrollBarWidth = GUI_SIZE;
 		local ScrollFrame = Create('Frame',{
 			Name = "ScrollFrame";
-			Position = horizontal and UDim2.new(0,0,1,-GUI_SIZE) or UDim2.new(1,-GUI_SIZE,0,0);
-			Size = horizontal and UDim2.new(1,0,0,GUI_SIZE) or UDim2.new(0,GUI_SIZE,1,0);
+			Position = horizontal and UDim2.new(0,0,1,-ScrollBarWidth) or UDim2.new(1,-ScrollBarWidth,0,0);
+			Size = horizontal and UDim2.new(1,0,0,ScrollBarWidth) or UDim2.new(0,ScrollBarWidth,1,0);
 			BackgroundTransparency = 1;
 			Create('ImageButton',{
 				Name = "ScrollDown";
-				Position = horizontal and UDim2.new(1,-GUI_SIZE,0,0) or UDim2.new(0,0,1,-GUI_SIZE);
-				Size = UDim2.new(0, GUI_SIZE, 0, GUI_SIZE);
-				BackgroundColor3 = GuiColor.Button;
-				BorderColor3 = GuiColor.Border;
-				--BorderSizePixel = 0;
+				Position = horizontal and UDim2.new(1,-ScrollBarWidth,0,0) or UDim2.new(0,0,1,-ScrollBarWidth);
+				Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
+				BackgroundColor3 = ScrollStyles.Button;
+				BorderColor3 = ScrollStyles.Border;
+				BorderSizePixel = 0;
 			});
 			Create('ImageButton',{
 				Name = "ScrollUp";
-				Size = UDim2.new(0, GUI_SIZE, 0, GUI_SIZE);
-				BackgroundColor3 = GuiColor.Button;
-				BorderColor3 = GuiColor.Border;
-				--BorderSizePixel = 0;
+				Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
+				BackgroundColor3 = ScrollStyles.Button;
+				BorderColor3 = ScrollStyles.Border;
+				BorderSizePixel = 0;
 			});
 			Create('ImageButton',{
 				Name = "ScrollBar";
-				Size = horizontal and UDim2.new(1,-GUI_SIZE*2,1,0) or UDim2.new(1,0,1,-GUI_SIZE*2);
-				Position = horizontal and UDim2.new(0,GUI_SIZE,0,0) or UDim2.new(0,0,0,GUI_SIZE);
+				Size = horizontal and UDim2.new(1,-ScrollBarWidth*2,1,0) or UDim2.new(1,0,1,-ScrollBarWidth*2);
+				Position = horizontal and UDim2.new(0,ScrollBarWidth,0,0) or UDim2.new(0,0,0,ScrollBarWidth);
 				AutoButtonColor = false;
-				BackgroundColor3 = Color3.new(0.94902, 0.94902, 0.94902);
-				BorderColor3 = GuiColor.Border;
-				--BorderSizePixel = 0;
+				BackgroundColor3 = Color3.fromRGB(20, 20, 20);
+				BorderColor3 = ScrollStyles.Border;
+				BorderSizePixel = 0;
 				Create('ImageButton',{
 					Name = "ScrollThumb";
 					AutoButtonColor = false;
-					Size = UDim2.new(0, GUI_SIZE, 0, GUI_SIZE);
-					BackgroundColor3 = GuiColor.Button;
-					BorderColor3 = GuiColor.Border;
-					--BorderSizePixel = 0;
+					Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
+					BackgroundColor3 = ScrollStyles.Button;
+					BorderColor3 = ScrollStyles.Border;
+					BorderSizePixel = 0;
 				});
 			});
 		})
@@ -2969,7 +3210,7 @@ do
 		local graphicTemplate = Create('Frame',{
 			Name="Graphic";
 			BorderSizePixel = 0;
-			BackgroundColor3 = GuiColor.Border;
+			BackgroundColor3 = Color3.new(1, 1, 1);
 		})
 		local graphicSize = GUI_SIZE/2
 
@@ -3021,8 +3262,8 @@ do
 
 		local lastDown
 		local lastUp
-		local scrollStyle = {BackgroundColor3=GuiColor.Border,BackgroundTransparency=0}
-		local scrollStyle_ds = {BackgroundColor3=GuiColor.Border,BackgroundTransparency=0.7}
+		local scrollStyle = {BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=0}
+		local scrollStyle_ds = {BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=0.7}
 
 		local function Update()
 			local t = Class.TotalSpace
@@ -3203,6 +3444,13 @@ do
 				local drag_con
 				local up_con
 				drag_con = MouseDrag.MouseMoved:connect(function(x,y)
+					if not game:GetService'UserInputService':IsMouseButtonPressed'MouseButton1' then
+						scrollEventID = tick()
+						MouseDrag.Parent = nil
+						ResetButtonColor(ScrollThumbFrame)
+						drag_con:disconnect(); drag_con = nil
+						up_con:disconnect(); drag = nil
+					end
 					local bar_abs_pos = ScrollBarFrame.AbsolutePosition.x
 					local bar_drag = ScrollBarFrame.AbsoluteSize.x - ScrollThumbFrame.AbsoluteSize.x
 					local bar_abs_one = bar_abs_pos + bar_drag
@@ -3227,6 +3475,13 @@ do
 				local drag_con
 				local up_con
 				drag_con = MouseDrag.MouseMoved:connect(function(x,y)
+					if not game:GetService'UserInputService':IsMouseButtonPressed'MouseButton1' then
+						scrollEventID = tick()
+						MouseDrag.Parent = nil
+						ResetButtonColor(ScrollThumbFrame)
+						drag_con:disconnect(); drag_con = nil
+						up_con:disconnect(); drag = nil
+					end
 					local bar_abs_pos = ScrollBarFrame.AbsolutePosition.y
 					local bar_drag = ScrollBarFrame.AbsoluteSize.y - ScrollThumbFrame.AbsoluteSize.y
 					local bar_abs_one = bar_abs_pos + bar_drag
@@ -3303,21 +3558,51 @@ if saveinstance then DexStorageEnabled = true end
 if DexStorageEnabled then
 	DexStorage = Instance.new("Folder")
 	DexStorage.Name = "Dex"
-	DexStorageMain = Instance.new("Folder",DexStorage)
+	DexStorageMain = Instance.new("Folder", DexStorage)
 	DexStorageMain.Name = "DexStorage"
 end
 
-local NilStorage
-local NilStorageMain
-local NilStorageEnabled
+local RunningScriptsStorage
+local RunningScriptsStorageMain
+local RunningScriptsStorageEnabled
 
-if get_nil_instances and IfThisFunctionWasStableEnough then NilStorageEnabled = true end
+if getscripts then RunningScriptsStorageEnabled = true end
 
-if NilStorageEnabled then
-	NilStorage = Instance.new("Folder")
-	NilStorage.Name = "Dex Internal Storage"
-	NilStorageMain = Instance.new("Folder",NilStorage)
-	NilStorageMain.Name = "Nil Instances"
+if RunningScriptsStorageEnabled then
+	RunningScriptsStorage = Instance.new("Folder")
+	RunningScriptsStorage.Name = "Dex Internal Storage"
+	RunningScriptsStorageMain = Instance.new("Folder", RunningScriptsStorage)
+	RunningScriptsStorageMain.Name = "Running Scripts"
+end
+
+local UpvalueStorage
+local UpvalueStorageVariables
+local UpvalueStorageFunctions
+local UpvalueStorageEnabled
+
+if vars and funcs then UpvalueStorageEnabled = true end
+
+if UpvalueStorageEnabled then
+	UpvalueStorage = Instance.new('Folder')
+	UpvalueStorage.Name = 'Upvalue Storage'
+	UpvalueStorageVariables = Instance.new("Folder", UpvalueStorage)
+	UpvalueStorageVariables.Name = "Upvalue Variables"
+	UpvalueStorageFunctions = Instance.new("Folder", UpvalueStorage)
+	UpvalueStorageFunctions.Name = "Upvalue Functions"
+	for i, v in pairs(vars) do
+		pcall(function()
+			local n = Instance.new('StringValue', UpvalueStorageVariables)
+			n.Name = tostring(i);
+			n.Value = tostring(v);
+		end)
+	end
+	for i, v in pairs(funcs) do
+		pcall(function()
+			local n = Instance.new('StringValue', UpvalueStorageFunctions)
+			n.Name = tostring(i);
+			n.Value = tostring(v);
+		end)
+	end
 end
 
 local listFrame = Create('Frame',{
@@ -3385,22 +3670,7 @@ local Styles = {
 	Font = Enum.Font.Arial;
 	Margin = 5;
 	Black = CreateColor3(0,0,0);
-	White = CreateColor3(255,255,255);
-}
-
-local DropDown = {
-	Font = Styles.Font;
-	FontSize = Enum.FontSize.Size14;
-	TextColor = CreateColor3(0,0,0);
-	TextColorOver = Styles.White;
-	TextXAlignment = Enum.TextXAlignment.Left;
-	Height = 20;
-	BackColor = Styles.White;
-	BackColorOver = CreateColor3(86,125,188);
-	BorderColor = CreateColor3(216,216,216);
-	BorderSizePixel = 2;
-	ArrowColor = CreateColor3(160,160,160);
-	ArrowColorOver = Styles.Black;
+	White = CreateColor3(24,24,24);
 }
 
 local Row = {
@@ -3409,13 +3679,28 @@ local Row = {
 	TextXAlignment = Enum.TextXAlignment.Left;
 	TextColor = Styles.Black;
 	TextColorOver = Styles.White;
-	TextLockedColor = CreateColor3(120,120,120);
+	TextLockedColor = CreateColor3(155,155,155);
 	Height = 24;
-	BorderColor = CreateColor3(216,216,216);
+	BorderColor = CreateColor3(216/4,216/4,216/4);
 	BackgroundColor = Styles.White;
-	BackgroundColorAlternate = CreateColor3(246,246,246);
-	BackgroundColorMouseover = CreateColor3(211,224,244);
+	BackgroundColorAlternate = CreateColor3(32, 32, 32);
+	BackgroundColorMouseover = CreateColor3(40, 40, 40);
 	TitleMarginLeft = 15;
+}
+
+local DropDown = {
+	Font = Styles.Font;
+	FontSize = Enum.FontSize.Size14;
+	TextColor = CreateColor3(255,255,255);
+	TextColorOver = Color3.new(1, 1, 1);
+	TextXAlignment = Enum.TextXAlignment.Left;
+	Height = 16;
+	BackColor = Styles.White;
+	BackColorOver = CreateColor3(190, 90, 0);
+	BorderColor = CreateColor3(45,45,45);
+	BorderSizePixel = 2;
+	ArrowColor = CreateColor3(160/2,160/2,160/2);
+	ArrowColorOver = Styles.Black;
 }
 
 local currentRightClickMenu
@@ -3499,7 +3784,7 @@ function GetFunctions()
 end
 
 function CreateInsertObjectMenu(choices, currentChoice, readOnly, onClick)
-	local mouse = game.Players.LocalPlayer:GetMouse()
+	local mouse = game:GetService'Players'.LocalPlayer:GetMouse()
 	local totalSize = explorerPanel.Parent.AbsoluteSize.y
 	if #choices == 0 then return end
 	
@@ -3588,7 +3873,7 @@ function CreateInsertObjectMenu(choices, currentChoice, readOnly, onClick)
 end
 
 function CreateFunctionCallerMenu(choices, currentChoice, readOnly, onClick)
-	local mouse = game.Players.LocalPlayer:GetMouse()
+	local mouse = game:GetService'Players'.LocalPlayer:GetMouse()
 	local totalSize = explorerPanel.Parent.AbsoluteSize.y
 	if #choices == 0 then return end
 	
@@ -3700,7 +3985,7 @@ function CreateFunctionCaller()
 			for i = 1,#list do
 				pcall(function() Instance.new(option,list[i]) end)
 			end
-			print(option.Name .. " selected to be called. Function caller being added soon, please wait!")
+			-- print(option.Name .. " selected to be called. Function caller being added soon, please wait!")
 			--CallFunction()
 			DestroyRightClick()
 		end
@@ -3711,6 +3996,18 @@ function CreateFunctionCaller()
 	if CurrentFunctionCallerWindow then
 		CurrentFunctionCallerWindow.Parent = explorerPanel.Parent
 	end
+end
+
+local UserInputService = game:GetService'UserInputService';
+
+function GetMouseLocation()
+	return UserInputService:GetMouseLocation() - Vector2.new(0, 36);
+end
+
+function MouseHoveringOver(GuiObject)
+	local MLocation = GetMouseLocation();
+
+	return (MLocation.x >= GuiObject.AbsolutePosition.X and MLocation.x <= (GuiObject.AbsolutePosition.X + GuiObject.AbsoluteSize.X)) and (MLocation.y >= GuiObject.AbsolutePosition.Y and MLocation.y <= (GuiObject.AbsolutePosition.Y + GuiObject.AbsoluteSize.Y));
 end
 
 function CreateRightClickMenuItem(text, onClick, insObj)
@@ -3735,6 +4032,16 @@ function CreateRightClickMenuItem(text, onClick, insObj)
 	elseif insObj == 2 then
 		button.FontSize = Enum.FontSize.Size11
 	end
+
+	spawn(function()
+		while button.Parent ~= nil and button.Parent.Parent ~= nil do
+			game:service'RunService'.Stepped:wait();
+			if not MouseHoveringOver(button) then
+				button.TextColor3 = DropDown.TextColor
+				button.BackgroundColor3 = DropDown.BackColor
+			end
+		end
+	end)
 	
 	button.MouseEnter:connect(function()
 		button.TextColor3 = DropDown.TextColorOver
@@ -3768,7 +4075,7 @@ function CreateRightClickMenuItem(text, onClick, insObj)
 end
 
 function CreateRightClickMenu(choices, currentChoice, readOnly, onClick)
-	local mouse = game.Players.LocalPlayer:GetMouse()
+	local mouse = game:GetService'Players'.LocalPlayer:GetMouse()
 
 	local frame = Instance.new("Frame")	
 	frame.Name = "DropDown"
@@ -3850,7 +4157,7 @@ end
 
 function checkMouseInGui(gui)
 	if gui == nil then return false end
-	local plrMouse = game.Players.LocalPlayer:GetMouse()
+	local plrMouse = game:GetService'Players'.LocalPlayer:GetMouse()
 	local guiPosition = gui.AbsolutePosition
 	local guiSize = gui.AbsoluteSize	
 	
@@ -3903,9 +4210,9 @@ function filteringWorkspace()
 end
 
 function lookForAName(obj,name)
-	for i,v in pairs(obj:GetChildren()) do
+	for i,v in pairs(obj:GetDescendants()) do
 		if string.find(string.lower(v.Name),string.lower(name)) then nameScanned = true end
-		lookForAName(v,name)
+		-- lookForAName(v,name)
 	end
 end
 
@@ -3970,8 +4277,11 @@ local updateList,rawUpdateList,updateScroll,rawUpdateSize do
 		if DexStorageEnabled then
 			r(NodeLookup[DexStorage])
 		end
-		if NilStorageEnabled then
-			r(NodeLookup[NilStorage])
+		if RunningScriptsStorageEnabled then
+			r(NodeLookup[RunningScriptsStorage])
+		end
+		if UpvalueStorageEnabled then
+			r(NodeLookup[UpvalueStorage])
 		end
 		rawUpdateSize()
 		updateActions()
@@ -3984,7 +4294,7 @@ local updateList,rawUpdateList,updateScroll,rawUpdateSize do
 	function updateList()
 		if updatingList then return end
 		updatingList = true
-		wait(0.25)
+		wait(2.25)
 		updatingList = false
 		rawUpdateList()
 	end
@@ -3993,7 +4303,7 @@ local updateList,rawUpdateList,updateScroll,rawUpdateSize do
 	function updateScroll()
 		if updatingScroll then return end
 		updatingScroll = true
-		wait(0.25)
+		wait(2.25)
 		updatingScroll = false
 		scrollBar:Update()
 	end
@@ -4324,7 +4634,7 @@ local function ToPropValue(value,type)
 				break
 			end
 		end
-		print(getEnum)
+		-- print(getEnum)
 		return getEnum
 	else
 		return nil
@@ -4535,10 +4845,33 @@ function DestroyRightClick()
 end
 
 function rightClickMenu(sObj)
-	local mouse = game.Players.LocalPlayer:GetMouse()
+	local mouse = game:GetService'Players'.LocalPlayer:GetMouse()
 	
+	local extra = (sObj == RunningScriptsStorageMain and 'Refresh Instances' or nil)
+
 	currentRightClickMenu = CreateRightClickMenu(
-		{"Cut","Copy","Paste Into","Duplicate","Delete","Group","Ungroup","Select Children","Teleport To","Insert Part","Insert Object","View Script","Save Instance","Call Function","Call Remote"},
+		{
+			'Cut',
+			'Copy',
+			'Paste Into',
+			'Duplicate',
+			'Delete',
+			-- 'Group',
+			-- 'Ungroup',
+			'Select Children',
+			'Teleport To',
+			-- 'Track',
+			-- 'Insert Part',
+			-- 'Insert Object',
+			'View Script',
+			'Save Script',
+			'Dump Function',
+			'Save Instance',
+			'Call Function',
+			'Call Remote',
+			'Try Get Values',
+			extra
+		},
 		"",
 		false,
 		function(option)
@@ -4630,7 +4963,7 @@ function rightClickMenu(sObj)
 				for i = 1,#list do
 					if list[i]:IsA("BasePart") then
 						pcall(function()
-							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = list[i].CFrame
+							game:GetService'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = list[i].CFrame
 						end)
 						break
 					end
@@ -4643,7 +4976,7 @@ function rightClickMenu(sObj)
 					pcall(function()
 						local newPart = Instance.new("Part")
 						newPart.Parent = list[i]
-						newPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.Head.Position) + Vector3.new(0,3,0)
+						newPart.CFrame = CFrame.new(game:GetService'Players'.LocalPlayer.Character.Head.Position) + Vector3.new(0,3,0)
 						table.insert(insertedParts,newPart)
 					end)
 				end
@@ -4673,13 +5006,164 @@ function rightClickMenu(sObj)
 						break
 					end
 				end
-			elseif option == "View Script" then
+			elseif option == "Save Script" then
 				if not Option.Modifiable then return end
+				local list = Selection:Get()
+				for i = 1,#list do
+					if list[i]:IsA("LocalScript") or list[i]:IsA("ModuleScript") then
+						if Synapse then
+							Synapse:WriteFile(game.PlaceId .. '_' .. list[i].Name:gsub('%W', '') .. '_' .. math.random(100000, 999999) .. '.lua', decompile(list[i]))
+						elseif writefile then
+							writefile(game.PlaceId .. '_' .. list[i].Name:gsub('%W', '') .. '_' .. math.random(100000, 999999) .. '.lua', decompile(list[i]));
+						end
+					end
+				end
+			elseif option == "View Script" then
+				-- if not Option.Modifiable then return end
 				local list = Selection:Get()
 				for i = 1,#list do
 					if list[i]:IsA("LocalScript") or list[i]:IsA("ModuleScript") then
 						ScriptEditorEvent:Fire(list[i])
 					end
+				end
+			elseif option == 'Try Get Values' then
+				for i, sObj in pairs(Selection:Get()) do
+					if vars[sObj.Name] or funcs[sObj.Name] then
+						local var = vars[sObj.Name] or funcs[sObj.Name]
+						if var then
+							if type(var) == 'table' then
+								local T = var;
+								-- table.sort(T, cmp)
+								for i,v in pairs(T) do
+									local n = Instance.new('StringValue', sObj);
+									n.Name = tostring(i);
+									local a, b = pcall(function()
+										return tostring(v);
+									end)
+									n.Value = a and b or '.undefined';
+									if (type(v) == 'function') then
+										funcs[i] = v;
+									else
+										vars[i] = v;
+									end
+								end
+							elseif type(var) == 'function' then
+								local T = debug.getupvalues(var);
+								-- table.sort(T, cmp)
+								for i,v in pairs(T) do
+									local n = Instance.new('StringValue', sObj);
+									n.Name = tostring(i);
+									local a, b = pcall(function()
+										return tostring(v);
+									end)
+									n.Value = a and b or '.undefined';
+									if (type(v) == 'function') then
+										funcs[i] = v;
+									else
+										vars[i] = v;
+									end
+								end
+							end
+						end
+					end
+					if typeof(sObj) == 'Instance' and (sObj:IsA'LocalScript' or sObj:IsA'ModuleScript') then
+						do -- get script env values
+							local T = getsenv(sObj);
+							for i,v in pairs(T) do
+								if not sObj:FindFirstChild(tostring(i)) then
+									local n = Instance.new('StringValue', sObj);
+									n.Name = tostring(i);
+									local a, b = pcall(function()
+										return tostring(v);
+									end)
+									n.Value = a and b or '.undefined';
+									if (type(v) == 'function') then
+										funcs[i] = v;
+										for fn, p in pairs(debug.getupvalues(v)) do
+											if not sObj:FindFirstChild(tostring(fn)) then
+												local n = Instance.new('StringValue', sObj);
+												n.Name = tostring(fn);
+												local a, b = pcall(function()
+													return tostring(p);
+												end)
+												n.Value = a and b or '.undefined';
+												if (type(p) == 'function') then
+													funcs[fn] = p;
+												else
+													vars[fn] = p;
+												end
+											end
+										end
+									else
+										vars[i] = v;
+									end
+								end
+							end
+						end
+						--[[do -- attempt to get upvalue variables
+							for i,v in pairs(getreg()) do
+								if typeof(v) == 'function' then
+									local T = debug.getupvalues(v);
+									for i,v in pairs(T) do
+										if not sObj:FindFirstChild(tostring(i)) then
+											local n = Instance.new('StringValue', sObj);
+											n.Name = tostring(i);
+											local a, b = pcall(function()
+												return tostring(v);
+											end)
+											n.Value = a and b or '.undefined';
+											if (type(v) == 'function') then
+												for _, p in pairs(debug.getupvalues(v)) do
+													if not sObj:FindFirstChild(tostring(_)) then
+														local n = Instance.new('StringValue', sObj);
+														n.Name = tostring(_);
+														local a, b = pcall(function()
+															return tostring(p);
+														end)
+														n.Value = a and b or '.undefined';
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end]]
+					end
+				end
+			elseif option == 'Dump Function' then
+				if funcs[sObj.Name] then
+					local var = funcs[sObj.Name]
+					if var then
+						if type(var) == 'function' then
+							if writefile then
+								writefile(game.PlaceId .. '_' .. 'DF' .. '_' .. math.random(100000, 999999) .. '.lua', decompile(var));
+							end
+						end
+					end
+				end
+			elseif option == 'Refresh Instances' then
+				for i,v in pairs(getscripts()) do
+					if v ~= RunningScriptsStorage and v ~= DexStorage and v ~= UpvalueStorage then
+						if (v:IsA'LocalScript' or v:IsA'ModuleScript' or v:IsA'Script') then
+							v.Archivable = true;
+							local ls = v:clone()
+							if v:IsA'LocalScript' or v:IsA'Script' then ls.Disabled = true; end
+							ls.Parent = RunningScriptsStorageMain
+						end
+					end
+				end
+			elseif option == 'Track' then
+				if not Option.Modifiable then return end
+				local list = Selection:Get()
+				for i = 1,#list do
+					pcall(function()
+						local name = list[i].Name;
+						if list[i].Parent:FindFirstChildOfClass'Humanoid' then
+							name = list[i].Parent.Name;
+						end
+						_G.Track(list[i], name, list[i].BrickColor.Color);
+					end)
 				end
 			end
 	end)
@@ -5117,18 +5601,35 @@ do
 	end)
 
 	local wheelAmount = 6
+	
 	explorerPanel.MouseWheelForward:connect(function()
-		if scrollBar.VisibleSpace - 1 > wheelAmount then
-			scrollBar:ScrollTo(scrollBar.ScrollIndex - wheelAmount)
+		if input ~= nil and input.down ~= nil and input.down.leftshift then
+			if scrollBarH.VisibleSpace - 1 > wheelAmount then
+				scrollBarH:ScrollTo(scrollBarH.ScrollIndex - wheelAmount)
+			else
+				scrollBarH:ScrollTo(scrollBarH.ScrollIndex - scrollBarH.VisibleSpace)
+			end
 		else
-			scrollBar:ScrollTo(scrollBar.ScrollIndex - scrollBar.VisibleSpace)
+			if scrollBar.VisibleSpace - 1 > wheelAmount then
+				scrollBar:ScrollTo(scrollBar.ScrollIndex - wheelAmount)
+			else
+				scrollBar:ScrollTo(scrollBar.ScrollIndex - scrollBar.VisibleSpace)
+			end
 		end
 	end)
 	explorerPanel.MouseWheelBackward:connect(function()
-		if scrollBar.VisibleSpace - 1 > wheelAmount then
-			scrollBar:ScrollTo(scrollBar.ScrollIndex + wheelAmount)
+		if input ~= nil and input.down ~= nil and input.down.leftshift then
+			if scrollBarH.VisibleSpace - 1 > wheelAmount then
+				scrollBarH:ScrollTo(scrollBarH.ScrollIndex + wheelAmount)
+			else
+				scrollBarH:ScrollTo(scrollBarH.ScrollIndex + scrollBarH.VisibleSpace)
+			end
 		else
-			scrollBar:ScrollTo(scrollBar.ScrollIndex + scrollBar.VisibleSpace)
+			if scrollBar.VisibleSpace - 1 > wheelAmount then
+				scrollBar:ScrollTo(scrollBar.ScrollIndex + wheelAmount)
+			else
+				scrollBar:ScrollTo(scrollBar.ScrollIndex + scrollBar.VisibleSpace)
+			end
 		end
 	end)
 end
@@ -5318,7 +5819,6 @@ local function writeObject(obj)
 	local newObject = {ClassName = obj.ClassName, Properties = {}}
 	for i,v in pairs(RbxApi.GetProperties(obj.className)) do
 		if v["Name"] ~= "Parent" then
-			print("thispassed")
 			table.insert(newObject.Properties,{Name = v["Name"], Type = v["ValueType"], Value = tostring(obj[v["Name"]])})
 		end
 	end
@@ -5326,10 +5826,10 @@ local function writeObject(obj)
 end
 
 local function buildDexStorage()
-	local localDexStorage
+	--[[local localDexStorage
 	
 	local success,err = ypcall(function()
-		localDexStorage = game:GetObjects("rbxasset://DexStorage.rbxm")[1]
+		localDexStorage = game:GetObjects("rbxasset://DexStorage.rbxm")
 	end)
 	
 	if success and localDexStorage then
@@ -5338,7 +5838,7 @@ local function buildDexStorage()
 				v.Parent = DexStorageMain
 			end)
 		end
-	end
+	end]]
 	
 	updateDexStorageListeners()
 	--[[
@@ -5416,9 +5916,18 @@ do
 		}
 	end
 	
-	if NilStorageEnabled then
-		NodeLookup[NilStorage] = {
-			Object = NilStorage;
+	if RunningScriptsStorageEnabled then
+		NodeLookup[RunningScriptsStorage] = {
+			Object = RunningScriptsStorage;
+			Parent = nil;
+			Index = 0;
+			Expanded = true;
+		}
+	end
+
+	if UpvalueStorageEnabled then
+		NodeLookup[UpvalueStorage] = {
+			Object = UpvalueStorage;
 			Parent = nil;
 			Index = 0;
 			Expanded = true;
@@ -5443,37 +5952,41 @@ do
 		Connect(DexStorage.DescendantAdded,updateDexStorage)
 		Connect(DexStorage.DescendantRemoving,updateDexStorage)
 	end
+
+	if UpvalueStorageEnabled then
+		Connect(UpvalueStorageVariables.DescendantAdded,addObject)
+		Connect(UpvalueStorageVariables.DescendantRemoving,removeObject)
 	
-	if NilStorageEnabled then
-		Connect(NilStorage.DescendantAdded,addObject)
-		Connect(NilStorage.DescendantRemoving,removeObject)		
+		Connect(UpvalueStorageFunctions.DescendantAdded,addObject)
+		Connect(UpvalueStorageFunctions.DescendantRemoving,removeObject)
+	end
+	
+	if RunningScriptsStorageEnabled then
+		Connect(RunningScriptsStorage.DescendantAdded,addObject)
+		Connect(RunningScriptsStorage.DescendantRemoving,removeObject)		
 		
-		local currentTable = get_nil_instances()	
+		--[[ local currentTable = get_nil_instances()
 		
 		spawn(function()
-			while wait() do
+			while true do
 				if #currentTable ~= #get_nil_instances() then
 					currentTable = get_nil_instances()
-					--NilStorageMain:ClearAllChildren()
-					for i,v in pairs(get_nil_instances()) do
-						if v ~= NilStorage and v ~= DexStorage then
+					--RunningScriptsStorageMain:ClearAllChildren()
+					for i,v in pairs(get_nil_instances() do
+						if v ~= RunningScriptsStorage and v ~= DexStorage and v ~= UpvalueStorage then
 							pcall(function()
-								v.Parent = NilStorageMain
+								v.Parent = RunningScriptsStorageMain
 							end)
-							--[[
-							local newNil = v
-							newNil.Archivable = true
-							newNil:Clone().Parent = NilStorageMain
-							--]]
 						end
 					end
 				end
+				wait(60)
 			end
-		end)
+		end)]]
 	end
 
 	local function get(o)
-		return o:GetChildren()
+		return o:GetDescendants()
 	end
 
 	local function r(o)
@@ -5481,17 +5994,21 @@ do
 		if s then
 			for i = 1,#children do
 				addObject(children[i],true)
-				r(children[i])
+				-- r(children[i])
 			end
 		end
 	end
 
 	r(workspace.Parent)
+
 	if DexStorageEnabled then
 		r(DexStorage)
 	end
-	if NilStorageEnabled then
-		r(NilStorage)
+	if RunningScriptsStorageEnabled then
+		r(RunningScriptsStorage)
+	end
+	if UpvalueStorageEnabled then
+		r(UpvalueStorage)
 	end
 
 	scrollBar.VisibleSpace = math.ceil(listFrame.AbsoluteSize.y/ENTRY_BOUND)
@@ -5716,11 +6233,20 @@ while RbxApi == nil do
 	wait()
 end
 
+explorerFilter.FocusLost:connect(function()
+	rawUpdateList()
+end)
+
+--[[local lastType = 0
+
 explorerFilter.Changed:connect(function(prop)
 	if prop == "Text" then
-		rawUpdateList()
+		if tick() - lastType > 1 then
+			rawUpdateList()
+		end
+		lastType = tick()
 	end
-end)
+end)]]
 
 CurrentInsertObjectWindow = CreateInsertObjectMenu(
 	GetClasses(),
@@ -5764,10 +6290,6 @@ Change log:
 
 wait(0.2)
 
-local print = function(s)
-	print(tostring(s))
-end
-
 -- Services
 local Teams = game:GetService("Teams")
 local Workspace = game:GetService("Workspace")
@@ -5802,24 +6324,13 @@ end
 
 function getCurrentApiJson()
 	local jsonStr = nil
-	if readfile and getelysianpath then
-		if readfile(getelysianpath().."Xpl0rerApi.txt") then
-			print("Api found in folder!")
-			jsonStr = readfile(getelysianpath().."Xpl0rerApi.txt")
-			return jsonStr
-		end
-	end
+
 	local success, err = pcall(function()
 		jsonStr = httpGet(apiUrl)
-		print("Fetched json successfully")
 	end)
 	if success then
-		print("Returning json")
-		--print(jsonStr:sub(1,500))
 		return jsonStr
 	else
-		print("Error fetching json: " .. tostring(err))
-		print("Falling back to local copy")
 		return getLocalApiJson()
 	end
 end
@@ -5861,7 +6372,6 @@ local function GetApiRemoteFunction(index)
 	if (apiChunks[index]) then 
 		return apiChunks[index], #apiChunks
 	else
-		print("Bad index for GetApiJson")
 		return nil
 	end
 end
@@ -5969,36 +6479,36 @@ local Styles = {
 	Font = Enum.Font.Arial;
 	Margin = 5;
 	Black = CreateColor3(0,0,0);
-	White = CreateColor3(255,255,255);
+	White = CreateColor3(24,24,24);
 }
 
 local Row = {
 	Font = Styles.Font;
 	FontSize = Enum.FontSize.Size14;
 	TextXAlignment = Enum.TextXAlignment.Left;
-	TextColor = Styles.Black;
-	TextColorOver = Styles.White;
-	TextLockedColor = CreateColor3(120,120,120);
+	TextColor = Color3.fromRGB(244,244,244);
+	TextColorOver = Color3.fromRGB(244,244,244);
+	TextLockedColor = CreateColor3(230,230,230);
 	Height = 24;
-	BorderColor = CreateColor3(216,216,216);
+	BorderColor = CreateColor3(216/4,216/4,216/4);
 	BackgroundColor = Styles.White;
-	BackgroundColorAlternate = CreateColor3(246,246,246);
-	BackgroundColorMouseover = CreateColor3(211,224,244);
+	BackgroundColorAlternate = CreateColor3(32, 32, 32);
+	BackgroundColorMouseover = CreateColor3(40, 40, 40);
 	TitleMarginLeft = 15;
 }
 
 local DropDown = {
 	Font = Styles.Font;
 	FontSize = Enum.FontSize.Size14;
-	TextColor = CreateColor3(0,0,0);
-	TextColorOver = Styles.White;
+	TextColor = CreateColor3(255,255,255);
+	TextColorOver = Color3.new(1, 1, 1);
 	TextXAlignment = Enum.TextXAlignment.Left;
 	Height = 16;
 	BackColor = Styles.White;
-	BackColorOver = CreateColor3(86,125,188);
-	BorderColor = CreateColor3(216,216,216);
+	BackColorOver = CreateColor3(190, 90, 0);
+	BorderColor = CreateColor3(45,45,45);
 	BorderSizePixel = 2;
-	ArrowColor = CreateColor3(160,160,160);
+	ArrowColor = CreateColor3(160/2,160/2,160/2);
 	ArrowColorOver = Styles.Black;
 }
 
@@ -6430,7 +6940,7 @@ local function CreateDropDown(choices, currentChoice, readOnly, onClick)
 		local graphicTemplate = Create('Frame',{
 			Name="Graphic";
 			BorderSizePixel = 0;
-			BackgroundColor3 = color;
+			BackgroundColor3 = Color3.new(1, 1, 1);
 		})
 		local graphicSize = 16/2
 		
@@ -6975,7 +7485,6 @@ function ClearPropertiesList()
 end
 
 local selection = Gui:FindFirstChild("Selection", 1)
-print(selection)
 
 function displayProperties(props)
 	for i,v in pairs(props) do
@@ -7041,19 +7550,19 @@ end
 local ScrollBarWidth = 16
 
 local ScrollStyles = {
-	Background      = Color3.new(233/255, 233/255, 233/255);
-	Border          = Color3.new(149/255, 149/255, 149/255);
-	Selected        = Color3.new( 63/255, 119/255, 189/255);
-	BorderSelected  = Color3.new( 55/255, 106/255, 167/255);
-	Text            = Color3.new(  0/255,   0/255,   0/255);
-	TextDisabled    = Color3.new(128/255, 128/255, 128/255);
-	TextSelected    = Color3.new(255/255, 255/255, 255/255);
-	Button          = Color3.new(221/255, 221/255, 221/255);
-	ButtonBorder    = Color3.new(149/255, 149/255, 149/255);
-	ButtonSelected  = Color3.new(255/255,   0/255,   0/255);
-	Field           = Color3.new(255/255, 255/255, 255/255);
-	FieldBorder     = Color3.new(191/255, 191/255, 191/255);
-	TitleBackground = Color3.new(178/255, 178/255, 178/255);
+	Background      = Color3.fromRGB(233, 233, 233);
+	Border          = Color3.fromRGB(149, 149, 149);
+	Selected        = Color3.fromRGB( 63, 119, 189);
+	BorderSelected  = Color3.fromRGB( 55, 106, 167);
+	Text            = Color3.fromRGB(  0,   0,   0);
+	TextDisabled    = Color3.fromRGB(128, 128, 128);
+	TextSelected    = Color3.fromRGB(255, 255, 255);
+	Button          = Color3.fromRGB( 35,  35,  35);
+	ButtonBorder    = Color3.fromRGB(149, 149, 149);
+	ButtonSelected  = Color3.fromRGB(255,   0,   0);
+	Field           = Color3.fromRGB(255, 255, 255);
+	FieldBorder     = Color3.fromRGB(191, 191, 191);
+	TitleBackground = Color3.fromRGB(178, 178, 178);
 }
 do
 	local ZIndexLock = {}
@@ -7122,6 +7631,8 @@ function ArrowGraphic(size,dir,scaled,template)
 		template.BorderSizePixel = 0
 	end
 
+	template.BackgroundColor3 = Color3.new(1, 1, 1);
+
 	local transform
 	if dir == nil or dir == 'Up' then
 		function transform(p,s) return p,s end
@@ -7176,6 +7687,11 @@ function ArrowGraphic(size,dir,scaled,template)
 		t.Size = s
 		t.Parent = Frame
 	end
+
+	for i,v in pairs(Frame:GetChildren()) do
+		v.BackgroundColor3 = Color3.new(1, 1, 1);
+	end
+
 	return Frame
 end
 
@@ -7267,30 +7783,30 @@ do
 				Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
 				BackgroundColor3 = ScrollStyles.Button;
 				BorderColor3 = ScrollStyles.Border;
-				--BorderSizePixel = 0;
+				BorderSizePixel = 0;
 			});
 			Create('ImageButton',{
 				Name = "ScrollUp";
 				Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
 				BackgroundColor3 = ScrollStyles.Button;
 				BorderColor3 = ScrollStyles.Border;
-				--BorderSizePixel = 0;
+				BorderSizePixel = 0;
 			});
 			Create('ImageButton',{
 				Name = "ScrollBar";
 				Size = horizontal and UDim2.new(1,-ScrollBarWidth*2,1,0) or UDim2.new(1,0,1,-ScrollBarWidth*2);
 				Position = horizontal and UDim2.new(0,ScrollBarWidth,0,0) or UDim2.new(0,0,0,ScrollBarWidth);
 				AutoButtonColor = false;
-				BackgroundColor3 = Color3.new(0.94902, 0.94902, 0.94902);
+				BackgroundColor3 = Color3.fromRGB(20, 20, 20);
 				BorderColor3 = ScrollStyles.Border;
-				--BorderSizePixel = 0;
+				BorderSizePixel = 0;
 				Create('ImageButton',{
 					Name = "ScrollThumb";
 					AutoButtonColor = false;
 					Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
 					BackgroundColor3 = ScrollStyles.Button;
 					BorderColor3 = ScrollStyles.Border;
-					--BorderSizePixel = 0;
+					BorderSizePixel = 0;
 				});
 			});
 		})
@@ -7298,7 +7814,7 @@ do
 		local graphicTemplate = Create('Frame',{
 			Name="Graphic";
 			BorderSizePixel = 0;
-			BackgroundColor3 = ScrollStyles.Border;
+			BackgroundColor3 = Color3.new(1, 1, 1);
 		})
 		local graphicSize = ScrollBarWidth/2
 
@@ -7360,8 +7876,8 @@ do
 
 		local lastDown
 		local lastUp
-		local scrollStyle = {BackgroundColor3=ScrollStyles.Border,BackgroundTransparency=0}
-		local scrollStyle_ds = {BackgroundColor3=ScrollStyles.Border,BackgroundTransparency=0.7}
+		local scrollStyle = {BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=0}
+		local scrollStyle_ds = {BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=0.7}
 
 		local function Update()
 			local t = Class.TotalSpace
@@ -7532,6 +8048,13 @@ do
 				local drag_con
 				local up_con
 				drag_con = MouseDrag.MouseMoved:connect(function(x,y)
+					if not game:GetService'UserInputService':IsMouseButtonPressed'MouseButton1' then
+						scrollEventID = tick()
+						MouseDrag.Parent = nil
+						ResetButtonColor(ScrollThumbFrame)
+						drag_con:disconnect(); drag_con = nil
+						up_con:disconnect(); drag = nil
+					end
 					local bar_abs_pos = ScrollBarFrame.AbsolutePosition.x
 					local bar_drag = ScrollBarFrame.AbsoluteSize.x - ScrollThumbFrame.AbsoluteSize.x
 					local bar_abs_one = bar_abs_pos + bar_drag
@@ -7556,6 +8079,13 @@ do
 				local drag_con
 				local up_con
 				drag_con = MouseDrag.MouseMoved:connect(function(x,y)
+					if not game:GetService'UserInputService':IsMouseButtonPressed'MouseButton1' then
+						scrollEventID = tick()
+						MouseDrag.Parent = nil
+						ResetButtonColor(ScrollThumbFrame)
+						drag_con:disconnect(); drag_con = nil
+						up_con:disconnect(); drag = nil
+					end
 					local bar_abs_pos = ScrollBarFrame.AbsolutePosition.y
 					local bar_drag = ScrollBarFrame.AbsoluteSize.y - ScrollThumbFrame.AbsoluteSize.y
 					local bar_abs_one = bar_abs_pos + bar_drag
@@ -7651,17 +8181,33 @@ do
 
 	local wheelAmount = Row.Height
 	PropertiesFrame.MouseWheelForward:connect(function()
-		if scrollBar.VisibleSpace - 1 > wheelAmount then
-			scrollBar:ScrollTo(scrollBar.ScrollIndex - wheelAmount)
+		if input ~= nil and input.down ~= nil and input.down.leftshift then
+			if scrollBarH.VisibleSpace - 1 > wheelAmount then
+				scrollBarH:ScrollTo(scrollBarH.ScrollIndex - wheelAmount)
+			else
+				scrollBarH:ScrollTo(scrollBarH.ScrollIndex - scrollBarH.VisibleSpace)
+			end
 		else
-			scrollBar:ScrollTo(scrollBar.ScrollIndex - scrollBar.VisibleSpace)
+			if scrollBar.VisibleSpace - 1 > wheelAmount then
+				scrollBar:ScrollTo(scrollBar.ScrollIndex - wheelAmount)
+			else
+				scrollBar:ScrollTo(scrollBar.ScrollIndex - scrollBar.VisibleSpace)
+			end
 		end
 	end)
 	PropertiesFrame.MouseWheelBackward:connect(function()
-		if scrollBar.VisibleSpace - 1 > wheelAmount then
-			scrollBar:ScrollTo(scrollBar.ScrollIndex + wheelAmount)
+		if input ~= nil and input.down ~= nil and input.down.leftshift then
+			if scrollBarH.VisibleSpace - 1 > wheelAmount then
+				scrollBarH:ScrollTo(scrollBarH.ScrollIndex + wheelAmount)
+			else
+				scrollBarH:ScrollTo(scrollBarH.ScrollIndex + scrollBarH.VisibleSpace)
+			end
 		else
-			scrollBar:ScrollTo(scrollBar.ScrollIndex + scrollBar.VisibleSpace)
+			if scrollBar.VisibleSpace - 1 > wheelAmount then
+				scrollBar:ScrollTo(scrollBar.ScrollIndex + wheelAmount)
+			else
+				scrollBar:ScrollTo(scrollBar.ScrollIndex + scrollBar.VisibleSpace)
+			end
 		end
 	end)
 end
@@ -7702,11 +8248,17 @@ bindGetAwait.OnInvoke = function()
 end
 end)
 spawn(function()
-	local top = D_E_X.ScriptEditor
+
+local top = D_E_X.ScriptEditor
+
+print(top)
 
 local editorGrid = top:WaitForChild("EditorGrid")
 
+print(editorGrid)
+
 local currentSource = ""
+local currentScrName = "";
 
 local currentEditor = {
 	x = 0,
@@ -7714,13 +8266,14 @@ local currentEditor = {
 }
 
 local userInput = game:GetService("UserInputService")
-local mouse = game.Players.LocalPlayer:GetMouse()
+local mouse = game:GetService'Players'.LocalPlayer:GetMouse()
 
 local topBar = top:WaitForChild("TopBar")
 local scriptBar = topBar:WaitForChild("ScriptBar")
 local scriptBarLeft = topBar:WaitForChild("ScriptBarLeft")
 local scriptBarRight = topBar:WaitForChild("ScriptBarRight")
 local clipboardButton = topBar:WaitForChild("Clipboard")
+local saveScriptButton = topBar:FindFirstChild("SaveScript")
 
 local entryTemplate = topBar:WaitForChild("Entry")
 
@@ -7737,19 +8290,19 @@ local editingIndex = 0
 local ScrollBarWidth = 16
 
 local ScrollStyles = {
-	Background      = Color3.new(233/255, 233/255, 233/255);
-	Border          = Color3.new(149/255, 149/255, 149/255);
-	Selected        = Color3.new( 63/255, 119/255, 189/255);
-	BorderSelected  = Color3.new( 55/255, 106/255, 167/255);
-	Text            = Color3.new(  0/255,   0/255,   0/255);
-	TextDisabled    = Color3.new(128/255, 128/255, 128/255);
-	TextSelected    = Color3.new(255/255, 255/255, 255/255);
-	Button          = Color3.new(221/255, 221/255, 221/255);
-	ButtonBorder    = Color3.new(149/255, 149/255, 149/255);
-	ButtonSelected  = Color3.new(255/255,   0/255,   0/255);
-	Field           = Color3.new(255/255, 255/255, 255/255);
-	FieldBorder     = Color3.new(191/255, 191/255, 191/255);
-	TitleBackground = Color3.new(178/255, 178/255, 178/255);
+	Background      = Color3.fromRGB(233, 233, 233);
+	Border          = Color3.fromRGB( 20,  20,  20);
+	Selected        = Color3.fromRGB( 63, 119, 189);
+	BorderSelected  = Color3.fromRGB( 55, 106, 167);
+	Text            = Color3.fromRGB(  0,   0,   0);
+	TextDisabled    = Color3.fromRGB(128, 128, 128);
+	TextSelected    = Color3.fromRGB(255, 255, 255);
+	Button          = Color3.fromRGB( 35,  35,  35);
+	ButtonBorder    = Color3.fromRGB(149, 149, 149);
+	ButtonSelected  = Color3.fromRGB(255,   0,   0);
+	Field           = Color3.fromRGB(255, 255, 255);
+	FieldBorder     = Color3.fromRGB(191, 191, 191);
+	TitleBackground = Color3.fromRGB(178, 178, 178);
 }
 do
 	local ZIndexLock = {}
@@ -7818,12 +8371,14 @@ function ArrowGraphic(size,dir,scaled,template)
 		template.BorderSizePixel = 0
 	end
 
+	template.BackgroundColor3 = Color3.new(1, 1, 1);
+
 	local transform
 	if dir == nil or dir == 'Up' then
 		function transform(p,s) return p,s end
 	elseif dir == 'Down' then
 		function transform(p,s) return UDim2.new(0,p.X.Offset,0,size-p.Y.Offset-1),s end
-	elseif dir == 'Left' then
+	elseif dir == 'Left' then 
 		function transform(p,s) return UDim2.new(0,p.Y.Offset,0,p.X.Offset),UDim2.new(0,s.Y.Offset,0,s.X.Offset) end
 	elseif dir == 'Right' then
 		function transform(p,s) return UDim2.new(0,size-p.Y.Offset-1,0,p.X.Offset),UDim2.new(0,s.Y.Offset,0,s.X.Offset) end
@@ -7872,6 +8427,11 @@ function ArrowGraphic(size,dir,scaled,template)
 		t.Size = s
 		t.Parent = Frame
 	end
+
+	for i,v in pairs(Frame:GetChildren()) do
+		v.BackgroundColor3 = Color3.new(1, 1, 1);
+	end
+
 	return Frame
 end
 
@@ -7963,30 +8523,30 @@ do
 				Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
 				BackgroundColor3 = ScrollStyles.Button;
 				BorderColor3 = ScrollStyles.Border;
-				--BorderSizePixel = 0;
+				BorderSizePixel = 0;
 			});
 			Create('ImageButton',{
 				Name = "ScrollUp";
 				Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
 				BackgroundColor3 = ScrollStyles.Button;
 				BorderColor3 = ScrollStyles.Border;
-				--BorderSizePixel = 0;
+				BorderSizePixel = 0;
 			});
 			Create('ImageButton',{
 				Name = "ScrollBar";
 				Size = horizontal and UDim2.new(1,-ScrollBarWidth*2,1,0) or UDim2.new(1,0,1,-ScrollBarWidth*2);
 				Position = horizontal and UDim2.new(0,ScrollBarWidth,0,0) or UDim2.new(0,0,0,ScrollBarWidth);
 				AutoButtonColor = false;
-				BackgroundColor3 = Color3.new(0.94902, 0.94902, 0.94902);
+				BackgroundColor3 = Color3.fromRGB(20, 20, 20);
 				BorderColor3 = ScrollStyles.Border;
-				--BorderSizePixel = 0;
+				BorderSizePixel = 0;
 				Create('ImageButton',{
 					Name = "ScrollThumb";
 					AutoButtonColor = false;
 					Size = UDim2.new(0, ScrollBarWidth, 0, ScrollBarWidth);
 					BackgroundColor3 = ScrollStyles.Button;
 					BorderColor3 = ScrollStyles.Border;
-					--BorderSizePixel = 0;
+					BorderSizePixel = 0;
 				});
 			});
 		})
@@ -7994,7 +8554,7 @@ do
 		local graphicTemplate = Create('Frame',{
 			Name="Graphic";
 			BorderSizePixel = 0;
-			BackgroundColor3 = ScrollStyles.Border;
+			BackgroundColor3 = Color3.new(1, 1, 1);
 		})
 		local graphicSize = ScrollBarWidth/2
 
@@ -8056,8 +8616,8 @@ do
 
 		local lastDown
 		local lastUp
-		local scrollStyle = {BackgroundColor3=ScrollStyles.Border,BackgroundTransparency=0}
-		local scrollStyle_ds = {BackgroundColor3=ScrollStyles.Border,BackgroundTransparency=0.7}
+		local scrollStyle = {BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=0}
+		local scrollStyle_ds = {BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=0.7}
 
 		local function Update()
 			local t = Class.TotalSpace
@@ -8228,6 +8788,13 @@ do
 				local drag_con
 				local up_con
 				drag_con = MouseDrag.MouseMoved:connect(function(x,y)
+					if not game:GetService'UserInputService':IsMouseButtonPressed'MouseButton1' then
+						scrollEventID = tick()
+						MouseDrag.Parent = nil
+						ResetButtonColor(ScrollThumbFrame)
+						drag_con:disconnect(); drag_con = nil
+						up_con:disconnect(); drag = nil
+					end
 					local bar_abs_pos = ScrollBarFrame.AbsolutePosition.x
 					local bar_drag = ScrollBarFrame.AbsoluteSize.x - ScrollThumbFrame.AbsoluteSize.x
 					local bar_abs_one = bar_abs_pos + bar_drag
@@ -8252,6 +8819,13 @@ do
 				local drag_con
 				local up_con
 				drag_con = MouseDrag.MouseMoved:connect(function(x,y)
+					if not game:GetService'UserInputService':IsMouseButtonPressed'MouseButton1' then
+						scrollEventID = tick()
+						MouseDrag.Parent = nil
+						ResetButtonColor(ScrollThumbFrame)
+						drag_con:disconnect(); drag_con = nil
+						up_con:disconnect(); drag = nil
+					end
 					local bar_abs_pos = ScrollBarFrame.AbsolutePosition.y
 					local bar_drag = ScrollBarFrame.AbsoluteSize.y - ScrollThumbFrame.AbsoluteSize.y
 					local bar_abs_one = bar_abs_pos + bar_drag
@@ -8304,6 +8878,39 @@ Create(scrollBarH.GUI,{
 	Parent = editorGrid;
 })
 
+local wheelAmount = 24;
+
+editorGrid.MouseWheelForward:connect(function()
+	if input ~= nil and input.down ~= nil and input.down.leftshift then
+		if scrollBarH.VisibleSpace - 1 > wheelAmount then
+			scrollBarH:ScrollTo(scrollBarH.ScrollIndex - wheelAmount)
+		else
+			scrollBarH:ScrollTo(scrollBarH.ScrollIndex - scrollBarH.VisibleSpace)
+		end
+	else
+		if scrollBar.VisibleSpace - 1 > wheelAmount then
+			scrollBar:ScrollTo(scrollBar.ScrollIndex - wheelAmount)
+		else
+			scrollBar:ScrollTo(scrollBar.ScrollIndex - scrollBar.VisibleSpace)
+		end
+	end
+end)
+editorGrid.MouseWheelBackward:connect(function()
+	if input ~= nil and input.down ~= nil and input.down.leftshift then
+		if scrollBarH.VisibleSpace - 1 > wheelAmount then
+			scrollBarH:ScrollTo(scrollBarH.ScrollIndex + wheelAmount)
+		else
+			scrollBarH:ScrollTo(scrollBarH.ScrollIndex + scrollBarH.VisibleSpace)
+		end
+	else
+		if scrollBar.VisibleSpace - 1 > wheelAmount then
+			scrollBar:ScrollTo(scrollBar.ScrollIndex + wheelAmount)
+		else
+			scrollBar:ScrollTo(scrollBar.ScrollIndex + scrollBar.VisibleSpace)
+		end
+	end
+end)
+
 local entries = {}
 
 local grid = {}
@@ -8313,10 +8920,11 @@ local xCount = 1
 
 local lineSpan = 0
 
-for i = 0,490,8 do
+for i = 0,editorGrid.AbsoluteSize.X - 20,8 do
 	local newRow = {}
 	for j = 0,390,16 do
 		local cellText = Instance.new("TextLabel",editorGrid)
+		cellText.Name = string.format('grid(%s,%s)', i, j);
 		cellText.BackgroundTransparency = 1
 		cellText.BorderSizePixel = 0
 		cellText.Text = ""
@@ -8333,29 +8941,32 @@ for i = 0,490,8 do
 end
 
 local syntaxHighlightList = {
-	{["Keyword"] = "for", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "local", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "if", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "then", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "do", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "while", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "end", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "function", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "string", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "table", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "game", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "workspace", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "return", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "break", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "elseif", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "in", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "pairs", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true},
-	{["Keyword"] = "ipairs", ["Color"] = Color3.new(0, 0, 127/255), ["Independent"] = true}
+	{["Keyword"] = "for", 			["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "local", 		["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "if", 			["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "then", 			["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "do", 			["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "while", 		["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "end", 			["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "function", 		["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "return", 		["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "break", 		["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "else", 			["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "elseif", 		["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "in", 			["Color"] = Color3.fromRGB( 86, 153, 212), ["Independent"] = true};
+	{["Keyword"] = "pairs", 		["Color"] = Color3.fromRGB(205,  98, 255), ["Independent"] = true};
+	{["Keyword"] = "ipairs", 		["Color"] = Color3.fromRGB(205,  98, 255), ["Independent"] = true};
+	{["Keyword"] = "next", 			["Color"] = Color3.fromRGB(205,  98, 255), ["Independent"] = true};
+	{["Keyword"] = "require", 		["Color"] = Color3.fromRGB(205,  98, 255), ["Independent"] = true};
+	{["Keyword"] = "pcall", 		["Color"] = Color3.fromRGB(205,  98, 255), ["Independent"] = true};
+	{["Keyword"] = "xpcall", 		["Color"] = Color3.fromRGB(205,  98, 255), ["Independent"] = true};
+	{["Keyword"] = "ypcall", 		["Color"] = Color3.fromRGB(205,  98, 255), ["Independent"] = true};
+	{["Keyword"] = "assert", 		["Color"] = Color3.fromRGB(205,  98, 255), ["Independent"] = true};
 }
 
 function checkMouseInGui(gui)
 	if gui == nil then return false end
-	local plrMouse = game.Players.LocalPlayer:GetMouse()
+	local plrMouse = game:GetService'Players'.LocalPlayer:GetMouse()
 	local guiPosition = gui.AbsolutePosition
 	local guiSize = gui.AbsoluteSize	
 	
@@ -8379,9 +8990,7 @@ function buildScript(source,xOff,yOff,override)
 	local buildScr = source
 	
 	local totalLines = 0
-	
-	--print(xOff,yOff)
-	
+
 	if currentSource ~= source then
 		currentSource = source
 	end
@@ -8389,6 +8998,7 @@ function buildScript(source,xOff,yOff,override)
 	if override then
 		currentSource = source
 		entries = {}
+		buildScr = tostring(buildScr);
 		while buildingRows do
 			local x,y = string.find(buildScr,"\n")
 			if x and y then
@@ -8438,15 +9048,23 @@ function buildScript(source,xOff,yOff,override)
 				else
 					grid[i][j].Text = newDigit
 				end
+
+				-- grid[i][j].BorderSizePixel = 1
+
+				grid[i][j].TextColor3 = Color3.fromRGB(245, 245, 245)
 				grid[i][j].BackgroundTransparency = 0
-				grid[i][j].BackgroundColor3 = Color3.new(163/255, 162/255, 165/255)
-				--grid[i][j].Font = Enum.Font.SourceSansBold
+				grid[i][j].BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+				grid[i][j].Font = Enum.Font.SourceSans
 			elseif i == lineSpan + 1 then
+				-- grid[i][j].BorderSizePixel = 1
+
 				grid[i][j].Text = ""
 				grid[i][j].BackgroundTransparency = 0
-				grid[i][j].BackgroundColor3 = Color3.new(200/255, 200/255, 200/255)
-				--grid[i][j].Font = Enum.Font.SourceSans
+				grid[i][j].BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+				-- grid[i][j].Font = Enum.Font.SourceSans
 			else
+				-- grid[i][j].BorderSizePixel = 1
+
 				grid[i][j].Text = ""
 				grid[i][j].BackgroundTransparency = 1
 				--grid[i][j].Font = Enum.Font.SourceSans
@@ -8457,7 +9075,7 @@ function buildScript(source,xOff,yOff,override)
 	while true do
 		if currentRow > #workingEntries or currentRow > #grid[1] then break end
 		local entry = workingEntries[currentRow+yOff]
-		while string.len(entry) > 0 do
+		while entry ~= nil and typeof(entry) == 'string' and string.len(entry) > 0 do
 			if string.sub(entry,1,1) == "\t" then entry = "    "..string.sub(entry,2) end
 			
 			if currentColumn > #grid then break end
@@ -8489,15 +9107,18 @@ function buildScript(source,xOff,yOff,override)
 			if string.sub(entry,1,1) == "\"" and string.match(entry,"\".+\"") then
 				inString = true
 				colorTime = string.len(string.match(entry,"\".+\""))
-				colorReplace = Color3.new(170/255, 0, 1)
+				colorReplace = Color3.fromRGB(73, 212, 107);
 			end
+
+			local oldTC3 = Color3.fromRGB(244, 244, 244); --grid[currentColumn][currentRow].TextColor3
 			
 			if colorTime > 0 then
 				colorTime = colorTime - 1
+				oldTC3 = grid[currentColumn][currentRow].TextColor3
 				grid[currentColumn][currentRow].TextColor3 = colorReplace
 				if colorTime == 0 then inString = false end
 			else
-				grid[currentColumn][currentRow].TextColor3 = Color3.new(0,0,0)
+				grid[currentColumn][currentRow].TextColor3 = oldTC3 --Color3.new(0,0,0)
 				inString = false
 			end
 			
@@ -8547,12 +9168,14 @@ function openScript(scrObj)
 	
 	local scrName = scrObj.Name
 	local scrSource = decompile(scrObj)
+	currentScrName = scrObj.Name;
 	
 	table.insert(memoryScripts,{Name = scrName,Source = scrSource})
 	
 	local newTab = entryTemplate:Clone()
 	newTab.Button.Text = scrName
 	newTab.Position = UDim2.new(0,#scriptBar:GetChildren() * 100,0,0)
+	newTab.BackgroundColor3 = Color3.new(33, 33, 33)
 	newTab.Visible = true
 	
 	newTab.Button.MouseButton1Down:connect(function()
@@ -8560,6 +9183,7 @@ function openScript(scrObj)
 			if v == newTab then
 				editingIndex = i
 				buildScript(memoryScripts[i].Source,0,0,true)
+				wait(.1);
 				scrollBar:ScrollTo(1)
 				scrollBar:Update()
 				scrollBarH:ScrollTo(1)
@@ -8603,7 +9227,13 @@ function openScript(scrObj)
 	newTab.Parent = scriptBar
 end
 
+getgenv().openScript = openScript;
+
 function updateScriptBar()
+
+end
+
+function _updateScriptBar()
 	local entryCount = 0
 	
 	scriptBarLeft.Active = false
@@ -8657,7 +9287,6 @@ end)
 
 mouse.Button1Down:connect(function()
 	if checkMouseInGui(editorGrid) then
-		--print("LETS EDIT!")
 	end
 end)
 
@@ -8674,6 +9303,18 @@ clipboardButton.MouseButton1Click:connect(function()
 		Clipboard.set(currentSource)
 	elseif CopyString then
 		CopyString(currentSource)
+	elseif Synapse then
+		Synapse:Copy(currentSource)
+	elseif setclipboard then
+		setclipboard(currentSource)
+	end
+end)
+
+saveScriptButton.MouseButton1Click:connect(function()
+	if Synapse then
+		Synapse:WriteFile(game.PlaceId .. '_' .. currentScrName:gsub('%W', '') .. '_' .. math.random(100000, 999999) .. '.lua', currentSource)
+	elseif writefile then
+		writefile(game.PlaceId .. '_' .. currentScrName:gsub('%W', '') .. '_' .. math.random(100000, 999999) .. '.lua', currentSource);
 	end
 end)
 
@@ -8702,4 +9343,12 @@ scrollBar:Update()
 scrollBarH:Update()
 end)
 
---moony
+function ScrambleNames(A)
+	for i,v in pairs(A:GetDescendants()) do
+		v.Name = RandomCharacters(math.random(16, 64));
+	end
+end
+
+wait(.25)
+
+D_E_X.Parent = game:GetService'CoreGui'
