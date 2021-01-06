@@ -3,14 +3,12 @@
 local text = {
     __index = function(T, K)
         if K == "Remove" then
-            return newcclosure(
-                function()
-                    dRenderObject_T(rawget(T, "PROPERTY"))
-                    dRenderObject_T(rawget(T, "PROPERTY"))
-                    dRenderObject_T(rawget(T, "PROPERTY"))
-                    rawset(T, "PROPERTY", nil)
-                end
-            )
+            return function()
+                dRenderObject_T(rawget(T, "PROPERTY"))
+                dRenderObject_T(rawget(T, "PROPERTY"))
+                dRenderObject_T(rawget(T, "PROPERTY"))
+                rawset(T, "PROPERTY", nil)
+            end
         end
 
         return gRenderObject_T(rawget(T, "PROPERTY"), K)
@@ -27,14 +25,12 @@ local text = {
 local quad = {
     __index = function(T, K)
         if K == "Remove" then
-            return newcclosure(
-                function()
-                    dRenderObject_Q(rawget(T, "PROPERTY"))
-                    dRenderObject_Q(rawget(T, "PROPERTY"))
-                    dRenderObject_Q(rawget(T, "PROPERTY"))
-                    rawset(T, "PROPERTY", nil)
-                end
-            )
+            return function()
+                dRenderObject_Q(rawget(T, "PROPERTY"))
+                dRenderObject_Q(rawget(T, "PROPERTY"))
+                dRenderObject_Q(rawget(T, "PROPERTY"))
+                rawset(T, "PROPERTY", nil)
+            end
         end
 
         return gRenderObject_Q(rawget(T, "PROPERTY"), K)
@@ -51,14 +47,12 @@ local quad = {
 local square = {
     __index = function(T, K)
         if K == "Remove" then
-            return newcclosure(
-                function()
-                    dRenderObject_S(rawget(T, "PROPERTY"))
-                    dRenderObject_S(rawget(T, "PROPERTY"))
-                    dRenderObject_S(rawget(T, "PROPERTY"))
-                    rawset(T, "PROPERTY", nil)
-                end
-            )
+            return function()
+                dRenderObject_S(rawget(T, "PROPERTY"))
+                dRenderObject_S(rawget(T, "PROPERTY"))
+                dRenderObject_S(rawget(T, "PROPERTY"))
+                rawset(T, "PROPERTY", nil)
+            end
         end
 
         return gRenderObject_S(rawget(T, "PROPERTY"), K)
@@ -75,14 +69,12 @@ local square = {
 local line = {
     __index = function(T, K)
         if K == "Remove" then
-            return newcclosure(
-                function()
-                    dRenderObject_L(rawget(T, "PROPERTY"))
-                    dRenderObject_L(rawget(T, "PROPERTY"))
-                    dRenderObject_L(rawget(T, "PROPERTY"))
-                    rawset(T, "PROPERTY", nil)
-                end
-            )
+            return function()
+                dRenderObject_L(rawget(T, "PROPERTY"))
+                dRenderObject_L(rawget(T, "PROPERTY"))
+                dRenderObject_L(rawget(T, "PROPERTY"))
+                rawset(T, "PROPERTY", nil)
+            end
         end
 
         return gRenderObject_L(rawget(T, "PROPERTY"), K)
@@ -99,14 +91,12 @@ local line = {
 local triangle = {
     __index = function(T, K)
         if K == "Remove" then
-            return newcclosure(
-                function()
-                    dRenderObject_TR(rawget(T, "PROPERTY"))
-                    dRenderObject_TR(rawget(T, "PROPERTY"))
-                    dRenderObject_TR(rawget(T, "PROPERTY"))
-                    rawset(T, "PROPERTY", nil)
-                end
-            )
+            return function()
+                dRenderObject_TR(rawget(T, "PROPERTY"))
+                dRenderObject_TR(rawget(T, "PROPERTY"))
+                dRenderObject_TR(rawget(T, "PROPERTY"))
+                rawset(T, "PROPERTY", nil)
+            end
         end
 
         return gRenderObject_TR(rawget(T, "PROPERTY"), K)
@@ -123,14 +113,12 @@ local triangle = {
 local circle = {
     __index = function(T, K)
         if K == "Remove" then
-            return newcclosure(
-                function()
-                    dRenderObject_C(rawget(T, "PROPERTY"))
-                    dRenderObject_C(rawget(T, "PROPERTY"))
-                    dRenderObject_C(rawget(T, "PROPERTY"))
-                    rawset(T, "PROPERTY", nil)
-                end
-            )
+            return function()
+                dRenderObject_C(rawget(T, "PROPERTY"))
+                dRenderObject_C(rawget(T, "PROPERTY"))
+                dRenderObject_C(rawget(T, "PROPERTY"))
+                rawset(T, "PROPERTY", nil)
+            end
         end
 
         return gRenderObject_C(rawget(T, "PROPERTY"), K)
@@ -147,14 +135,12 @@ local circle = {
 local image = {
     __index = function(T, K)
         if K == "Remove" then
-            return newcclosure(
-                function()
-                    dRenderObject_I(rawget(T, "PROPERTY"))
-                    dRenderObject_I(rawget(T, "PROPERTY"))
-                    dRenderObject_I(rawget(T, "PROPERTY"))
-                    rawset(T, "PROPERTY", nil)
-                end
-            )
+            return function()
+                dRenderObject_I(rawget(T, "PROPERTY"))
+                dRenderObject_I(rawget(T, "PROPERTY"))
+                dRenderObject_I(rawget(T, "PROPERTY"))
+                rawset(T, "PROPERTY", nil)
+            end
         end
 
         return gRenderObject_I(rawget(T, "PROPERTY"), K)
